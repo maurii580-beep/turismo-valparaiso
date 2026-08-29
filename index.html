@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta Patrimonial: Región de Valparaíso</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Leaflet CSS y JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Hoja de Estilos Personalizada -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- Encabezado -->
+  <header class="bg-slate-900 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-2">
+          <i data-lucide="compass" class="w-7 h-7 text-sky-400"></i>
+          Guía Patrimonial Costa & Interior
+        </h1>
+        <p class="text-sm text-slate-300 mt-1">Descubre la historia de Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué</p>
+      </div>
+      <div class="text-xs bg-slate-800 text-slate-300 px-3 py-1.5 rounded-full border border-slate-700">
+        Región de Valparaíso, Chile
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+    
+    <!-- Mapa Interactivo -->
+    <section class="mb-8 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="p-4 bg-slate-100 border-b border-slate-200 flex justify-between items-center">
+        <h2 class="font-semibold text-slate-700 flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-5 h-5 text-rose-500"></i>
+          Mapa de Ubicaciones
+        </h2>
+        <span class="text-xs text-slate-500">Haz clic en un marcador para ver detalles</span>
+      </div>
+      <div id="mapa" class="w-full"></div>
+    </section>
+
+    <!-- Barra de Filtros -->
+    <section class="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <div>
+          <label for="buscarInput" class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Buscar</label>
+          <div class="relative">
+            <input type="text" id="buscarInput" placeholder="Ej. Castillo, Poeta, Viñedo, Dunas..." 
+                   class="w-full pl-9 pr-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+          </div>
+        </div>
+
+        <div>
+          <label for="filtroCiudad" class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Ciudad / Comuna</label>
+          <select id="filtroCiudad" class="w-full py-2 px-3 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 bg-white">
+            <option value="todas">Todas las ciudades</option>
+            <option value="Viña del Mar">Viña del Mar</option>
+            <option value="Valparaíso">Valparaíso</option>
+            <option value="Casablanca">Casablanca</option>
+            <option value="Concón">Concón</option>
+            <option value="Quilpué">Quilpué</option>
+            <option value="Olmué">Olmué</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="filtroCosto" class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Tipo de Ingreso</label>
+          <select id="filtroCosto" class="w-full py-2 px-3 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 bg-white">
+            <option value="todos">Todos los precios</option>
+            <option value="gratis">Solo Gratis</option>
+            <option value="pago">De Pago / Tarifa</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contador de Resultados -->
+    <div class="flex justify-between items-center mb-4">
+      <p id="contadorResultados" class="text-sm font-medium text-slate-600">Cargando lugares...</p>
+    </div>
+
+    <!-- Contenedor de Tarjetas -->
+    <section id="contenedorTarjetas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    </section>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+    <p>Proyecto de Turismo y Patrimonio Regional &bull; Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué</p>
+  </footer>
+
+  <!-- Lógica JavaScript Modular -->
+  <script src="js/app.js"></script>
+</body>
+</html>

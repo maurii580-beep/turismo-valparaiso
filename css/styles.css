@@ -1,0 +1,14 @@
+/* Altura y capa del mapa Leaflet */
+#mapa {
+  height: 420px;
+  z-index: 10;
+}
+
+/* Transiciones suaves para las tarjetas */
+article {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+  transform: translateY(-2px);
+}
