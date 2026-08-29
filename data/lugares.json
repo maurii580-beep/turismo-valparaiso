@@ -9,6 +9,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
+    "imagen": "img/reloj-flores.jpg",
     "coordenadas": { "lat": -33.024722, "lng": -71.564444 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024722,-71.564444"
   },
@@ -22,6 +23,7 @@
     "precio": "Gratis (área exterior)",
     "esGratis": true,
     "horario": "Martes a Domingo 10:00 a 18:00",
+    "imagen": "img/castillo-wulff.jpg",
     "coordenadas": { "lat": -33.021111, "lng": -71.565833 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.021111,-71.565833"
   },
@@ -35,6 +37,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Lunes a Domingo 08:00 a 20:00",
+    "imagen": "img/muelle-vergara.jpg",
     "coordenadas": { "lat": -33.007222, "lng": -71.554444 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.007222,-71.554444"
   },
@@ -48,6 +51,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Martes a Domingo 10:00 a 17:30",
+    "imagen": "img/palacio-rioja.jpg",
     "coordenadas": { "lat": -33.018611, "lng": -71.547500 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.018611,-71.547500"
   },
@@ -61,6 +65,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Martes a Domingo 09:00 a 18:00",
+    "imagen": "img/quinta-vergara.jpg",
     "coordenadas": { "lat": -33.029444, "lng": -71.552500 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.552500"
   },
@@ -74,6 +79,7 @@
     "precio": "De Pago (~$9.000 CLP)",
     "esGratis": false,
     "horario": "Martes a Domingo 10:00 a 18:00",
+    "imagen": "img/la-sebastiana.jpg",
     "coordenadas": { "lat": -33.048056, "lng": -71.615278 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048056,-71.615278"
   },
@@ -87,6 +93,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
+    "imagen": "img/plaza-sotomayor.jpg",
     "coordenadas": { "lat": -33.038889, "lng": -71.628889 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.038889,-71.628889"
   },
@@ -100,6 +107,7 @@
     "precio": "Paseo Gratis / Museo de Pago",
     "esGratis": false,
     "horario": "Paseo 24/7 | Museo 10:00 a 18:00",
+    "imagen": "img/paseo-baburizza.jpg",
     "coordenadas": { "lat": -33.041667, "lng": -71.628611 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628611"
   },
@@ -113,6 +121,7 @@
     "precio": "Mirador Gratis / Pasaje Ascensor (~$300-$500)",
     "esGratis": false,
     "horario": "Paseo 24/7",
+    "imagen": "img/ascensor-artilleria.jpg",
     "coordenadas": { "lat": -33.032222, "lng": -71.631944 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.032222,-71.631944"
   },
@@ -126,6 +135,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
+    "imagen": "img/paseo-gervasoni.jpg",
     "coordenadas": { "lat": -33.042222, "lng": -71.627778 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042222,-71.627778"
   },
@@ -139,6 +149,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Plaza 24/7 / Templo según horarios litúrgicos",
+    "imagen": "img/plaza-casablanca.jpg",
     "coordenadas": { "lat": -33.318889, "lng": -71.408889 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.318889,-71.408889"
   },
@@ -152,6 +163,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Lunes a Domingo de 08:30 a 18:30",
+    "imagen": "img/santuario-lo-vasquez.jpg",
     "coordenadas": { "lat": -33.262500, "lng": -71.429444 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.262500,-71.429444"
   },
@@ -165,6 +177,7 @@
     "precio": "Tours de Pago (desde ~$15.000 CLP)",
     "esGratis": false,
     "horario": "Lunes a Domingo 10:00 a 17:30 (reserva previa)",
+    "imagen": "img/vina-casablanca.jpg",
     "coordenadas": { "lat": -33.327500, "lng": -71.378889 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.327500,-71.378889"
   },
@@ -178,6 +191,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
+    "imagen": "img/dunas-concon.jpg",
     "coordenadas": { "lat": -32.939722, "lng": -71.548611 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.939722,-71.548611"
   },
@@ -191,6 +205,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
+    "imagen": "img/borde-concon.jpg",
     "coordenadas": { "lat": -32.923889, "lng": -71.519444 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.923889,-71.519444"
   },
@@ -204,6 +219,7 @@
     "precio": "De Pago (~$2.000 a $4.000 CLP)",
     "esGratis": false,
     "horario": "Martes a Domingo de 10:00 a 17:30",
+    "imagen": "img/zoolo-quilpue.jpg",
     "coordenadas": { "lat": -33.054444, "lng": -71.428333 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.054444,-71.428333"
   },
@@ -217,6 +233,7 @@
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
+    "imagen": "img/plaza-quilpue.jpg",
     "coordenadas": { "lat": -33.046111, "lng": -71.443056 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.443056"
   },
@@ -230,6 +247,7 @@
     "precio": "De Pago (~$3.500 a $5.000 CLP / Reserva vía aspticket.cl)",
     "esGratis": false,
     "horario": "Martes a Domingo de 08:30 a 17:30",
+    "imagen": "img/la-campana.jpg",
     "coordenadas": { "lat": -32.983333, "lng": -71.133333 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.983333,-71.133333"
   },
@@ -243,6 +261,7 @@
     "precio": "Gratis (área exterior en días sin evento)",
     "esGratis": true,
     "horario": "Lunes a Domingo de 09:00 a 19:00",
+    "imagen": "img/el-patagual.jpg",
     "coordenadas": { "lat": -33.003611, "lng": -71.188056 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.003611,-71.188056"
   }

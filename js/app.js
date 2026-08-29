@@ -8,22 +8,15 @@ const filtroCiudad = document.getElementById('filtroCiudad');
 const filtroCosto = document.getElementById('filtroCosto');
 
 // Inicialización de Leaflet
-let map;
-let markersLayer;
+const map = L.map('mapa').setView([-33.08, -71.42], 10);
 
-function inicializarMapa() {
-  if (!document.getElementById('mapa')) return;
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
-  map = L.map('mapa').setView([-33.08, -71.42], 10);
+let markersLayer = L.layerGroup().addTo(map);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
-
-  markersLayer = L.layerGroup().addTo(map);
-}
-
-// Paleta de colores por ciudad para los badges
+// Paleta de colores por ciudad
 const coloresCiudad = {
   "Viña del Mar": "bg-sky-50 text-sky-700 border-sky-200",
   "Valparaíso": "bg-indigo-50 text-indigo-700 border-indigo-200",
@@ -33,7 +26,7 @@ const coloresCiudad = {
   "Olmué": "bg-emerald-50 text-emerald-700 border-emerald-200"
 };
 
-// Cargar datos JSON con Fetch API
+// Carga asíncrona de datos
 async function cargarLugares() {
   try {
     const respuesta = await fetch('data/lugares.json');
@@ -44,25 +37,26 @@ async function cargarLugares() {
     renderizarTarjetas(datosTuristicos);
     actualizarMapa(datosTuristicos);
   } catch (error) {
-    console.error('Error al cargar los datos turísticos:', error);
+    console.error('Error al cargar los datos:', error);
     contador.textContent = 'Error al cargar los lugares.';
     contenedor.innerHTML = `
       <div class="col-span-full py-12 text-center text-rose-500">
-        <p class="font-semibold">No se pudo cargar el archivo data/lugares.json.</p>
-        <p class="text-xs text-slate-500 mt-1">Si abres el archivo localmente, asegúrate de usar un servidor local (Live Server o npx serve) para evitar restricciones CORS.</p>
+        <p class="font-semibold">No se pudo cargar data/lugares.json</p>
+        <p class="text-xs text-slate-500 mt-1">Asegúrate de ejecutar el proyecto desde un servidor local (Live Server).</p>
       </div>
     `;
   }
 }
 
-// Actualizar marcadores en el mapa
+// Marcadores del mapa con miniatura fotográfica
 function actualizarMapa(lugares) {
   markersLayer.clearLayers();
   lugares.forEach(lugar => {
     const marker = L.marker([lugar.coordenadas.lat, lugar.coordenadas.lng]);
     marker.bindPopup(`
-      <div class="p-1">
-        <h3 class="font-bold text-sm text-slate-900">${lugar.nombre}</h3>
+      <div class="p-1 max-w-[200px]">
+        <img src="${lugar.imagen}" alt="${lugar.nombre}" class="w-full h-24 object-cover rounded-md mb-2 bg-slate-100" onerror="this.style.display='none'">
+        <h3 class="font-bold text-sm text-slate-900 leading-tight">${lugar.nombre}</h3>
         <p class="text-xs text-slate-600 mb-2">${lugar.ciudad} &bull; ${lugar.añoConstruccion}</p>
         <a href="${lugar.googleMapsUrl}" target="_blank" class="inline-block text-xs font-semibold text-sky-600 hover:text-sky-800">
           ¿Cómo llegar? &rarr;
@@ -73,7 +67,7 @@ function actualizarMapa(lugares) {
   });
 }
 
-// Renderizar tarjetas dinámicas
+// Renderizado de tarjetas con fotografía en cabecera
 function renderizarTarjetas(lugares) {
   contenedor.innerHTML = '';
   contador.textContent = `Mostrando ${lugares.length} ${lugares.length === 1 ? 'lugar' : 'lugares'}`;
@@ -101,29 +95,38 @@ function renderizarTarjetas(lugares) {
     const badgeCiudadColor = coloresCiudad[lugar.ciudad] || "bg-slate-50 text-slate-700 border-slate-200";
 
     tarjeta.innerHTML = `
-      <div class="p-6">
-        <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full border ${badgeCiudadColor}">
-            ${lugar.ciudad}
-          </span>
-          <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full border ${badgeCostoColor}">
-            ${lugar.precio.includes('Gratis') ? 'Gratis' : 'De Pago'}
-          </span>
+      <div>
+        <!-- Imagen del lugar -->
+        <div class="relative w-full h-48 bg-slate-100 overflow-hidden">
+          <img src="${lugar.imagen}" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+               onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60'">
+          <div class="absolute top-3 left-3">
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full border bg-white/95 shadow-sm ${badgeCiudadColor}">
+              ${lugar.ciudad}
+            </span>
+          </div>
+          <div class="absolute top-3 right-3">
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full border bg-white/95 shadow-sm ${badgeCostoColor}">
+              ${lugar.precio.includes('Gratis') ? 'Gratis' : 'De Pago'}
+            </span>
+          </div>
         </div>
 
-        <h3 class="text-lg font-bold text-slate-900 mb-1 leading-snug">${lugar.nombre}</h3>
-        <p class="text-xs font-medium text-slate-500 mb-3">${lugar.categoria} &bull; Construcción: <strong>${lugar.añoConstruccion}</strong></p>
-        
-        <p class="text-sm text-slate-600 mb-4 leading-relaxed">${lugar.descripcionHistorica}</p>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-1 leading-snug">${lugar.nombre}</h3>
+          <p class="text-xs font-medium text-slate-500 mb-3">${lugar.categoria} &bull; Construcción: <strong>${lugar.añoConstruccion}</strong></p>
+          
+          <p class="text-sm text-slate-600 mb-4 leading-relaxed">${lugar.descripcionHistorica}</p>
 
-        <div class="pt-3 border-t border-slate-100 text-xs text-slate-500 flex flex-col gap-1.5 mb-2">
-          <div class="flex items-center gap-2">
-            <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400"></i>
-            <span>${lugar.horario}</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i data-lucide="ticket" class="w-3.5 h-3.5 text-slate-400"></i>
-            <span>${lugar.precio}</span>
+          <div class="pt-3 border-t border-slate-100 text-xs text-slate-500 flex flex-col gap-1.5 mb-2">
+            <div class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400"></i>
+              <span>${lugar.horario}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="ticket" class="w-3.5 h-3.5 text-slate-400"></i>
+              <span>${lugar.precio}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -142,7 +145,7 @@ function renderizarTarjetas(lugares) {
   lucide.createIcons();
 }
 
-// Filtrado reactivo
+// Filtro en vivo
 function filtrarDatos() {
   const texto = buscarInput.value.toLowerCase();
   const ciudadSeleccionada = filtroCiudad.value;
@@ -166,13 +169,10 @@ function filtrarDatos() {
   actualizarMapa(resultados);
 }
 
-// Listeners
+// Event Listeners
 buscarInput.addEventListener('input', filtrarDatos);
 filtroCiudad.addEventListener('change', filtrarDatos);
 filtroCosto.addEventListener('change', filtrarDatos);
 
-// Inicialización al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-  inicializarMapa();
-  cargarLugares();
-});
+// Inicializar
+document.addEventListener('DOMContentLoaded', cargarLugares);
