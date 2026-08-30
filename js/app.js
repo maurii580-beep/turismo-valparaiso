@@ -26,6 +26,11 @@ const modalSugerencia = document.getElementById('modalSugerencia');
 const btnAbrirModalSugerencia = document.getElementById('btnAbrirModalSugerencia');
 const btnCerrarModal = document.getElementById('btnCerrarModal');
 const formSugerencia = document.getElementById('formSugerencia');
+const btnEnviarSugerencia = document.getElementById('btnEnviarSugerencia');
+const estadoEnvio = document.getElementById('estadoEnvio');
+
+// Configuración de Formspree
+const FORMSPREE_ID = "mvkogjqa"; // <-- Pega aquí tu ID de Formspree (ej: "xkgonwla")
 
 // ==========================================
 // MODO OSCURO (Dark Mode)
@@ -65,11 +70,12 @@ if (btnModoOscuro) {
 }
 
 // ==========================================
-// MODAL DE SUGERENCIAS Y WHATSAPP
+// MODAL DE SUGERENCIAS Y ENVÍO A CORREO (FORMSPREE)
 // ==========================================
 if (btnAbrirModalSugerencia && modalSugerencia) {
   btnAbrirModalSugerencia.addEventListener('click', () => {
     modalSugerencia.classList.remove('hidden');
+    if (estadoEnvio) estadoEnvio.classList.add('hidden');
     if (window.lucide) lucide.createIcons();
   });
 }
@@ -87,27 +93,50 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Enviar formulario a WhatsApp
+// Enviar formulario
 if (formSugerencia) {
-  formSugerencia.addEventListener('submit', (e) => {
+  formSugerencia.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const nombreUsuario = document.getElementById('sugNombreUsuario').value.trim() || 'Visitante de la web';
-    const lugar = document.getElementById('sugLugar').value.trim();
-    const comuna = document.getElementById('sugComuna').value;
-    const detalle = document.getElementById('sugDetalle').value.trim();
+    btnEnviarSugerencia.disabled = true;
+    btnEnviarSugerencia.innerHTML = `
+      <span class="inline-block animate-spin mr-2">🔄</span> Enviando...
+    `;
 
-    const mensaje = `🏛️ *Nueva Sugerencia - Ruta Patrimonial*\n\n` +
-                    `👤 *De:* ${nombreUsuario}\n` +
-                    `📍 *Lugar:* ${lugar}\n` +
-                    `🏙️ *Comuna:* ${comuna}\n` +
-                    `📝 *Detalles/Historia:*\n${detalle}`;
+    const datosForm = new FormData(formSugerencia);
 
-    const urlWhatsApp = `https://wa.me/${MI_NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
-    window.open(urlWhatsApp, '_blank');
+    try {
+      const respuesta = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: datosForm,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-    formSugerencia.reset();
-    modalSugerencia.classList.add('hidden');
+      if (respuesta.ok) {
+        estadoEnvio.textContent = "¡Muchas gracias! Tu sugerencia ha sido enviada con éxito.";
+        estadoEnvio.className = "text-xs text-center py-1 text-emerald-600 dark:text-emerald-400 font-medium block";
+        formSugerencia.reset();
+
+        setTimeout(() => {
+          modalSugerencia.classList.add('hidden');
+          estadoEnvio.classList.add('hidden');
+        }, 2200);
+      } else {
+        throw new Error('Error en el servidor');
+      }
+    } catch (error) {
+      estadoEnvio.textContent = "Hubo un problema al enviar. Inténtalo nuevamente.";
+      estadoEnvio.className = "text-xs text-center py-1 text-rose-600 dark:text-rose-400 font-medium block";
+    } finally {
+      btnEnviarSugerencia.disabled = false;
+      btnEnviarSugerencia.innerHTML = `
+        <i data-lucide="send" class="w-4 h-4"></i>
+        <span>Enviar sugerencia</span>
+      `;
+      if (window.lucide) lucide.createIcons();
+    }
   });
 }
 

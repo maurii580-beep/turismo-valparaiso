@@ -171,7 +171,7 @@
     <p>Proyecto de Turismo y Patrimonio Regional &bull; Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué</p>
   </footer>
 
-  <!-- Modal de Sugerencias (Envío a WhatsApp) -->
+  <!-- Modal de Sugerencias (Envío Seguro a Correo vía Formspree) -->
   <div id="modalSugerencia" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
       
@@ -186,26 +186,27 @@
         </div>
         <div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">Sugerir un Lugar o Mejora</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Envíanos nuevos datos para incluir en el mapa</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Tus aportes nos ayudan a enriquecer la ruta regional</p>
         </div>
       </div>
 
+      <!-- Formulario Formspree -->
       <form id="formSugerencia" class="space-y-4">
         <div>
-          <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Tu Nombre o Alias (Opcional)</label>
-          <input type="text" id="sugNombreUsuario" placeholder="Ej. Juan Pérez" 
+          <label for="sugNombreUsuario" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Tu Nombre o Alias (Opcional)</label>
+          <input type="text" id="sugNombreUsuario" name="nombre_usuario" placeholder="Ej. Juan Pérez" 
                  class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Nombre del Lugar *</label>
-            <input type="text" id="sugLugar" required placeholder="Ej. Teatro Municipal" 
+            <label for="sugLugar" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Nombre del Lugar *</label>
+            <input type="text" id="sugLugar" name="lugar" required placeholder="Ej. Teatro Municipal" 
                    class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Comuna / Ciudad *</label>
-            <select id="sugComuna" required 
+            <label for="sugComuna" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Comuna / Ciudad *</label>
+            <select id="sugComuna" name="comuna" required 
                     class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
               <option value="Viña del Mar">Viña del Mar</option>
               <option value="Valparaíso">Valparaíso</option>
@@ -220,14 +221,17 @@
 
         <div>
           <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Datos Históricos o Comentarios *</label>
-          <textarea id="sugDetalle" required rows="3" placeholder="¿En qué año se construyó? ¿Es gratis o de pago? ¿Por qué debería estar en la ruta?" 
+          <textarea id="sugDetalle" name="detalles" required rows="3" placeholder="¿En qué año se construyó? ¿Es gratis o de pago? ¿Por qué debería estar en el mapa?" 
                     class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none"></textarea>
         </div>
 
-        <button type="submit" 
-                class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm rounded-lg shadow-md transition-colors">
+        <!-- Estado de Envío -->
+        <div id="estadoEnvio" class="text-xs text-center hidden py-1"></div>
+
+        <button type="submit" id="btnEnviarSugerencia"
+                class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm rounded-lg shadow-md transition-colors disabled:opacity-50">
           <i data-lucide="send" class="w-4 h-4"></i>
-          <span>Enviar sugerencia por WhatsApp</span>
+          <span>Enviar sugerencia</span>
         </button>
       </form>
     </div>
