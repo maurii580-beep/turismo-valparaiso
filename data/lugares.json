@@ -236,7 +236,7 @@
     "horario": "Lunes a Domingo de 07:00 a 22:00",
     "imagen": "img/ascensor-reina-victoria.jpg",
     "coordenadas": { "lat": -33.042500, "lng": -71.625833 },
-    "googleMapsUrl": "https://maps.app.goo.gl/H3b6gptUWJN76Lj27"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.625833"
   },
   {
     "id": "escalera-piano-beethoven",
@@ -264,7 +264,7 @@
     "horario": "Acceso libre 24/7",
     "imagen": "img/puerta-roja.jpg",
     "coordenadas": { "lat": -33.043333, "lng": -71.626111 },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043333,-71.626111"
+    "googleMapsUrl": "https://maps.app.goo.gl/wsj1J7MAENHp5ujK8"
   },
   {
     "id": "arco-britanico",
