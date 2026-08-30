@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ruta Patrimonial: Región de Valparaíso</title>
   
-  <!-- Tailwind CSS CDN y configuración de Dark Mode -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -41,7 +41,7 @@
       <div class="flex items-center gap-3">
         <!-- Botón Modo Oscuro / Claro -->
         <button id="btnModoOscuro" 
-                class="inline-flex items-center gap-1 text-slate-300 hover:text-amber-400 transition-colors p-1 rounded-md"
+                class="inline-flex items-center gap-1.5 text-slate-300 hover:text-amber-400 transition-colors p-1 rounded-md"
                 aria-label="Cambiar tema claro/oscuro">
           <i id="iconoModo" data-lucide="moon" class="w-3.5 h-3.5"></i>
           <span id="textoModo" class="text-xs">Oscuro</span>
@@ -150,7 +150,7 @@
           <button id="btnFiltroFavoritos" 
                   class="w-full py-2 px-3 text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg flex items-center justify-center gap-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
             <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
-            <span>Ver Favoritos</span>
+            <span id="textoFiltroFavoritos">Ver Favoritos</span>
             <span id="contadorFavoritosBadge" class="bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 text-xs px-2 py-0.5 rounded-full font-bold">0</span>
           </button>
         </div>
