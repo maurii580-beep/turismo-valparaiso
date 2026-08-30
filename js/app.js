@@ -1,8 +1,11 @@
 let datosTuristicos = [];
 let soloFavoritosActivo = false;
 
-// Cargar favoritos
+// Cargar favoritos desde localStorage
 let favoritos = JSON.parse(localStorage.getItem('rutas_favoritos')) || [];
+
+// Configuración de WhatsApp
+const MI_NUMERO_WHATSAPP = "56995864161"; // <-- Reemplaza por tu número de WhatsApp
 
 // Elementos del DOM
 const contenedor = document.getElementById('contenedorTarjetas');
@@ -17,6 +20,12 @@ const btnCompartir = document.getElementById('btnCompartir');
 const btnModoOscuro = document.getElementById('btnModoOscuro');
 const iconoModo = document.getElementById('iconoModo');
 const textoModo = document.getElementById('textoModo');
+
+// Elementos del Modal
+const modalSugerencia = document.getElementById('modalSugerencia');
+const btnAbrirModalSugerencia = document.getElementById('btnAbrirModalSugerencia');
+const btnCerrarModal = document.getElementById('btnCerrarModal');
+const formSugerencia = document.getElementById('formSugerencia');
 
 // ==========================================
 // MODO OSCURO (Dark Mode)
@@ -55,7 +64,56 @@ if (btnModoOscuro) {
   });
 }
 
-// Inicialización de Leaflet
+// ==========================================
+// MODAL DE SUGERENCIAS Y WHATSAPP
+// ==========================================
+if (btnAbrirModalSugerencia && modalSugerencia) {
+  btnAbrirModalSugerencia.addEventListener('click', () => {
+    modalSugerencia.classList.remove('hidden');
+    if (window.lucide) lucide.createIcons();
+  });
+}
+
+if (btnCerrarModal && modalSugerencia) {
+  btnCerrarModal.addEventListener('click', () => {
+    modalSugerencia.classList.add('hidden');
+  });
+}
+
+// Cerrar haciendo clic fuera del modal
+window.addEventListener('click', (e) => {
+  if (e.target === modalSugerencia) {
+    modalSugerencia.classList.add('hidden');
+  }
+});
+
+// Enviar formulario a WhatsApp
+if (formSugerencia) {
+  formSugerencia.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nombreUsuario = document.getElementById('sugNombreUsuario').value.trim() || 'Visitante de la web';
+    const lugar = document.getElementById('sugLugar').value.trim();
+    const comuna = document.getElementById('sugComuna').value;
+    const detalle = document.getElementById('sugDetalle').value.trim();
+
+    const mensaje = `🏛️ *Nueva Sugerencia - Ruta Patrimonial*\n\n` +
+                    `👤 *De:* ${nombreUsuario}\n` +
+                    `📍 *Lugar:* ${lugar}\n` +
+                    `🏙️ *Comuna:* ${comuna}\n` +
+                    `📝 *Detalles/Historia:*\n${detalle}`;
+
+    const urlWhatsApp = `https://wa.me/${MI_NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+    window.open(urlWhatsApp, '_blank');
+
+    formSugerencia.reset();
+    modalSugerencia.classList.add('hidden');
+  });
+}
+
+// ==========================================
+// LEAFLET MAPA
+// ==========================================
 const map = L.map('mapa').setView([-33.08, -71.42], 10);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -64,7 +122,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 let markersLayer = L.layerGroup().addTo(map);
 
-// Colores de badges por comuna
 const coloresCiudad = {
   "Viña del Mar": "bg-sky-50 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 border-sky-200 dark:border-sky-800",
   "Valparaíso": "bg-indigo-50 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800",
@@ -91,14 +148,14 @@ async function cargarLugares() {
       contenedor.innerHTML = `
         <div class="col-span-full py-12 text-center text-rose-500">
           <p class="font-semibold">No se pudo cargar data/lugares.json</p>
-          <p class="text-xs text-slate-500 mt-1">Si estás abriendo el archivo localmente en tu computadora, debes usar Live Server o un servidor local.</p>
+          <p class="text-xs text-slate-500 mt-1">Asegúrate de estar ejecutando el proyecto en un servidor local o Vercel.</p>
         </div>
       `;
     }
   }
 }
 
-// Favoritos expuesto al objeto window para que funcione el onclick
+// Favoritos expuesto al window
 window.alternarFavorito = function(id) {
   if (favoritos.includes(id)) {
     favoritos = favoritos.filter(favId => favId !== id);
@@ -116,7 +173,6 @@ function actualizarContadorBadge() {
   }
 }
 
-// Marcadores de mapa
 function actualizarMapa(lugares) {
   markersLayer.clearLayers();
   lugares.forEach(lugar => {
@@ -139,7 +195,6 @@ function actualizarMapa(lugares) {
   });
 }
 
-// Renderizado de tarjetas
 function renderizarTarjetas(lugares) {
   if (!contenedor) return;
   contenedor.innerHTML = '';
@@ -233,7 +288,6 @@ function renderizarTarjetas(lugares) {
   if (window.lucide) lucide.createIcons();
 }
 
-// Filtrado de lugares
 function filtrarDatos() {
   const texto = (buscarInput?.value || '').toLowerCase();
   const ciudadSeleccionada = filtroCiudad?.value || 'todas';
@@ -259,7 +313,6 @@ function filtrarDatos() {
   actualizarMapa(resultados);
 }
 
-// Toggle Favoritos
 if (btnFiltroFavoritos) {
   btnFiltroFavoritos.addEventListener('click', () => {
     soloFavoritosActivo = !soloFavoritosActivo;
@@ -276,7 +329,6 @@ if (btnFiltroFavoritos) {
   });
 }
 
-// Compartir
 if (btnCompartir) {
   btnCompartir.addEventListener('click', async () => {
     const shareData = {
@@ -298,12 +350,11 @@ if (btnCompartir) {
   });
 }
 
-// Listeners
 if (buscarInput) buscarInput.addEventListener('input', filtrarDatos);
 if (filtroCiudad) filtroCiudad.addEventListener('change', filtrarDatos);
 if (filtroCosto) filtroCosto.addEventListener('change', filtrarDatos);
 
-// Inicialización
+// Inicio
 document.addEventListener('DOMContentLoaded', () => {
   inicializarModoOscuro();
   cargarLugares();
