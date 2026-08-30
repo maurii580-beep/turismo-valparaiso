@@ -90,7 +90,7 @@
     "categoria": "Museo Arqueológico y Antropológico",
     "añoConstruccion": 1937,
     "descripcionHistorica": "Institución fundada en 1937 dedicada a la arqueología chilena y culturas precolombinas. En su frontis se ubica uno de los pocos Moái auténticos de Rapa Nui fuera de la isla.",
-    "precio": "Jardín con Moái Gratis / Museo de Pago (~$4.000 CLP)",
+    "precio": "Jardín con Moái Gratis / Museo de Pago (~$4.000 CLP) Gratis el primer domingo de cada mes",
     "esGratis": false,
     "horario": "Lunes a Domingo de 10:00 a 18:00",
     "imagen": "img/museo-fonck.jpg",
@@ -236,7 +236,7 @@
     "horario": "Lunes a Domingo de 07:00 a 22:00",
     "imagen": "img/ascensor-reina-victoria.jpg",
     "coordenadas": { "lat": -33.042500, "lng": -71.625833 },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.625833"
+    "googleMapsUrl": "https://maps.app.goo.gl/H3b6gptUWJN76Lj27"
   },
   {
     "id": "escalera-piano-beethoven",
