@@ -858,5 +858,41 @@
     "imagen": "img/cuesta-dormida.jpg",
     "coordenadas": { "lat": -33.048333, "lng": -71.076667 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048333,-71.076667"
-  }
+  },
+  {
+  "id": "mural-mon-laferte",
+  "nombre": "Mural 'Día Uno' (Mon Laferte)",
+  "ciudad": "Valparaíso",
+  "categoria": "Arte Urbano y Muralismo",
+  "añoConstruccion": 2021,
+  "descripcionHistorica": "Pintado en febrero de 2021 por la cantautora y artista visual viñamarina Mon Laferte en colaboración con la muralista Mono González. Ubicado en una casona de tres pisos en la intersección de las calles Capilla y Galos (Cerro Alegre), la obra representa el ciclo femenino, el nacimiento y la energía creadora.",
+  "precio": "Gratis",
+  "esGratis": true,
+  "horario": "Acceso libre 24/7",
+  "imagen": "img/mural-mon-laferte.jpg",
+  "coordenadas": {
+    "lat": -33.041944,
+    "lng": -71.629722
+  },
+  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041944,-71.629722"
+},
+{
+  "id": "casino-municipal-vina",
+  "nombre": "Casino Municipal de Viña del Mar",
+  "ciudad": "Viña del Mar",
+  "categoria": "Patrimonio Arquitectónico y Entretenimiento",
+  "añoConstruccion": 1930,
+  "descripcionHistorica": "Inaugurado en diciembre de 1930 bajo la presidencia de Carlos Ibáñez del Campo y la alcaldía de Manuel Ossa. De monumental estilo neoclásico y art déco, diseñado por los arquitectos Alberto Risopatrón y Augusto Gómez Serrano, se ubica frente a la desembocadura del Estero Marga Marga rodeado de jardines costeros tradicionales.",
+  "precio": "Jardines y exterior: Gratis | Entrada a sala de juegos: Entrada general establecida por ley (~$4.500 CLP)",
+  "esGratis": false,
+  "horario": "Abierto 24/7 (Sala de juegos, restaurantes y espectáculos)",
+  "imagen": "img/casino-vina.jpg",
+  "sitioWeb": "https://www.enjoy.cl/#/vina-del-mar",
+  "requisitoIngreso": "Mayores de 18 años con cédula de identidad o pasaporte vigente (para ingresar a la sala de juegos)",
+  "coordenadas": {
+    "lat": -33.020556,
+    "lng": -71.560278
+  },
+  "googleMapsUrl": "https://maps.app.goo.gl/FYm7qY4VaakzHNqY8"
+}
 ]
