@@ -4,6 +4,228 @@
   z-index: 10;
 }
 
+#seccionMapa {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+#seccionMapa:hover {
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+#contenedorMapa {
+  will-change: max-height, opacity;
+}
+
+#btnToggleMapa {
+  box-shadow: 0 6px 16px rgba(14, 116, 144, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#btnToggleMapa:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(14, 116, 144, 0.16);
+}
+
+#contenedorMapa .leaflet-container {
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+#btnFiltroFavoritos,
+#btnCercaDeMi,
+#filtroCiudad,
+#filtroCategoria,
+#filtroCosto,
+#buscarInput {
+  transition: all 0.2s ease;
+}
+
+#btnFiltroFavoritos:hover,
+#btnCercaDeMi:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle {
+  transform-origin: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.theme-toggle-track {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(15, 23, 42, 0.9));
+  box-shadow: inset 0 1px 3px rgba(15, 23, 42, 0.45);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle-thumb {
+  transform: translateX(0);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.35);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-icons {
+  position: relative;
+}
+
+.theme-icon {
+  display: block;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.theme-icon-moon {
+  opacity: 0.35;
+  transform: scale(0.9) rotate(-10deg);
+}
+
+.theme-toggle[aria-pressed="false"] {
+  border-color: rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.06);
+  color: #e2e8f0;
+}
+
+.theme-toggle[aria-pressed="false"] .theme-toggle-track {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.4), rgba(15, 23, 42, 0.94));
+}
+
+.theme-toggle[aria-pressed="false"] .theme-toggle-thumb {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.theme-toggle[aria-pressed="false"] .theme-icon-sun {
+  opacity: 1;
+  transform: scale(1.1) rotate(0deg);
+}
+
+.theme-toggle[aria-pressed="false"] .theme-icon-moon {
+  opacity: 0.35;
+  transform: scale(0.85) rotate(-12deg);
+}
+
+.theme-toggle[aria-pressed="true"] {
+  border-color: rgba(251, 191, 36, 0.8);
+  background: rgba(28, 25, 23, 0.8);
+  color: #f8fafc;
+  box-shadow: 0 0 0 1px rgba(252, 211, 77, 0.08), 0 0 18px rgba(251, 191, 36, 0.18);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-track {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.95), rgba(245, 158, 11, 0.95));
+  box-shadow: inset 0 1px 4px rgba(120, 53, 15, 0.35), 0 0 16px rgba(251, 191, 36, 0.26);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-thumb {
+  transform: translateX(1.1rem);
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  box-shadow: 0 2px 12px rgba(251, 191, 36, 0.4);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-icon-sun {
+  opacity: 0.35;
+  transform: scale(0.85) rotate(12deg);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-icon-moon {
+  opacity: 1;
+  transform: scale(1.1) rotate(0deg);
+  color: #bae6fd;
+  filter: drop-shadow(0 0 6px rgba(125, 211, 252, 0.7));
+}
+
+@media (max-width: 640px) {
+  body {
+    min-height: 100vh;
+  }
+
+  main {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  header .max-w-7xl {
+    padding-top: 1.1rem !important;
+    padding-bottom: 1.1rem !important;
+  }
+
+  header h1 {
+    font-size: 1.15rem !important;
+    line-height: 1.3;
+  }
+
+  header p {
+    font-size: 0.72rem !important;
+    line-height: 1.4;
+  }
+
+  .bg-slate-950.text-slate-300.text-xs.border-b.border-slate-800.py-2.px-4 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  #seccionMapa {
+    margin-bottom: 1rem !important;
+  }
+
+  #mapa {
+    height: 220px !important;
+  }
+
+  #btnToggleMapa {
+    font-size: 0.68rem !important;
+    padding: 0.5rem 0.7rem !important;
+  }
+
+  section.bg-white.dark\:bg-slate-900.p-4.sm\:p-5.rounded-2xl.shadow-\[0_10px_30px_rgba\(15\,23\,42\,0\.05\)\] {
+    padding: 0.9rem !important;
+  }
+
+  #buscarInput,
+  #filtroCiudad,
+  #filtroCategoria,
+  #filtroCosto,
+  #btnFiltroFavoritos,
+  #btnCercaDeMi {
+    font-size: 0.75rem !important;
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.65rem !important;
+  }
+
+  #btnFiltroFavoritos {
+    min-height: 2.6rem;
+  }
+
+  #contenedorTarjetas {
+    gap: 0.9rem !important;
+  }
+
+  article .h-48 {
+    height: 10.5rem !important;
+  }
+
+  article .p-4 {
+    padding: 0.9rem !important;
+  }
+
+  article .text-lg {
+    font-size: 1rem !important;
+  }
+
+  article .text-sm {
+    font-size: 0.72rem !important;
+  }
+
+  article .text-xs {
+    font-size: 0.66rem !important;
+  }
+}
+
 /* Transiciones suaves para las tarjetas */
 article {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;

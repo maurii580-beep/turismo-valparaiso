@@ -25,6 +25,9 @@ const textoCercaDeMi = document.getElementById('textoCercaDeMi');
 const btnVistaGrid = document.getElementById('btnVistaGrid');
 const btnVistaLista = document.getElementById('btnVistaLista');
 const btnVistaIconos = document.getElementById('btnVistaIconos');
+const btnToggleMapa = document.getElementById('btnToggleMapa');
+const contenedorMapa = document.getElementById('contenedorMapa');
+let mapaAbierto = false;
 
 // ==========================================
 // 1. MODO OSCURO / CLARO
@@ -441,6 +444,32 @@ function actualizarMapa(lugares) {
   });
 }
 
+function alternarMapa() {
+  if (!contenedorMapa || !btnToggleMapa) return;
+
+  mapaAbierto = !mapaAbierto;
+  const seccionMapa = document.getElementById('seccionMapa');
+
+  if (mapaAbierto) {
+    contenedorMapa.classList.remove('max-h-0', 'opacity-0');
+    contenedorMapa.classList.add('max-h-[1200px]', 'opacity-100');
+    seccionMapa?.classList.add('ring-1', 'ring-sky-200', 'dark:ring-sky-900');
+    btnToggleMapa.setAttribute('aria-expanded', 'true');
+    btnToggleMapa.innerHTML = '<i data-lucide="chevrons-up" class="w-4 h-4"></i><span>Ocultar mapa</span>';
+    if (mapaLeaflet) {
+      setTimeout(() => mapaLeaflet.invalidateSize(), 220);
+    }
+  } else {
+    contenedorMapa.classList.remove('max-h-[1200px]', 'opacity-100');
+    contenedorMapa.classList.add('max-h-0', 'opacity-0');
+    seccionMapa?.classList.remove('ring-1', 'ring-sky-200', 'dark:ring-sky-900');
+    btnToggleMapa.setAttribute('aria-expanded', 'false');
+    btnToggleMapa.innerHTML = '<i data-lucide="chevrons-down" class="w-4 h-4"></i><span>Mostrar mapa</span>';
+  }
+
+  if (window.lucide) lucide.createIcons();
+}
+
 // ==========================================
 // FAVORITOS Y TEMA
 // ==========================================
@@ -474,8 +503,18 @@ function toggleTema() {
 }
 
 function actualizarIconoTema(esOscuro) {
+  const botonTema = document.getElementById('btnModoOscuro');
+  if (botonTema) {
+    botonTema.setAttribute('aria-pressed', String(esOscuro));
+    botonTema.classList.toggle('theme-toggle--active', esOscuro);
+  }
+
   if (!iconoTema) return;
-  iconoTema.setAttribute('data-lucide', esOscuro ? 'sun' : 'moon');
+  iconoTema.setAttribute('data-lucide', esOscuro ? 'moon' : 'sun');
+  const textoModo = document.getElementById('textoModo');
+  if (textoModo) {
+    textoModo.textContent = esOscuro ? 'Oscuro' : 'Claro';
+  }
   if (window.lucide) lucide.createIcons();
 }
 
@@ -734,6 +773,7 @@ function configurarEventos() {
   });
 
   btnCercaDeMi?.addEventListener('click', alternarGeolocalizacion);
+  btnToggleMapa?.addEventListener('click', alternarMapa);
   btnModoOscuro?.addEventListener('click', toggleTema);
   btnCompartir?.addEventListener('click', compartirGuia);
   btnSugerir?.addEventListener('click', sugerirLugar);

@@ -33,10 +33,16 @@
       <div class="flex items-center gap-3">
         <!-- Botón Modo Oscuro / Claro -->
         <button id="btnModoOscuro" 
-                class="inline-flex items-center gap-1.5 text-slate-300 hover:text-amber-400 transition-colors p-1 rounded-md"
-                aria-label="Cambiar tema claro/oscuro">
-          <i id="iconoModo" data-lucide="moon" class="w-3.5 h-3.5"></i>
-          <span id="textoModo" class="text-xs">Oscuro</span>
+                class="theme-toggle inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-2 py-1.5 text-slate-300 shadow-sm transition-all duration-300 hover:border-sky-400/60 hover:text-amber-300 focus:outline-none focus:ring-2 focus:ring-sky-500/50"
+                aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
+          <span class="theme-toggle-track relative inline-flex h-5 w-9 items-center rounded-full bg-slate-700 p-0.5 transition-colors duration-300">
+            <span class="theme-toggle-thumb absolute left-0.5 h-4 w-4 rounded-full bg-slate-100 shadow-md transition-transform duration-300 ease-out"></span>
+          </span>
+          <span class="theme-icons relative flex items-center justify-center h-4 w-7">
+            <i data-lucide="sun" class="theme-icon theme-icon-sun absolute w-3.5 h-3.5 text-amber-400 transition-all duration-300"></i>
+            <i id="iconoModo" data-lucide="moon" class="theme-icon theme-icon-moon absolute w-3.5 h-3.5 text-sky-300 transition-all duration-300"></i>
+          </span>
+          <span id="textoModo" class="text-[10px] font-semibold uppercase tracking-[0.12em]">Oscuro</span>
         </button>
 
         <span class="text-slate-700">|</span>
@@ -69,16 +75,16 @@
   </div>
 
   <!-- Encabezado -->
-  <header class="bg-slate-900 text-white shadow-md border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+  <header class="bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 text-white shadow-lg border-b border-slate-700/80">
+    <div class="max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-2">
-          <i data-lucide="compass" class="w-7 h-7 text-sky-400"></i>
+        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
+          <i data-lucide="compass" class="w-6 h-6 text-sky-400"></i>
           Guía Patrimonial Costa & Interior
         </h1>
         <p class="text-sm text-slate-300 mt-1">Descubre la historia de Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué</p>
       </div>
-      <div class="text-xs bg-slate-800 text-slate-300 px-3 py-1.5 rounded-full border border-slate-700">
+      <div class="text-xs bg-white/5 text-slate-200 px-3 py-1.5 rounded-full border border-slate-600/80 backdrop-blur-sm shadow-sm">
         Región de Valparaíso, Chile
       </div>
     </div>
@@ -87,19 +93,25 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
     
     <!-- Mapa Interactivo -->
-    <section class="mb-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-      <div class="p-4 bg-slate-100 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+    <section id="seccionMapa" class="mb-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+      <div class="p-4 bg-slate-100 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center gap-3">
         <h2 class="font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2">
           <i data-lucide="map-pin" class="w-5 h-5 text-rose-500"></i>
           Mapa de Ubicaciones
         </h2>
-        <span class="text-xs text-slate-500 dark:text-slate-400">Haz clic en un marcador para ver detalles</span>
+        <button id="btnToggleMapa" type="button" aria-expanded="false"
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-slate-700 text-white text-xs font-semibold hover:bg-slate-700 dark:hover:bg-slate-600 transition-colors">
+          <i data-lucide="chevrons-down" class="w-4 h-4"></i>
+          <span>Mostrar mapa</span>
+        </button>
       </div>
-      <div id="mapa" class="w-full h-[260px] sm:h-[340px] md:h-[420px]"></div>
+      <div id="contenedorMapa" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
+        <div id="mapa" class="w-full h-[260px] sm:h-[340px] md:h-[420px]"></div>
+      </div>
     </section>
 
     <!-- Barra de Filtros -->
-    <section class="bg-white dark:bg-slate-900 p-4 sm:p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 mb-8">
+    <section class="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl shadow-[0_10px_30px_rgba(15,23,42,0.05)] border border-slate-200 dark:border-slate-800 mb-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end mb-4">
         
         <div>
