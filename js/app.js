@@ -34,11 +34,14 @@ const iconoTema = document.getElementById('iconoTema') || document.getElementByI
 const btnCompartir = document.getElementById('btnCompartir');
 const btnSugerir = document.getElementById('btnSugerir') || document.getElementById('btnAbrirModalSugerencia');
 const modalSugerencia = document.getElementById('modalSugerencia');
+const modalSugerir = document.getElementById('modalSugerir');
+const modalSugerirContenido = document.getElementById('modalSugerirContenido');
 
 // Modal Elements
 const modalDetalle = document.getElementById('modalDetalle');
 const modalContenido = document.getElementById('modalContenido');
 const btnCerrarModalSugerencia = document.getElementById('btnCerrarModalSugerencia');
+const btnCerrarModalSugerir = document.getElementById('btnCerrarModalSugerir');
 const btnCerrarModalDetalle = document.getElementById('btnCerrarModalDetalle');
 
 // ==========================================
@@ -159,8 +162,13 @@ function filtrarDatos() {
       coincideCategoria = lugar.categoria.toLowerCase().includes('parque') || 
                           lugar.categoria.toLowerCase().includes('santuario') ||
                           lugar.categoria.toLowerCase().includes('humedal') ||
-                          lugar.categoria.toLowerCase().includes('playa') ||
                           lugar.categoria.toLowerCase().includes('botánico');
+    } else if (categoriaSeleccionada === 'playa') {
+      coincideCategoria = lugar.categoria.toLowerCase().includes('playa') ||
+                          lugar.categoria.toLowerCase().includes('balneario') ||
+                          lugar.categoria.toLowerCase().includes('coster') ||
+                          lugar.categoria.toLowerCase().includes('surf') ||
+                          lugar.categoria.toLowerCase().includes('marina');
     } else if (categoriaSeleccionada === 'urbano') {
       coincideCategoria = lugar.categoria.toLowerCase().includes('arte') || 
                           lugar.categoria.toLowerCase().includes('mirador') ||
@@ -501,6 +509,16 @@ async function compartirGuia() {
 // 3. BOTÓN SUGERIR LUGAR
 // ==========================================
 function sugerirLugar() {
+  if (modalSugerir) {
+    modalSugerir.classList.remove('hidden');
+    setTimeout(() => {
+      modalSugerir.classList.remove('opacity-0');
+      modalSugerirContenido?.classList.remove('scale-95');
+      modalSugerirContenido?.classList.add('scale-100');
+    }, 10);
+    return;
+  }
+
   if (modalSugerencia) {
     modalSugerencia.classList.remove('hidden');
     return;
@@ -511,12 +529,26 @@ function sugerirLugar() {
   window.open(mailtoUrl, '_blank');
 }
 
+function cerrarModalSugerir() {
+  if (!modalSugerir) return;
+  modalSugerir.classList.add('opacity-0');
+  modalSugerirContenido?.classList.remove('scale-100');
+  modalSugerirContenido?.classList.add('scale-95');
+  setTimeout(() => {
+    modalSugerir.classList.add('hidden');
+  }, 200);
+}
+
 // ==========================================
 // CONTROL DEL FORMULARIO DE CONTACTO (FORMSPREE)
 // ==========================================
 const formContacto = document.getElementById('formContacto');
 const btnEnviarForm = document.getElementById('btnEnviarForm');
 const estadoEnvioForm = document.getElementById('estadoEnvioForm');
+
+const formContactoModal = document.getElementById('formContactoModal');
+const btnEnviarFormModal = document.getElementById('btnEnviarFormModal');
+const estadoEnvioFormModal = document.getElementById('estadoEnvioFormModal');
 
 const formSugerencia = document.getElementById('formSugerencia');
 const btnEnviarSugerencia = document.getElementById('btnEnviarSugerencia');
@@ -558,6 +590,48 @@ if (formContacto) {
     } finally {
       btnEnviarForm.disabled = false;
       btnEnviarForm.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i><span>Enviar Mensaje</span>`;
+      lucide.createIcons();
+    }
+  });
+}
+
+if (formContactoModal) {
+  formContactoModal.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btnEnviarFormModal.disabled = true;
+    btnEnviarFormModal.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Enviando...`;
+    lucide.createIcons();
+
+    const formData = new FormData(formContactoModal);
+
+    try {
+      const response = await fetch(formContactoModal.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formContactoModal.reset();
+        mostrarEstadoFormModal('¡Sugerencia enviada con éxito! Muchas gracias por tu aporte.', 'exito');
+        setTimeout(() => cerrarModalSugerir(), 1200);
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          mostrarEstadoFormModal(data.errors.map(err => err.message).join(', '), 'error');
+        } else {
+          mostrarEstadoFormModal('No se pudo enviar la sugerencia. Inténtalo nuevamente en unos segundos.', 'error');
+        }
+      }
+    } catch (error) {
+      console.error('Error al enviar sugerencia:', error);
+      mostrarEstadoFormModal('No se pudo establecer conexión. Revisa tu conexión a internet.', 'error');
+    } finally {
+      btnEnviarFormModal.disabled = false;
+      btnEnviarFormModal.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i><span>Enviar Sugerencia</span>`;
       lucide.createIcons();
     }
   });
@@ -630,6 +704,19 @@ function mostrarEstadoSugerencia(mensaje, tipo) {
   estadoEnvio.textContent = mensaje;
 }
 
+function mostrarEstadoFormModal(mensaje, tipo) {
+  if (!estadoEnvioFormModal) return;
+  estadoEnvioFormModal.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'dark:bg-emerald-950', 'dark:text-emerald-300', 'bg-rose-100', 'text-rose-800', 'dark:bg-rose-950', 'dark:text-rose-300', 'border', 'border-emerald-200', 'dark:border-emerald-900', 'border-rose-200', 'dark:border-rose-900');
+
+  if (tipo === 'exito') {
+    estadoEnvioFormModal.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-200', 'dark:bg-emerald-950', 'dark:text-emerald-300', 'dark:border-emerald-900');
+  } else {
+    estadoEnvioFormModal.classList.add('bg-rose-100', 'text-rose-800', 'border', 'border-rose-200', 'dark:bg-rose-950', 'dark:text-rose-300', 'dark:border-rose-900');
+  }
+
+  estadoEnvioFormModal.textContent = mensaje;
+}
+
 // ==========================================
 // EVENT LISTENERS
 // ==========================================
@@ -654,9 +741,15 @@ function configurarEventos() {
   btnCerrarModalSugerencia?.addEventListener('click', () => {
     modalSugerencia?.classList.add('hidden');
   });
+  btnCerrarModalSugerir?.addEventListener('click', cerrarModalSugerir);
   if (modalSugerencia) {
     window.addEventListener('click', (e) => {
       if (e.target === modalSugerencia) modalSugerencia.classList.add('hidden');
+    });
+  }
+  if (modalSugerir) {
+    window.addEventListener('click', (e) => {
+      if (e.target === modalSugerir) cerrarModalSugerir();
     });
   }
 
@@ -671,7 +764,11 @@ function configurarEventos() {
     if (e.target === modalDetalle) cerrarModalDetalle();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') cerrarModalDetalle();
+    if (e.key === 'Escape') {
+      cerrarModalDetalle();
+      cerrarModalSugerir();
+      modalSugerencia?.classList.add('hidden');
+    }
   });
 }
 
