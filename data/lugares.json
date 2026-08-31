@@ -10,6 +10,7 @@
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/reloj-flores.jpg",
+    "sitioWeb": "https://visitavina.cl",
     "coordenadas": { "lat": -33.024722, "lng": -71.564444 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024722,-71.564444"
   },
@@ -24,6 +25,7 @@
     "esGratis": true,
     "horario": "Martes a Domingo de 10:00 a 18:00",
     "imagen": "img/castillo-wulff.jpg",
+    "sitioWeb": "https://visitavina.cl",
     "coordenadas": { "lat": -33.021111, "lng": -71.565833 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.021111,-71.565833"
   },
@@ -52,6 +54,7 @@
     "esGratis": true,
     "horario": "Martes a Domingo de 10:00 a 17:30",
     "imagen": "img/palacio-rioja.jpg",
+    "sitioWeb": "https://palaciorioja.cl",
     "coordenadas": { "lat": -33.018611, "lng": -71.547500 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.018611,-71.547500"
   },
@@ -66,6 +69,7 @@
     "esGratis": true,
     "horario": "Martes a Domingo de 09:00 a 18:00",
     "imagen": "img/quinta-vergara.jpg",
+    "sitioWeb": "https://palaciovergara.cl",
     "coordenadas": { "lat": -33.029444, "lng": -71.552500 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.552500"
   },
@@ -84,22 +88,40 @@
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.019444,-71.551667"
   },
   {
-  "id": "museo-fonck",
-  "nombre": "Museo Fonck y Moái de Rapa Nui",
+  "id": "jardin-botanico-nacional",
+  "nombre": "Jardín Botánico Nacional",
   "ciudad": "Viña del Mar",
-  "categoria": "Museo Arqueológico y Antropológico",
-  "añoConstruccion": 1937,
-  "descripcionHistorica": "Institución fundada en 1937 dedicada a la arqueología, historia y culturas originarias de Chile (Rapa Nui, zona norte y centro-sur). En su jardín exterior se ubica un Moái auténtico tallado en toba lapilli traído desde Rapa Nui en 1951.",
-  "precio": "Jardín con Moái Gratis / Museo: Adultos ~$4.500 CLP - Niños ~$1.000 CLP",
+  "categoria": "Parque Botánico y Conservación",
+  "añoConstruccion": 1931,
+  "descripcionHistorica": "Creado originalmente en 1918 por el empresario salitrero Pascual Baburizza en el fundo El Salto y traspasado al Estado chileno en 1931. Cuenta con cerca de 400 hectáreas dedicadas a la conservación de flora nativa, colecciones de cactáceas, bosque esclerófilo, lagunas y senderos recreativos.",
+  "precio": "Adultos: ~$3.000 CLP | Niños (5-12) y Adultos mayores: ~$1.500 CLP | Niños 0-4 años: Gratis",
   "esGratis": false,
-  "horario": "Lunes 10:00-14:00 y 15:00-18:00 | Martes a Sábado 10:00-18:00 | Domingo y festivos 10:00-14:00",
-  "imagen": "img/museo-fonck.jpg",
-  "requisitoIngreso": "Cédula de identidad chilena (vigente)",
-  "infoAdicional": "Primer domingo de cada mes: Entrada liberada de 10:00 a 14:00 horas para visitantes nacionales y extranjeros con cédula de identidad chilena.",
+  "horario": "Lunes a Viernes de 09:00 a 17:30 (ingreso hasta 17:00) | Sábados, Domingos y Festivos de 09:00 a 18:00 hrs",
+  "imagen": "img/jardin-botanico.jpg",
+  "sitioWeb": "https://jbn.cl",
+  "infoAdicional": "Abierto todos los días del año (incluye feriados). Dispone de áreas de picnic, senderos de trekking y estacionamiento para vehículos ($3.000 extra).",
   "coordenadas": {
-    "lat": -33.020556, "lng": -71.549722
+    "lat": -33.045278,
+    "lng": -71.503056
   },
-  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.020556,-71.549722"
+  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045278,-71.503056"
+  },
+  {
+    "id": "museo-fonck",
+    "nombre": "Museo Fonck y Moái de Rapa Nui",
+    "ciudad": "Viña del Mar",
+    "categoria": "Museo Arqueológico y Antropológico",
+    "añoConstruccion": 1937,
+    "descripcionHistorica": "Institución fundada en 1937 dedicada a la arqueología chilena y culturas precolombinas. En su frontis se ubica uno de los pocos Moái auténticos de Rapa Nui fuera de la isla.",
+    "precio": "Jardín con Moái Gratis / Museo: Adultos ~$4.500 CLP - Niños ~$1.000 CLP",
+    "esGratis": false,
+    "horario": "Lunes 10:00-14:00 y 15:00-18:00 | Martes a Sábado 10:00-18:00 | Domingo y festivos 10:00-14:00",
+    "imagen": "img/museo-fonck.jpg",
+    "sitioWeb": "https://museofonck.cl",
+    "requisitoIngreso": "Cédula de identidad chilena (vigente)",
+    "infoAdicional": "Primer domingo de cada mes: Entrada liberada de 10:00 a 14:00 horas para visitantes nacionales y extranjeros con cédula de identidad chilena.",
+    "coordenadas": { "lat": -33.020556, "lng": -71.549722 },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.020556,-71.549722"
   },
   {
     "id": "teatro-municipal-vina",
@@ -112,8 +134,39 @@
     "esGratis": true,
     "horario": "Foyer y visitas: Lunes a Sábado de 10:00 a 18:00 / Funciones según cartelera",
     "imagen": "img/teatro-vina.jpg",
+    "sitioWeb": "https://teatrovina.cl",
     "coordenadas": { "lat": -33.024167, "lng": -71.551944 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024167,-71.551944"
+  },
+  {
+    "id": "laguna-sausalito",
+    "nombre": "Laguna Sausalito y Parque Natural",
+    "ciudad": "Viña del Mar",
+    "categoria": "Parque Urbano y Ecoturismo",
+    "añoConstruccion": 1929,
+    "descripcionHistorica": "Embalse construido a fines del siglo XIX por José Francisco Vergara para regar los viñedos de la hacienda y adquirido por el municipio en 1929. Renombrada en los años 60 en honor al hermanamiento con Sausalito (California), es un pulmón verde de 8 hectáreas ideal para paseos familiares, senderismo y avistamiento de aves.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Lunes a Domingo de 08:00 a 20:00 hrs",
+    "imagen": "img/laguna-sausalito.jpg",
+    "sitioWeb": "https://visitavina.cl",
+    "coordenadas": { "lat": -33.012778, "lng": -71.536389 },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.012778,-71.536389"
+  },
+  {
+    "id": "estadio-sausalito",
+    "nombre": "Estadio Sausalito",
+    "ciudad": "Viña del Mar",
+    "categoria": "Patrimonio Deportivo y Arquitectura",
+    "añoConstruccion": 1929,
+    "descripcionHistorica": "Inaugurado en septiembre de 1929 como 'Estadio El Tranque' y casa histórica del club Everton de Viña del Mar. Fue sede histórica de la Copa del Mundo FIFA de 1962 (incluyendo la semifinal de Brasil con Garrincha), la Copa América de 1991 y 2015, y los Juegos Panamericanos Santiago 2023.",
+    "precio": "Gratis (recorrido exterior en parque) / Partidos y eventos de pago según boletería",
+    "esGratis": true,
+    "horario": "Exterior y parque abierto en horario diurno / Interior según programación de partidos y conciertos",
+    "imagen": "img/estadio-sausalito.jpg",
+    "sitioWeb": "https://everton.cl",
+    "coordenadas": { "lat": -33.014444, "lng": -71.535000 },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.014444,-71.535000"
   },
 
   {
@@ -225,6 +278,7 @@
     "esGratis": false,
     "horario": "Martes a Domingo de 10:00 a 18:00",
     "imagen": "img/la-sebastiana.jpg",
+    "sitioWeb": "https://fundacionneruda.org",
     "coordenadas": { "lat": -33.048056, "lng": -71.615278 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048056,-71.615278"
   },
@@ -253,6 +307,7 @@
     "esGratis": false,
     "horario": "Paseo 24/7 | Museo Martes a Domingo 10:00 a 18:00",
     "imagen": "img/paseo-baburizza.jpg",
+    "sitioWeb": "https://museobaburizza.cl",
     "coordenadas": { "lat": -33.041667, "lng": -71.628611 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628611"
   },
@@ -309,6 +364,7 @@
     "esGratis": true,
     "horario": "Martes a Domingo de 10:00 a 19:00",
     "imagen": "img/parque-cultural-valpo.jpg",
+    "sitioWeb": "https://parquecultural.cl",
     "coordenadas": { "lat": -33.044722, "lng": -71.618889 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.618889"
   },
@@ -323,6 +379,7 @@
     "esGratis": false,
     "horario": "Martes a Domingo de 10:00 a 17:30",
     "imagen": "img/museo-maritimo.jpg",
+    "sitioWeb": "https://museomaritimo.cl",
     "coordenadas": { "lat": -33.031944, "lng": -71.632222 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.031944,-71.632222"
   },
@@ -407,6 +464,7 @@
     "esGratis": true,
     "horario": "Exterior 24/7",
     "imagen": "img/congreso-nacional.jpg",
+    "sitioWeb": "https://www.congreso.cl",
     "coordenadas": { "lat": -33.047778, "lng": -71.605278 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.047778,-71.605278"
   },
@@ -593,6 +651,7 @@
     "esGratis": false,
     "horario": "Martes a Domingo de 10:00 a 17:30",
     "imagen": "img/zoolo-quilpue.jpg",
+    "sitioWeb": "https://quilpue.cl",
     "coordenadas": { "lat": -33.054444, "lng": -71.428333 },
     "googleMapsUrl": "https://maps.app.goo.gl/WwtoKJQM8jLSZBw57"
   },
@@ -621,6 +680,7 @@
     "esGratis": true,
     "horario": "Lunes a Viernes de 09:00 a 18:00",
     "imagen": "img/casona-quilpue.jpg",
+    "sitioWeb": "https://quilpue.cl",
     "coordenadas": { "lat": -33.044722, "lng": -71.441944 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.441944"
   },
@@ -649,6 +709,7 @@
     "esGratis": true,
     "horario": "Según programación de eventos",
     "imagen": "img/teatro-quilpue.jpg",
+    "sitioWeb": "https://quilpue.cl",
     "coordenadas": { "lat": -33.045556, "lng": -71.444444 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045556,-71.444444"
   },
@@ -678,6 +739,7 @@
     "esGratis": true,
     "horario": "Lunes a Domingo de 08:30 a 18:30",
     "imagen": "img/santuario-lo-vasquez.jpg",
+    "sitioWeb": "https://santuariolovasquez.cl",
     "coordenadas": { "lat": -33.262500, "lng": -71.429444 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.262500,-71.429444"
   },
@@ -692,6 +754,7 @@
     "esGratis": false,
     "horario": "Lunes a Domingo de 10:00 a 17:30 (reserva previa)",
     "imagen": "img/vina-casablanca.jpg",
+    "sitioWeb": "https://casablancavalley.cl",
     "coordenadas": { "lat": -33.327500, "lng": -71.378889 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.327500,-71.378889"
   },
@@ -735,6 +798,7 @@
     "esGratis": false,
     "horario": "Martes a Domingo de 08:30 a 17:30",
     "imagen": "img/la-campana.jpg",
+    "sitioWeb": "https://www.conaf.cl",
     "coordenadas": { "lat": -32.983333, "lng": -71.133333 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.983333,-71.133333"
   },
@@ -749,6 +813,7 @@
     "esGratis": true,
     "horario": "Lunes a Domingo de 09:00 a 19:00",
     "imagen": "img/el-patagual.jpg",
+    "sitioWeb": "https://muniolmue.cl",
     "coordenadas": { "lat": -33.003611, "lng": -71.188056 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.003611,-71.188056"
   },
