@@ -221,6 +221,11 @@ function renderizarTarjetas(lugares) {
 
   contenedorTarjetas.innerHTML = lugares.map(lugar => {
     const esFav = favoritos.includes(lugar.id);
+
+    // Generador de imagen de respaldo con el nombre del lugar si falla o no existe
+    const imgFallback = `https://placehold.co/600x400/f8fafc/64748b?text=${encodeURIComponent(lugar.nombre)}`;
+    const imgSrc = lugar.imagen || imgFallback;
+
     const distanciaTag = lugar.distanciaKm !== undefined ? `
       <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-sky-500 text-white shadow-sm">
         <i data-lucide="map-pin" class="w-3 h-3"></i> ${lugar.distanciaKm} km
@@ -231,7 +236,7 @@ function renderizarTarjetas(lugares) {
       return `
         <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
           <div class="relative h-48 w-full overflow-hidden cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">
-            <img src="${lugar.imagen}" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
             
             <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" 
@@ -283,7 +288,7 @@ function renderizarTarjetas(lugares) {
     if (tipoVistaActual === 'lista') {
       return `
         <article class="bg-white dark:bg-slate-900 p-3 sm:p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-sky-500 transition-all flex items-center gap-4">
-          <img src="${lugar.imagen}" alt="${lugar.nombre}" loading="lazy" class="w-20 h-20 sm:w-28 sm:h-28 rounded-lg object-cover flex-shrink-0 cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">
+          <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-20 h-20 sm:w-28 sm:h-28 rounded-lg object-cover flex-shrink-0 cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">
           
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2 mb-1 flex-wrap">
@@ -311,7 +316,7 @@ function renderizarTarjetas(lugares) {
     if (tipoVistaActual === 'iconos') {
       return `
         <article class="group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all" onclick="abrirModalDetalle('${lugar.id}')">
-          <img src="${lugar.imagen}" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
           
           <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" class="absolute top-3 right-3 p-2 rounded-full bg-slate-900/60 backdrop-blur-sm">

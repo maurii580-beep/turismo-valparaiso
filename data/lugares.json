@@ -88,6 +88,79 @@
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.019444,-71.551667"
   },
   {
+    "id": "playa-renaca",
+    "nombre": "Playa Reñaca",
+    "ciudad": "Viña del Mar",
+    "categoria": "Balneario Costero y Deporte",
+    "añoConstruccion": 1960,
+    "descripcionHistorica": "El epicentro del turismo estival y del surf en la zona central de Chile. Se divide en 5 sectores a lo largo de su costanera, flanqueada por los icónicos edificios residenciales escalonados sobre las laderas de los cerros.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-renaca.jpg",
+    "sitioWeb": "https://visitavina.cl",
+    "infoAdicional": "Excelente para deportes náuticos y surf (con escuelas en el Sector 5). Cuenta con salvavidas en temporada alta y variado comercio gastronómico.",
+    "coordenadas": {
+      "lat": -32.973056,
+      "lng": -71.545833
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.973056,-71.545833"
+  },
+  {
+    "id": "playa-acapulco-el-sol",
+    "nombre": "Playa Acapulco y Playa El Sol",
+    "ciudad": "Viña del Mar",
+    "categoria": "Balneario Costero y Paseo Peatonal",
+    "añoConstruccion": 1930,
+    "descripcionHistorica": "Extensa franja costera céntrica ubicada entre el Muelle Vergara y la Av. San Martín. Posee una amplia ciclovía, ferias de artesanía, parques infantiles y miradores directos a la bahía de Valparaíso.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-acapulco.jpg",
+    "sitioWeb": "https://visitavina.cl",
+    "coordenadas": {
+      "lat": -33.013611,
+      "lng": -71.556667
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.013611,-71.556667"
+  },
+  {
+    "id": "playa-caleta-abarca",
+    "nombre": "Playa Caleta Abarca",
+    "ciudad": "Viña del Mar",
+    "categoria": "Balneario Costero y Jardines",
+    "añoConstruccion": 1920,
+    "descripcionHistorica": "Histórica playa de aguas resguardadas al sur de la ciudad, al pie del Cerro Castillo y a pasos del Reloj de Flores y la estación Miramar del Metro. Rodeada de jardines con palmeras y paseos peatonales.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-caleta-abarca.jpg",
+    "sitioWeb": "https://visitavina.cl",
+    "coordenadas": {
+      "lat": -33.024167,
+      "lng": -71.567222
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024167,-71.567222"
+  },
+  {
+    "id": "playa-cochoa",
+    "nombre": "Playa Cochoa",
+    "ciudad": "Viña del Mar",
+    "categoria": "Balneario Costero y Gastronomía",
+    "añoConstruccion": 1975,
+    "descripcionHistorica": "Acogedora ensenada de oleaje calmo ubicada en la ruta costera hacia Concón, famosa por su extensa oferta de restaurantes marinos sobre la costanera y vista directa a las puestas de sol.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-cochoa.jpg",
+    "sitioWeb": "https://visitavina.cl",
+    "coordenadas": {
+      "lat": -32.957778,
+      "lng": -71.548889
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.957778,-71.548889"
+  },
+  {
   "id": "jardin-botanico-nacional",
   "nombre": "Jardín Botánico Nacional",
   "ciudad": "Viña del Mar",
@@ -281,6 +354,41 @@
     "sitioWeb": "https://fundacionneruda.org",
     "coordenadas": { "lat": -33.048056, "lng": -71.615278 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048056,-71.615278"
+  },
+  {
+    "id": "playa-torpederas",
+    "nombre": "Playa Las Torpederas",
+    "ciudad": "Valparaíso",
+    "categoria": "Balneario Tradicional y Patrimonio Costero",
+    "añoConstruccion": 1887,
+    "descripcionHistorica": "La playa más clásica y tradicional de Valparaíso, ubicada en la base de Playa Ancha. Su nombre proviene de los galpones donde se resguardaban las lanchas torpederas de la Armada a fines del siglo XIX.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-torpederas.jpg",
+    "infoAdicional": "Conecta con el paseo peatonal costero hacia el Mirador del Faro Punta Ángeles y la Universidad de Playa Ancha.",
+    "coordenadas": {
+      "lat": -33.022500,
+      "lng": -71.642778
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.642778"
+  },
+  {
+    "id": "playa-san-mateo",
+    "nombre": "Playa San Mateo",
+    "ciudad": "Valparaíso",
+    "categoria": "Balneario Portuario",
+    "añoConstruccion": 1900,
+    "descripcionHistorica": "Pequeña caleta de baño ubicada al pie del Cerro Artillería, inmediata al Molo de Abrigo y al Sitio de Fondeo de la Armada. Punto tradicional de descanso para navegantes y pescadores.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-san-mateo.jpg",
+    "coordenadas": {
+      "lat": -33.029444,
+      "lng": -71.630000
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.630000"
   },
   {
     "id": "plaza-sotomayor",
@@ -587,7 +695,6 @@
     "coordenadas": { "lat": -33.042778, "lng": -71.625556 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.625556"
   },
-
   {
     "id": "campo-dunar-concon",
     "nombre": "Santuario de la Naturaleza Campo Dunar de Concón",
@@ -601,6 +708,41 @@
     "imagen": "img/dunas-concon.jpg",
     "coordenadas": { "lat": -32.939722, "lng": -71.548611 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.939722,-71.548611"
+  },
+  {
+    "id": "playa-la-boca-concon",
+    "nombre": "Playa La Boca (Concón)",
+    "ciudad": "Concón",
+    "categoria": "Balneario Costero y Surf",
+    "añoConstruccion": 1950,
+    "descripcionHistorica": "Ubicada junto a la desembocadura del Río Aconcagua, es el epicentro del aprendizaje de surf y bodyboard en la región, gracias a sus olas constantes y fondo de arena suave.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-la-boca.jpg",
+    "infoAdicional": "Cuenta con numerosas escuelas de surf con arriendo de trajes y tablas durante todo el año, además de ferias artesanales en su costanera.",
+    "coordenadas": {
+      "lat": -32.922222,
+      "lng": -71.513333
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.922222,-71.513333"
+  },
+  {
+    "id": "playa-los-lilenes",
+    "nombre": "Playa Los Lilenes",
+    "ciudad": "Concón",
+    "categoria": "Balneario Costero y Ensenada Natural",
+    "añoConstruccion": 1980,
+    "descripcionHistorica": "Ensenada protegida de oleaje suave ubicada al pie de los acantilados de Concón. Ideal para el descanso familiar y la práctica de kayak o stand-up paddle.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/playa-los-lilenes.jpg",
+    "coordenadas": {
+      "lat": -32.943889,
+      "lng": -71.551667
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.943889,-71.551667"
   },
   {
     "id": "roquerios-playa-amarilla-concon",
