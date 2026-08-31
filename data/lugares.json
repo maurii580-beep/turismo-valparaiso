@@ -11,8 +11,8 @@
     "horario": "Acceso libre 24/7",
     "imagen": "img/reloj-flores.jpg",
     "sitioWeb": "https://visitavina.cl",
-    "coordenadas": { "lat": -33.024722, "lng": -71.564444 },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024722,-71.564444"
+    "coordenadas": { "lat": -33.0346590, "lng": -71.4836123 },
+    "googleMapsUrl": "https://maps.app.goo.gl/nNpdWoEGJgSSA5St6"
   },
   {
     "id": "castillo-wulff",
