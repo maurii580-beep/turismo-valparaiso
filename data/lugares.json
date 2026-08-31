@@ -84,18 +84,22 @@
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.019444,-71.551667"
   },
   {
-    "id": "museo-fonck",
-    "nombre": "Museo Fonck y Moái de Rapa Nui",
-    "ciudad": "Viña del Mar",
-    "categoria": "Museo Arqueológico y Antropológico",
-    "añoConstruccion": 1937,
-    "descripcionHistorica": "Institución fundada en 1937 dedicada a la arqueología chilena y culturas precolombinas. En su frontis se ubica uno de los pocos Moái auténticos de Rapa Nui fuera de la isla.",
-    "precio": "Jardín con Moái Gratis / Museo de Pago (~$4.000 CLP) - Gratis el primer domingo de cada mes",
-    "esGratis": false,
-    "horario": "Lunes a Domingo de 10:00 a 18:00",
-    "imagen": "img/museo-fonck.jpg",
-    "coordenadas": { "lat": -33.020556, "lng": -71.549722 },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.020556,-71.549722"
+  "id": "museo-fonck",
+  "nombre": "Museo Fonck y Moái de Rapa Nui",
+  "ciudad": "Viña del Mar",
+  "categoria": "Museo Arqueológico y Antropológico",
+  "añoConstruccion": 1937,
+  "descripcionHistorica": "Institución fundada en 1937 dedicada a la arqueología, historia y culturas originarias de Chile (Rapa Nui, zona norte y centro-sur). En su jardín exterior se ubica un Moái auténtico tallado en toba lapilli traído desde Rapa Nui en 1951.",
+  "precio": "Jardín con Moái Gratis / Museo: Adultos ~$4.500 CLP - Niños ~$1.000 CLP",
+  "esGratis": false,
+  "horario": "Lunes 10:00-14:00 y 15:00-18:00 | Martes a Sábado 10:00-18:00 | Domingo y festivos 10:00-14:00",
+  "imagen": "img/museo-fonck.jpg",
+  "requisitoIngreso": "Cédula de identidad chilena (vigente)",
+  "infoAdicional": "Primer domingo de cada mes: Entrada liberada de 10:00 a 14:00 horas para visitantes nacionales y extranjeros con cédula de identidad chilena.",
+  "coordenadas": {
+    "lat": -33.020556, "lng": -71.549722
+  },
+  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.020556,-71.549722"
   },
   {
     "id": "teatro-municipal-vina",
