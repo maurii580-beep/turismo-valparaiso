@@ -189,6 +189,69 @@
     </section>
 
     <div id="contenedorTarjetas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <!-- Sección Formulario de Preguntas / Contacto -->
+    <section id="seccionContacto" class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm mb-12">
+      <div class="max-w-2xl mx-auto">
+        
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">¿Tienes dudas o sugerencias?</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Escríbenos y te responderemos por correo electrónico.</p>
+        </div>
+
+        <form id="formContacto" action="https://formspree.io/f/mvkogjqa" method="POST" class="space-y-4">
+          
+          <div>
+            <label for="nombreContacto" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Nombre Completo *</label>
+            <input type="text" id="nombreContacto" name="nombre" required placeholder="Tu nombre y apellido"
+                   class="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+          </div>
+
+          <div>
+            <label for="emailContacto" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Correo Electrónico *</label>
+            <input type="email" id="emailContacto" name="email" required placeholder="ejemplo@correo.com"
+                   class="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+          </div>
+
+          <div>
+            <label for="preferenciaContacto" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
+              ¿Deseas recibir respuesta? (Opcional)
+            </label>
+            <select id="preferenciaContacto" name="preferencia_contacto"
+                    class="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <option value="Responder por correo">Sí, responder a mi correo electrónico</option>
+              <option value="Solo enviar sugerencia">No es necesario responder / Solo enviar comentario</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="motivoContacto" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Motivo</label>
+            <select id="motivoContacto" name="motivo"
+                    class="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <option value="Pregunta general">Pregunta general sobre un lugar</option>
+              <option value="Sugerencia de lugar">Sugerir un nuevo atractivo turístico</option>
+              <option value="Correccion de datos">Corrección de horario o tarifa</option>
+              <option value="Otro">Otro asunto</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="mensajeContacto" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Mensaje o Pregunta *</label>
+            <textarea id="mensajeContacto" name="mensaje" rows="4" required placeholder="Escribe tu mensaje detalladamente..."
+                      class="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+          </div>
+
+          <button type="submit" id="btnEnviarForm"
+                  class="w-full py-3 px-6 bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm rounded-xl transition-colors flex items-center justify-center gap-2 shadow-md">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Enviar Mensaje</span>
+          </button>
+
+          <div id="estadoEnvioForm" class="hidden text-center p-3 rounded-lg text-sm font-medium"></div>
+
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-6 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors">
@@ -215,7 +278,7 @@
       </div>
 
       <!-- Formulario Formspree -->
-      <form id="formSugerencia" class="space-y-4">
+      <form id="formSugerencia" action="https://formspree.io/f/mvkogjqa" method="POST" class="space-y-4">
         <div>
           <label for="sugNombreUsuario" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Tu Nombre o Alias (Opcional)</label>
           <input type="text" id="sugNombreUsuario" name="nombre_usuario" placeholder="Ej. Juan Pérez" 
@@ -247,6 +310,12 @@
           <label for="sugDetalle" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Datos Históricos o Comentarios *</label>
           <textarea id="sugDetalle" name="detalles" required rows="3" placeholder="¿En qué año se construyó? ¿Es gratis o de pago? ¿Por qué debería estar en el mapa?" 
                     class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none"></textarea>
+        </div>
+
+        <div>
+          <label for="sugContacto" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Opcional: deja tu contacto si quieres que te respondamos</label>
+          <input type="text" id="sugContacto" name="contacto" placeholder="Ej. +56 9 1234 5678 o correo@ejemplo.com"
+                 class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
         </div>
 
         <!-- Estado de Envío -->
