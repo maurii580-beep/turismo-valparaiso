@@ -20,6 +20,7 @@ const btnCompartir = document.getElementById('btnCompartir');
 const btnModoOscuro = document.getElementById('btnModoOscuro');
 const iconoModo = document.getElementById('iconoModo');
 const textoModo = document.getElementById('textoModo');
+const filtroCategoria = document.getElementById('filtroCategoria');
 
 // Elementos del Modal
 const modalSugerencia = document.getElementById('modalSugerencia');
@@ -37,7 +38,7 @@ const FORMSPREE_ID = "mvkogjqa"; // <-- Pega aquí tu ID de Formspree (ej: "xkgo
 // ==========================================
 function inicializarModoOscuro() {
   const temaGuardado = localStorage.getItem('tema');
-  const prefiereOscuro = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const prefiereOscuro = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
 
   if (temaGuardado === 'dark' || (!temaGuardado && prefiereOscuro)) {
     document.documentElement.classList.add('dark');
@@ -51,10 +52,10 @@ function inicializarModoOscuro() {
 function actualizarBotonTema(esOscuro) {
   if (iconoModo && textoModo) {
     if (esOscuro) {
-      iconoModo.setAttribute('data-lucide', 'sun');
+      iconoModo.dataset.lucide = 'sun';
       textoModo.textContent = 'Claro';
     } else {
-      iconoModo.setAttribute('data-lucide', 'moon');
+      iconoModo.dataset.lucide = 'moon';
       textoModo.textContent = 'Oscuro';
     }
     if (window.lucide) lucide.createIcons();
@@ -127,6 +128,7 @@ if (formSugerencia) {
         throw new Error('Error en el servidor');
       }
     } catch (error) {
+      console.error('Error en envío de formulario:', error);
       estadoEnvio.textContent = "Hubo un problema al enviar. Inténtalo nuevamente.";
       estadoEnvio.className = "text-xs text-center py-1 text-rose-600 dark:text-rose-400 font-medium block";
     } finally {
@@ -143,13 +145,20 @@ if (formSugerencia) {
 // ==========================================
 // LEAFLET MAPA
 // ==========================================
-const map = L.map('mapa').setView([-33.08, -71.42], 10);
+let map;
+let markersLayer;
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+if (window.L) {
+  map = L.map('mapa').setView([-33.08, -71.42], 10);
 
-let markersLayer = L.layerGroup().addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  markersLayer = L.layerGroup().addTo(map);
+} else {
+  console.warn('Leaflet no se cargó correctamente; se omite el mapa.');
+}
 
 const coloresCiudad = {
   "Viña del Mar": "bg-sky-50 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 border-sky-200 dark:border-sky-800",
@@ -203,6 +212,8 @@ function actualizarContadorBadge() {
 }
 
 function actualizarMapa(lugares) {
+  if (!markersLayer) return;
+
   markersLayer.clearLayers();
   lugares.forEach(lugar => {
     const esFav = favoritos.includes(lugar.id);
@@ -292,23 +303,47 @@ function renderizarTarjetas(lugares) {
 
           <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1.5 mb-2">
             <div class="flex items-center gap-2">
-              <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-500"></i>
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 flex-shrink-0"></i>
               <span>${lugar.horario}</span>
             </div>
             <div class="flex items-center gap-2">
-              <i data-lucide="ticket" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-500"></i>
+              <i data-lucide="ticket" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 flex-shrink-0"></i>
               <span>${lugar.precio}</span>
             </div>
+            
+            ${lugar.requisitoIngreso ? `
+              <div class="flex items-center gap-2 text-amber-700 dark:text-amber-400 font-medium">
+                <i data-lucide="id-card" class="w-3.5 h-3.5 flex-shrink-0"></i>
+                <span>Requisito: ${lugar.requisitoIngreso}</span>
+              </div>
+            ` : ''}
+
+            ${lugar.infoAdicional ? `
+              <div class="flex items-start gap-2 text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-950/50 p-2 rounded-md mt-1 border border-sky-100 dark:border-sky-900/50">
+                <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                <span class="text-[11px] leading-snug">${lugar.infoAdicional}</span>
+              </div>
+            ` : ''}
           </div>
         </div>
       </div>
 
-      <div class="p-4 bg-slate-50 dark:bg-slate-800/40 border-t border-slate-100 dark:border-slate-800 mt-auto">
+      <!-- Pie de la tarjeta con botones de acción -->
+      <div class="p-4 bg-slate-50 dark:bg-slate-800/40 border-t border-slate-100 dark:border-slate-800 mt-auto flex flex-col sm:flex-row gap-2">
         <a href="${lugar.googleMapsUrl}" target="_blank" rel="noopener noreferrer" 
-           class="w-full inline-flex justify-center items-center gap-2 px-4 py-2.5 bg-slate-900 dark:bg-sky-600 hover:bg-sky-700 dark:hover:bg-sky-500 text-white text-xs font-medium rounded-lg transition-colors duration-150">
+           class="flex-1 inline-flex justify-center items-center gap-1.5 px-3 py-2.5 bg-slate-900 dark:bg-sky-600 hover:bg-sky-700 dark:hover:bg-sky-500 text-white text-xs font-medium rounded-lg transition-colors duration-150">
           <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
-          ¿Cómo llegar con Google Maps?
+          <span>¿Cómo llegar?</span>
         </a>
+
+        ${lugar.sitioWeb ? `
+          <a href="${lugar.sitioWeb}" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex justify-center items-center gap-1.5 px-3 py-2.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-xs font-medium rounded-lg transition-colors duration-150"
+             title="Visitar sitio web oficial">
+            <i data-lucide="globe" class="w-3.5 h-3.5 text-sky-500"></i>
+            <span>Web</span>
+          </a>
+        ` : ''}
       </div>
     `;
     contenedor.appendChild(tarjeta);
@@ -317,25 +352,57 @@ function renderizarTarjetas(lugares) {
   if (window.lucide) lucide.createIcons();
 }
 
+// Función de Filtrado Actualizada
 function filtrarDatos() {
   const texto = (buscarInput?.value || '').toLowerCase();
   const ciudadSeleccionada = filtroCiudad?.value || 'todas';
+  const categoriaSeleccionada = filtroCategoria?.value || 'todas';
   const costoSeleccionado = filtroCosto?.value || 'todos';
 
   const resultados = datosTuristicos.filter(lugar => {
+    // 1. Filtro de búsqueda libre
     const coincideTexto = lugar.nombre.toLowerCase().includes(texto) ||
                           lugar.descripcionHistorica.toLowerCase().includes(texto) ||
                           lugar.categoria.toLowerCase().includes(texto);
 
+    // 2. Filtro de Ciudad
     const coincideCiudad = ciudadSeleccionada === 'todas' || lugar.ciudad === ciudadSeleccionada;
 
+    // 3. Filtro de Categoría Especial
+    let coincideCategoria = true;
+    if (categoriaSeleccionada === 'ascensores') {
+      // Coincidencia exacta por categoría de ascensor operativo
+      coincideCategoria = lugar.categoria === 'Ascensor Patrimonial';
+    } else if (categoriaSeleccionada === 'patrimonio') {
+      coincideCategoria = lugar.categoria.toLowerCase().includes('museo') || 
+                          lugar.categoria.toLowerCase().includes('patrimonio') ||
+                          lugar.categoria.toLowerCase().includes('palacio') ||
+                          lugar.categoria.toLowerCase().includes('arquitectura') ||
+                          lugar.categoria.toLowerCase().includes('monumento') ||
+                          lugar.categoria.toLowerCase().includes('cívico');
+    } else if (categoriaSeleccionada === 'naturaleza') {
+      coincideCategoria = lugar.categoria.toLowerCase().includes('parque') || 
+                          lugar.categoria.toLowerCase().includes('santuario') ||
+                          lugar.categoria.toLowerCase().includes('humedal') ||
+                          lugar.categoria.toLowerCase().includes('dunar') ||
+                          lugar.categoria.toLowerCase().includes('playa') ||
+                          lugar.categoria.toLowerCase().includes('reserva');
+    } else if (categoriaSeleccionada === 'urbano') {
+      coincideCategoria = lugar.categoria.toLowerCase().includes('arte') || 
+                          lugar.categoria.toLowerCase().includes('mirador') ||
+                          lugar.categoria.toLowerCase().includes('paseo') ||
+                          lugar.categoria.toLowerCase().includes('escalera');
+    }
+
+    // 4. Filtro de Costo
     let coincideCosto = true;
     if (costoSeleccionado === 'gratis') coincideCosto = lugar.esGratis;
     if (costoSeleccionado === 'pago') coincideCosto = !lugar.esGratis;
 
+    // 5. Filtro de Favoritos
     const coincideFavorito = soloFavoritosActivo ? favoritos.includes(lugar.id) : true;
 
-    return coincideTexto && coincideCiudad && coincideCosto && coincideFavorito;
+    return coincideTexto && coincideCiudad && coincideCategoria && coincideCosto && coincideFavorito;
   });
 
   renderizarTarjetas(resultados);
@@ -381,6 +448,7 @@ if (btnCompartir) {
 
 if (buscarInput) buscarInput.addEventListener('input', filtrarDatos);
 if (filtroCiudad) filtroCiudad.addEventListener('change', filtrarDatos);
+if (filtroCategoria) filtroCategoria.addEventListener('change', filtrarDatos);
 if (filtroCosto) filtroCosto.addEventListener('change', filtrarDatos);
 
 // Inicio
