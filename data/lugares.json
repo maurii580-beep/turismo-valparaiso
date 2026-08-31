@@ -94,12 +94,12 @@
   "categoria": "Parque Botánico y Conservación",
   "añoConstruccion": 1931,
   "descripcionHistorica": "Creado originalmente en 1918 por el empresario salitrero Pascual Baburizza en el fundo El Salto y traspasado al Estado chileno en 1931. Cuenta con cerca de 400 hectáreas dedicadas a la conservación de flora nativa, colecciones de cactáceas, bosque esclerófilo, lagunas y senderos recreativos.",
-  "precio": "Adultos: ~$3.000 CLP | Niños (5-12) y Adultos mayores: ~$1.500 CLP | Niños 0-4 años: Gratis",
+  "precio": "Adultos: ~$3.000 CLP | Estudiantes (con TNE), Niños (5-12) y Adultos mayores: ~$1.500 CLP | Niños 0-4 años: Gratis",
   "esGratis": false,
   "horario": "Lunes a Viernes de 09:00 a 17:30 (ingreso hasta 17:00) | Sábados, Domingos y Festivos de 09:00 a 18:00 hrs",
   "imagen": "img/jardin-botanico.jpg",
   "sitioWeb": "https://jbn.cl",
-  "infoAdicional": "Abierto todos los días del año (incluye feriados). Dispone de áreas de picnic, senderos de trekking y estacionamiento para vehículos ($3.000 extra).",
+  "infoAdicional": "Abierto todos los días del año (incluye feriados). Estudiantes deben presentar TNE o credencial vigente para acceder a tarifa rebajada. Áreas de picnic, senderos y estacionamiento de autos ($3.000).",
   "coordenadas": {
     "lat": -33.045278,
     "lng": -71.503056
