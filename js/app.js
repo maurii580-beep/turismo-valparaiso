@@ -26,6 +26,15 @@ const btnVistaGrid = document.getElementById('btnVistaGrid');
 const btnVistaLista = document.getElementById('btnVistaLista');
 const btnVistaIconos = document.getElementById('btnVistaIconos');
 
+// ==========================================
+// 1. MODO OSCURO / CLARO
+// ==========================================
+const btnModoOscuro = document.getElementById('btnModoOscuro');
+const iconoTema = document.getElementById('iconoTema') || document.getElementById('iconoModo');
+const btnCompartir = document.getElementById('btnCompartir');
+const btnSugerir = document.getElementById('btnSugerir') || document.getElementById('btnAbrirModalSugerencia');
+const modalSugerencia = document.getElementById('modalSugerencia');
+
 // Modal Elements
 const modalDetalle = document.getElementById('modalDetalle');
 const modalContenido = document.getElementById('modalContenido');
@@ -440,11 +449,180 @@ function actualizarContadorFavoritos() {
 }
 
 function inicializarTema() {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
+  const esOscuro = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.classList.toggle('dark', esOscuro);
+  actualizarIconoTema(esOscuro);
+}
+
+function toggleTema() {
+  const esOscuro = document.documentElement.classList.toggle('dark');
+  localStorage.theme = esOscuro ? 'dark' : 'light';
+  actualizarIconoTema(esOscuro);
+}
+
+function actualizarIconoTema(esOscuro) {
+  if (!iconoTema) return;
+  iconoTema.setAttribute('data-lucide', esOscuro ? 'sun' : 'moon');
+  if (window.lucide) lucide.createIcons();
+}
+
+// ==========================================
+// 2. BOTÓN COMPARTIR (Web Share API o Portapapeles)
+// ==========================================
+async function compartirGuia() {
+  const totalFavs = favoritos.length;
+  const texto = totalFavs > 0 
+    ? `¡Mira mi lista de ${totalFavs} lugares favoritos guardados en la Guía Turística de la Región de Valparaíso!` 
+    : '¡Descubre los mejores atractivos turísticos y ascensores patrimoniales de la Región de Valparaíso!';
+  const url = window.location.href;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'Guía Turística Región de Valparaíso',
+        text: texto,
+        url: url
+      });
+    } catch (err) {
+      if (err.name !== 'AbortError') console.error('Error al compartir:', err);
+    }
   } else {
-    document.documentElement.classList.remove('dark');
+    navigator.clipboard.writeText(url);
+    alert('📋 ¡Enlace copiado al portapapeles para compartir!');
   }
+}
+
+// ==========================================
+// 3. BOTÓN SUGERIR LUGAR
+// ==========================================
+function sugerirLugar() {
+  if (modalSugerencia) {
+    modalSugerencia.classList.remove('hidden');
+    return;
+  }
+
+  const mensaje = encodeURIComponent('¡Hola! Me gustaría sugerir un nuevo atractivo turístico para la Guía de Valparaíso: \n\n- Nombre del lugar:\n- Comuna:\n- ¿Por qué debería estar en la guía?:');
+  const mailtoUrl = `mailto:contacto@turismovalparaiso.cl?subject=Sugerencia%20Nuevo%20Lugar%20Turistico&body=${mensaje}`;
+  window.open(mailtoUrl, '_blank');
+}
+
+// ==========================================
+// CONTROL DEL FORMULARIO DE CONTACTO (FORMSPREE)
+// ==========================================
+const formContacto = document.getElementById('formContacto');
+const btnEnviarForm = document.getElementById('btnEnviarForm');
+const estadoEnvioForm = document.getElementById('estadoEnvioForm');
+
+const formSugerencia = document.getElementById('formSugerencia');
+const btnEnviarSugerencia = document.getElementById('btnEnviarSugerencia');
+const estadoEnvio = document.getElementById('estadoEnvio');
+
+if (formContacto) {
+  formContacto.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btnEnviarForm.disabled = true;
+    btnEnviarForm.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Enviando...`;
+    lucide.createIcons();
+
+    const formData = new FormData(formContacto);
+
+    try {
+      const response = await fetch(formContacto.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formContacto.reset();
+        mostrarEstadoForm('¡Mensaje enviado con éxito! Gracias por contactarnos.', 'exito');
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          mostrarEstadoForm(data.errors.map(err => err.message).join(', '), 'error');
+        } else {
+          mostrarEstadoForm('No se pudo enviar el mensaje. Revisa el formulario o intenta nuevamente.', 'error');
+        }
+      }
+    } catch (error) {
+      console.error('Error al enviar formulario:', error);
+      mostrarEstadoForm('No se pudo establecer conexión. Revisa tu conexión a internet.', 'error');
+    } finally {
+      btnEnviarForm.disabled = false;
+      btnEnviarForm.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i><span>Enviar Mensaje</span>`;
+      lucide.createIcons();
+    }
+  });
+}
+
+if (formSugerencia) {
+  formSugerencia.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btnEnviarSugerencia.disabled = true;
+    btnEnviarSugerencia.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Enviando...`;
+    lucide.createIcons();
+
+    const formData = new FormData(formSugerencia);
+
+    try {
+      const response = await fetch(formSugerencia.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formSugerencia.reset();
+        mostrarEstadoSugerencia('¡Sugerencia enviada con éxito! Muchas gracias por tu aporte.', 'exito');
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          mostrarEstadoSugerencia(data.errors.map(err => err.message).join(', '), 'error');
+        } else {
+          mostrarEstadoSugerencia('No se pudo enviar la sugerencia. Inténtalo nuevamente en unos segundos.', 'error');
+        }
+      }
+    } catch (error) {
+      console.error('Error al enviar sugerencia:', error);
+      mostrarEstadoSugerencia('No se pudo establecer conexión. Revisa tu conexión a internet.', 'error');
+    } finally {
+      btnEnviarSugerencia.disabled = false;
+      btnEnviarSugerencia.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i><span>Enviar sugerencia</span>`;
+      lucide.createIcons();
+    }
+  });
+}
+
+function mostrarEstadoForm(mensaje, tipo) {
+  if (!estadoEnvioForm) return;
+  estadoEnvioForm.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'dark:bg-emerald-950', 'dark:text-emerald-300', 'bg-rose-100', 'text-rose-800', 'dark:bg-rose-950', 'dark:text-rose-300', 'border', 'border-emerald-200', 'dark:border-emerald-900', 'border-rose-200', 'dark:border-rose-900');
+
+  if (tipo === 'exito') {
+    estadoEnvioForm.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-200', 'dark:bg-emerald-950', 'dark:text-emerald-300', 'dark:border-emerald-900');
+  } else {
+    estadoEnvioForm.classList.add('bg-rose-100', 'text-rose-800', 'border', 'border-rose-200', 'dark:bg-rose-950', 'dark:text-rose-300', 'dark:border-rose-900');
+  }
+
+  estadoEnvioForm.textContent = mensaje;
+}
+
+function mostrarEstadoSugerencia(mensaje, tipo) {
+  if (!estadoEnvio) return;
+  estadoEnvio.classList.remove('hidden', 'text-emerald-600', 'dark:text-emerald-400', 'text-rose-600', 'dark:text-rose-400', 'font-semibold');
+
+  if (tipo === 'exito') {
+    estadoEnvio.classList.add('text-emerald-600', 'dark:text-emerald-400', 'font-semibold');
+  } else {
+    estadoEnvio.classList.add('text-rose-600', 'dark:text-rose-400', 'font-semibold');
+  }
+
+  estadoEnvio.textContent = mensaje;
 }
 
 // ==========================================
@@ -464,6 +642,18 @@ function configurarEventos() {
   });
 
   btnCercaDeMi?.addEventListener('click', alternarGeolocalizacion);
+  btnModoOscuro?.addEventListener('click', toggleTema);
+  btnCompartir?.addEventListener('click', compartirGuia);
+  btnSugerir?.addEventListener('click', sugerirLugar);
+
+  btnCerrarModalSugerencia?.addEventListener('click', () => {
+    modalSugerencia?.classList.add('hidden');
+  });
+  if (modalSugerencia) {
+    window.addEventListener('click', (e) => {
+      if (e.target === modalSugerencia) modalSugerencia.classList.add('hidden');
+    });
+  }
 
   // Botones de cambio de vista
   btnVistaGrid?.addEventListener('click', () => setVista('grid'));

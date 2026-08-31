@@ -297,6 +297,25 @@
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.038889,-71.628889"
   },
   {
+  "id": "museo-del-inmigrante-valparaiso",
+  "nombre": "Museo del Inmigrante (Cerro Alegre)",
+  "ciudad": "Valparaíso",
+  "categoria": "Museo y Patrimonio Histórico",
+  "añoConstruccion": 1880,
+  "descripcionHistorica": "Ubicado en una casona de conservación histórica en el Cerro Alegre, este espacio cultural e interpretativo rescata la memoria y el legado de las diversas colonias de inmigrantes (británicos, alemanes, italianos, franceses y españoles, entre otros) que forjaron la identidad cosmopolita, comercial y arquitectónica de Valparaíso durante los siglos XIX y XX.",
+  "precio": "Entrada general: ~$3.000 CLP / Estudiantes y 3ra edad: ~$1.500 CLP",
+  "esGratis": false,
+  "horario": "Martes a Domingo de 10:30 a 18:00 hrs",
+  "imagen": "img/museo-inmigrante.jpg",
+  "sitioWeb": "https://valparaisochile.cl",
+  "infoAdicional": "Ofrece exposiciones permanentes de documentos de época, relatos orales y objetos de las familias inmigrantes en los cerros Alegre y Concepción.",
+  "coordenadas": {
+    "lat": -33.041667,
+    "lng": -71.628889
+  },
+  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628889"
+  },
+  {
     "id": "paseo-yugoslavo-baburizza",
     "nombre": "Paseo Yugoslavo y Palacio Baburizza",
     "ciudad": "Valparaíso",
