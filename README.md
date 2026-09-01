@@ -1,75 +1,90 @@
 # 🧭 Ruta Patrimonial — Región de Valparaíso
 
-Plataforma web interactiva para descubrir y explorar los principales puntos de interés histórico, cultural y arquitectónico de la Región de Valparaíso (Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué).
+Plataforma web interactiva para descubrir atractivos patrimoniales, culturales, naturales y urbanos de la Región de Valparaíso. El sitio reúne una guía visual de Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué con un enfoque turístico, histórico y amigable para celular.
 
-El proyecto integra un mapa dinámico con geolocalización de hitos, fichas históricas detalladas, filtros reactivos y cálculo de rutas directas con Google Maps.
-
----
-
-## 📸 Vista Previa
-
-*(Agrega aquí una captura de pantalla de la aplicación una vez desplegada)*
+El proyecto combina mapa, filtros interactivos, favoritos, geolocalización, sugerencias de usuarios y una experiencia visual compacta optimizada para mobile.
 
 ---
 
-## ✨ Características Principales
+## 📸 Vista previa
 
-- **🗺️ Mapa Interactivo:** Visualización geográfica de todos los atractivos mediante Leaflet.js y OpenStreetMap.
-- **🏛️ Fichas Histórico-Patrimoniales:** Detalle de año de construcción, contexto histórico, horarios y tarifas de acceso.
-- **🔍 Filtros en Tiempo Real:**
-  - Búsqueda por texto libre (nombre, época, descripción).
-  - Filtrado por comuna (*Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué, Olmué*).
-  - Clasificación por tipo de ingreso (*Gratis* vs. *De Pago*).
-- **📍 Navegación Asistida:** Enlaces parametrizados hacia Google Maps para trazar rutas desde la ubicación actual del usuario.
-- **📱 Diseño Responsivo:** Interfaz adaptada a dispositivos móviles, tablets y escritorios con Tailwind CSS.
-- **⚡ Arquitectura Ligera (Jamstack):** Datos desacoplados en formato JSON y renderizado modular con Vanilla JavaScript, optimizado para despliegues estáticos de alta velocidad.
+La aplicación presenta una interfaz tipo guía turística con:
+- mapa de localidades
+- tarjetas de atractivos
+- filtros por ciudad, categoría, precio y favoritos
+- modo oscuro/claro
+- diseño compacto y responsivo
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## ✨ Mejoras incorporadas
 
-- **Frontend:** HTML5 semántico, JavaScript moderno (ES6+, Fetch API, Async/Await).
-- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) (CDN) y CSS3 personalizado.
-- **Mapas:** [Leaflet.js](https://leafletjs.com/) + OpenStreetMap Tiles.
-- **Iconografía:** [Lucide Icons](https://lucide.dev/).
-- **Fuente de Datos:** JSON estructurado (`data/lugares.json`).
-- **Despliegue:** [Vercel](https://vercel.com/).
+- **🗺️ Mapa desplegable:** el mapa queda oculto por defecto y se puede abrir/ocultar con un botón más limpio para no saturar la vista en móvil.
+- **🌗 Modo oscuro con toggle mejorado:** se implementó un selector visual con iconos de sol y luna y un comportamiento más moderno.
+- **📱 Diseño adaptado para celulares:** reducción de espacio, alturas más compactas y mejor densidad visual en pantallas pequeñas.
+- **🔍 Filtros más útiles:** búsqueda por texto, ciudad, categoría, tipo de ingreso y filtrado de favoritos.
+- **📍 Cerca de mí:** opción para ordenar lugares según la ubicación del usuario.
+- **💾 Favoritos persistentes:** los lugares guardados se mantienen en localStorage.
+- **📤 Sugerir lugar:** modal de sugerencias con flujo para enviar un aporte al proyecto.
+- **🔗 Compartir y acceso rápido:** botón para compartir la guía y abrir información relevante del sitio.
+- **🎨 Visual premium:** ajustes de bordes, sombras, espaciado y estados activos para una apariencia más pulida.
 
 ---
 
-## 📁 Estructura del Proyecto
+## 🛠️ Tecnologías utilizadas
+
+- **Frontend:** HTML5, JavaScript vanilla (ES6+)
+- **Estilos:** Tailwind CSS CDN y CSS personalizado
+- **Mapas:** Leaflet.js + OpenStreetMap
+- **Iconografía:** Lucide Icons
+- **Datos:** JSON estructurado en data/lugares.json
+- **Persistencia:** localStorage
+
+---
+
+## 📁 Estructura del proyecto
 
 ```text
 turismo-valparaiso/
-├── index.html          # Estructura principal de la interfaz
+├── index.html
 ├── css/
-│   └── styles.css      # Estilos personalizados y ajustes de Leaflet
+│   └── styles.css
 ├── data/
-│   └── lugares.json    # Base de datos con los puntos turísticos y metadatos
+│   └── lugares.json
+├── img/
 ├── js/
-│   └── app.js          # Lógica de carga asíncrona, mapa y filtrado interactivo
-└── README.md           # Documentación del proyecto
+│   └── app.js
+├── README.md
+└── .gitignore
+```
 
-📌 Datos Estructurados (Ejemplo de Hito)
-Cada punto dentro de data/lugares.json cuenta con el siguiente esquema:
+---
 
-JSON
-{
-  "id": "castillo-wulff",
-  "nombre": "Castillo Wulff",
-  "ciudad": "Viña del Mar",
-  "categoria": "Arquitectura Patrimonial",
-  "añoConstruccion": 1906,
-  "descripcionHistorica": "Mandado a construir por el empresario Gustavo Wulff sobre roqueríos costeros...",
-  "precio": "Gratis (área exterior)",
-  "esGratis": true,
-  "horario": "Martes a Domingo 10:00 a 18:00",
-  "coordenadas": {
-    "lat": -33.021111,
-    "lng": -71.565833
-  },
-  "googleMapsUrl": "[https://www.google.com/maps/dir/?api=1&destination=-33.021111,-71.565833](https://www.google.com/maps/dir/?api=1&destination=-33.021111,-71.565833)"
-}
+## ▶️ Cómo usarlo
 
-📄 Licencia
-Distribuido bajo la Licencia MIT. Consulta LICENSE para más información.
+1. Clona o descarga este repositorio.
+2. Abre la carpeta del proyecto.
+3. Ejecuta el archivo `index.html` en un navegador.
+4. Si deseas un entorno local más realista, puedes usar un servidor estático simple como:
+
+```bash
+python -m http.server 8000
+```
+
+Luego accede a:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## 📌 Estado actual
+
+El proyecto se encuentra en una versión funcional y visualmente pulida, con enfoque en usabilidad móvil, atractivo turístico y experiencia de navegación más fluida.
+
+---
+
+## 📝 Licencia
+
+Este proyecto se entrega como desarrollo web local para uso educativo y demostrativo.

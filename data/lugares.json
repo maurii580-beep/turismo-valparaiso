@@ -241,7 +241,44 @@
     "coordenadas": { "lat": -33.014444, "lng": -71.535000 },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.014444,-71.535000"
   },
-
+  {
+  "id": "palacio-presidencial-cerro-castillo",
+  "nombre": "Palacio Presidencial de Cerro Castillo",
+  "ciudad": "Viña del Mar",
+  "categoria": "Patrimonio Arquitectónico e Histórico",
+  "añoConstruccion": 1929,
+  "descripcionHistorica": "Residencia de descanso oficial de los Presidentes de la República de Chile, mandada a construir bajo el mandato de Carlos Ibáñez del Campo y diseñada por los arquitectos Luis Browne y Manuel Valenzuela. De estilo neocolonial español con influencias barrocas, se emplaza en la cima del Cerro Castillo dominando la entrada sur a Viña del Mar y la bahía.",
+  "precio": "Gratis (Con inscripción previa)",
+  "esGratis": true,
+  "horario": "Visitas: Martes 10:00 hrs | Miércoles | Jueves 11:00 hrs",
+  "imagen": "img/palacio-cerro-castillo.jpg",
+  "sitioWeb": "https://visitaspatrimonio.presidencia.cl/app",
+  "requisitoIngreso": "Inscripción previa obligatoria en la plataforma oficial (visitaspatrimonio.presidencia.cl/app) y presentación de cédula de identidad o pasaporte.",
+  "infoAdicional": "Punto de encuentro: Fuera del Palacio Presidencial Cerro Castillo.",
+  "coordenadas": {
+    "lat": -33.022500,
+    "lng": -71.565833
+  },
+  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.565833"
+  },
+  {
+    "id": "acantilados-federico-santa-maria",
+    "nombre": "Acantilados Federico Santa María",
+    "ciudad": "Valparaíso",
+    "categoria": "Santuario Natural y Mirador Costero",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Impresionante formación geológica y farellón costero ubicado en los faldeos de Playa Ancha, en terrenos históricos ligados a la fundación benéfica del filántropo Federico Santa María. Ofrece vistas panorámicas al océano Pacífico abierto, acantilados escarpados y senderos naturales para el avistamiento de aves marinas y atardeceres.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre diurno (recomendado con luz solar)",
+    "imagen": "img/acantilados-santa-maria.jpg",
+    "infoAdicional": "Zona natural abierta con acantilados de gran altura. Se aconseja transitar por senderos señalizados, usar calzado adecuado y no acercarse a los bordes.",
+    "coordenadas": {
+      "lat": -33.028889,
+      "lng": -71.654722
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.028889,-71.654722"
+  },
   {
     "id": "ascensor-baron",
     "nombre": "Ascensor Barón",
