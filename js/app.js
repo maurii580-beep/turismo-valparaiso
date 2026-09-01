@@ -19,6 +19,7 @@ const filtroCategoria = document.getElementById('filtroCategoria');
 const filtroCosto = document.getElementById('filtroCosto');
 const btnFiltroFavoritos = document.getElementById('btnFiltroFavoritos');
 const contadorFavoritosBadge = document.getElementById('contadorFavoritosBadge');
+const tarjetaCiudadHistoria = document.getElementById('tarjetaCiudadHistoria');
 const btnCercaDeMi = document.getElementById('btnCercaDeMi');
 const textoCercaDeMi = document.getElementById('textoCercaDeMi');
 
@@ -136,6 +137,92 @@ function alternarGeolocalizacion() {
   );
 }
 
+const historiasCiudades = {
+  'Viña del Mar': {
+    titulo: 'Viña del Mar',
+    icono: '🌊',
+    historia: 'Conocida como la Ciudad Jardín, Viña del Mar nació como balneario elegante a fines del siglo XIX y se consolidó con palacios, jardines y una fuerte identidad turística. Su costa, sus paseos y su arquitectura la convierten en un símbolo del litoral chileno.',
+    detalle: 'Un destino donde la mirada hacia el mar convive con la cultura, el arte y la historia de la vida elegante del Pacífico.'
+  },
+  'Valparaíso': {
+    titulo: 'Valparaíso',
+    icono: '🎨',
+    historia: 'Valparaíso fue clave en la historia comercial y cultural de Chile, creciendo como puerto cosmopolita con influencias europeas, inmigrantes y artistas. Sus cerros, callejones y ascensores le dieron una personalidad única y una identidad profundamente creativa.',
+    detalle: 'La ciudad puerto se convirtió en un referente de color, movimiento, arte urbano y memoria histórica.'
+  },
+  'Casablanca': {
+    titulo: 'Casablanca',
+    icono: '🍇',
+    historia: 'Casablanca se destaca por su tradición vinícola y su cercanía con el mar, combinando paisajes rurales con una fuerte presencia del vino de la zona. Su nombre evoca la historia agrícola y la belleza del valle central junto al océano.',
+    detalle: 'Un lugar de paisaje sereno, viñedos y una identidad ligada a la tierra y la viticultura.'
+  },
+  'Concón': {
+    titulo: 'Concón',
+    icono: '🏖️',
+    historia: 'Concón se reconoce por su costa arenosa, su paisaje de dunas y su vínculo con la vida costera de la región. Su historia está marcada por la relación entre el mar, la playa y la vida cotidiana de la zona central.',
+    detalle: 'Una ciudad de tranquilidad, horizonte abierto y encanto costero que invita a recorrer sus playas y caletas.'
+  },
+  'Quilpué': {
+    titulo: 'Quilpué',
+    icono: '🌿',
+    historia: 'Quilpué nació como asentamiento agrícola y comercial en la zona central de la región, creciendo con la llegada de familias, servicios y un fuerte desarrollo urbano. Su historia refleja la transformación de un territorio rural hacia una ciudad dinámica.',
+    detalle: 'Una ciudad de raíces campesinas y crecimiento constante, con identidad vecina al litoral y al valle.'
+  },
+  'Olmué': {
+    titulo: 'Olmué',
+    icono: '🌄',
+    historia: 'Olmué es un pueblo de tradición paisajista y cultural, reconocido por sus festividades, su cercanía a la naturaleza y su encanto de pueblo serrano. Su historia se liga a la vida rural, los viñedos y la tranquilidad del entorno.',
+    detalle: 'Un rincón de belleza natural y calma, donde la tradición y la naturaleza siguen marcando su identidad.'
+  }
+};
+
+function actualizarTarjetaCiudad() {
+  if (!tarjetaCiudadHistoria) return;
+
+  const ciudadSeleccionada = filtroCiudad?.value || 'todas';
+
+  if (!ciudadSeleccionada || ciudadSeleccionada === 'todas') {
+    tarjetaCiudadHistoria.classList.add('hidden');
+    tarjetaCiudadHistoria.innerHTML = '';
+    return;
+  }
+
+  const infoCiudad = historiasCiudades[ciudadSeleccionada];
+  if (!infoCiudad) {
+    tarjetaCiudadHistoria.classList.add('hidden');
+    tarjetaCiudadHistoria.innerHTML = '';
+    return;
+  }
+
+  tarjetaCiudadHistoria.classList.remove('hidden');
+  tarjetaCiudadHistoria.classList.remove('city-card-animate');
+  void tarjetaCiudadHistoria.offsetWidth;
+
+  tarjetaCiudadHistoria.innerHTML = `
+    <div class="city-card-animate flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div class="flex items-start gap-3">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rose-500 via-pink-500 to-orange-400 text-2xl shadow-lg shadow-rose-500/25 ring-2 ring-white/40">
+          ${infoCiudad.icono}
+        </div>
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.18em] text-rose-600 dark:text-rose-400 font-bold">Ciudad destacada</p>
+          <h3 class="text-xl font-black text-slate-900 dark:text-slate-100">${infoCiudad.titulo}</h3>
+        </div>
+      </div>
+      <span class="inline-flex items-center gap-2 rounded-full bg-white/60 text-rose-700 dark:bg-slate-800/70 dark:text-rose-300 px-3 py-1 text-xs font-semibold shadow-sm ring-1 ring-white/50 dark:ring-slate-700/70 backdrop-blur-md">
+        <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+        Región de Valparaíso
+      </span>
+    </div>
+    <p class="text-sm leading-6 text-slate-700 dark:text-slate-200 mt-3">${infoCiudad.historia}</p>
+    <p class="text-xs font-medium text-slate-500 dark:text-slate-300 mt-1">${infoCiudad.detalle}</p>
+  `;
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
 // ==========================================
 // FILTRADO Y ORDENAMIENTO
 // ==========================================
@@ -203,6 +290,7 @@ function filtrarDatos() {
 
   renderizarTarjetas(resultados);
   actualizarMapa(resultados);
+  actualizarTarjetaCiudad();
 }
 
 // ==========================================
@@ -251,8 +339,8 @@ function renderizarTarjetas(lugares) {
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
             
             <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" 
-                    class="absolute top-3 right-3 p-2 rounded-full bg-slate-900/40 hover:bg-slate-900/70 backdrop-blur-sm transition-transform active:scale-90">
-              <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-rose-500 fill-rose-500' : 'text-white'}"></i>
+                    class="absolute top-3 right-3 p-2 rounded-full ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg shadow-rose-500/25' : 'bg-slate-900/40 hover:bg-slate-900/70'} backdrop-blur-sm transition-all duration-200 active:scale-90">
+              <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-white'}"></i>
             </button>
 
             <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5 items-center">
@@ -312,8 +400,8 @@ function renderizarTarjetas(lugares) {
           </div>
 
           <div class="flex items-center gap-2 flex-shrink-0">
-            <button onclick="toggleFavorito('${lugar.id}')" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
-              <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-rose-500 fill-rose-500' : 'text-slate-400'}"></i>
+            <button onclick="toggleFavorito('${lugar.id}')" class="p-2 rounded-lg ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-md shadow-rose-500/20' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400'} transition-all duration-200">
+              <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-slate-400'}"></i>
             </button>
             <button onclick="abrirModalDetalle('${lugar.id}')" class="p-2 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 hover:bg-sky-100">
               <i data-lucide="chevron-right" class="w-4 h-4"></i>
@@ -330,8 +418,8 @@ function renderizarTarjetas(lugares) {
           <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
           
-          <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" class="absolute top-3 right-3 p-2 rounded-full bg-slate-900/60 backdrop-blur-sm">
-            <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-rose-500 fill-rose-500' : 'text-white'}"></i>
+          <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" class="absolute top-3 right-3 p-2 rounded-full ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg shadow-rose-500/25' : 'bg-slate-900/60'} backdrop-blur-sm transition-all duration-200">
+            <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-white'}"></i>
           </button>
 
           <div class="absolute bottom-3 left-3 right-3 text-white">
@@ -764,9 +852,11 @@ function configurarEventos() {
   filtroCiudad?.addEventListener('change', filtrarDatos);
   filtroCategoria?.addEventListener('change', filtrarDatos);
   filtroCosto?.addEventListener('change', filtrarDatos);
+  actualizarTarjetaCiudad();
 
   btnFiltroFavoritos?.addEventListener('click', () => {
     soloFavoritosActivo = !soloFavoritosActivo;
+    btnFiltroFavoritos.classList.toggle('is-active', soloFavoritosActivo);
     btnFiltroFavoritos.classList.toggle('border-rose-500', soloFavoritosActivo);
     btnFiltroFavoritos.classList.toggle('bg-rose-50', soloFavoritosActivo);
     filtrarDatos();
