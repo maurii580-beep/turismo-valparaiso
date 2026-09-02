@@ -330,6 +330,15 @@ function renderizarTarjetas(lugares) {
         <i data-lucide="map-pin" class="w-3 h-3"></i> ${lugar.distanciaKm} km
       </span>` : '';
 
+    const bloqueCurioso = lugar.datoCurioso ? `
+      <div class="mb-4 p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/70 dark:border-amber-900/50 flex items-start gap-2 text-xs">
+        <span class="text-amber-500 text-sm leading-none mt-0.5">💡</span>
+        <p class="text-amber-900 dark:text-amber-200 font-medium leading-snug">
+          <strong class="font-bold">¿Sabías que?</strong> ${lugar.datoCurioso}
+        </p>
+      </div>
+    ` : '';
+
     // VISTA 1: GRID CLÁSICA
     if (tipoVistaActual === 'grid') {
       return `
@@ -356,6 +365,8 @@ function renderizarTarjetas(lugares) {
             </div>
             <p class="text-xs text-sky-600 dark:text-sky-400 font-medium mb-3">${lugar.categoria}</p>
             <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 mb-4 flex-1">${lugar.descripcionHistorica}</p>
+
+            ${bloqueCurioso}
 
             <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1.5 mb-4">
               <div class="flex items-center gap-2">
@@ -477,6 +488,16 @@ function abrirModalDetalle(id) {
     linkWeb.href = lugar.sitioWeb;
   } else {
     linkWeb.classList.add('hidden');
+  }
+
+  const contCurioso = document.getElementById('modalDatoCurioso');
+  const txtCurioso = document.getElementById('modalDatoCuriosoTexto');
+
+  if (lugar.datoCurioso) {
+    contCurioso?.classList.remove('hidden');
+    if (txtCurioso) txtCurioso.textContent = lugar.datoCurioso;
+  } else {
+    contCurioso?.classList.add('hidden');
   }
 
   // Animación de entrada
