@@ -6,12 +6,16 @@
     "categoria": "Monumento Público",
     "añoConstruccion": 1962,
     "descripcionHistorica": "Inaugurado en mayo de 1962 como bienvenida a la sede del VII Campeonato Mundial de Fútbol de la FIFA. Su maquinaria original fue fabricada en Neuchâtel, Suiza.",
+    "datoCurioso": "Sus manecillas suizas de bronce pesan decenas de kilos y su segundero mide más de 3 metros, funcionando ininterrumpidamente desde el Mundial de 1962.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/reloj-flores.jpg",
     "sitioWeb": "https://visitavina.cl",
-    "coordenadas": { "lat": -33.0346590, "lng": -71.4836123 },
+    "coordenadas": {
+      "lat": -33.034659,
+      "lng": -71.4836123
+    },
     "googleMapsUrl": "https://maps.app.goo.gl/nNpdWoEGJgSSA5St6"
   },
   {
@@ -21,12 +25,16 @@
     "categoria": "Arquitectura Patrimonial",
     "añoConstruccion": 1906,
     "descripcionHistorica": "Mandado a construir por el empresario Gustavo Wulff sobre las rocas costeras. Con estilo franco-germánico, destaca por su torreón sobre el oleaje y su puente vidriado.",
+    "datoCurioso": "Su torre circular posee un suelo acristalado que permite pararse directamente sobre el oleaje del Pacífico rompiendo contra el acantilado rocoso.",
     "precio": "Gratis (área exterior)",
     "esGratis": true,
     "horario": "Martes a Domingo de 10:00 a 18:00",
     "imagen": "img/castillo-wulff.jpg",
     "sitioWeb": "https://visitavina.cl",
-    "coordenadas": { "lat": -33.021111, "lng": -71.565833 },
+    "coordenadas": {
+      "lat": -33.021111,
+      "lng": -71.565833
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.021111,-71.565833"
   },
   {
@@ -36,11 +44,15 @@
     "categoria": "Paseo Costero y Patrimonio Industrial",
     "añoConstruccion": 1892,
     "descripcionHistorica": "Construido por Lever, Murphy & Co. como muelle de carga y descarga para la refinería de azúcar CRAV. Reinaugurado como paseo peatonal preservando su histórica grúa.",
+    "datoCurioso": "La emblemática grúa montada en su cabezal data de 1914 y tenía la capacidad de elevar cargas de hasta 12 toneladas de carbón mineral por maniobra.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Lunes a Domingo de 08:00 a 20:00",
     "imagen": "img/muelle-vergara.jpg",
-    "coordenadas": { "lat": -33.007222, "lng": -71.554444 },
+    "coordenadas": {
+      "lat": -33.007222,
+      "lng": -71.554444
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.007222,-71.554444"
   },
   {
@@ -50,12 +62,16 @@
     "categoria": "Museo y Arquitectura Neoclásica",
     "añoConstruccion": 1907,
     "descripcionHistorica": "Residencia de estilo neoclásico francés diseñada por Alfredo Azancot para el banquero Fernando Rioja tras el terremoto de 1906. Cuenta con salones de época y parque botánico.",
+    "datoCurioso": "El suelo del salón de baile principal cuenta con un sistema de amortiguación sobre resortes de acero franceses pensado para otorgar mayor flexibilidad a los bailarines.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Martes a Domingo de 10:00 a 17:30",
     "imagen": "img/palacio-rioja.jpg",
     "sitioWeb": "https://palaciorioja.cl",
-    "coordenadas": { "lat": -33.018611, "lng": -71.547500 },
+    "coordenadas": {
+      "lat": -33.018611,
+      "lng": -71.5475
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.018611,-71.547500"
   },
   {
@@ -65,12 +81,16 @@
     "categoria": "Parque Urbano y Bellas Artes",
     "añoConstruccion": 1910,
     "descripcionHistorica": "Antigua hacienda de la familia Vergara. Alberga el palacio de estilo gótico veneciano con el Museo Municipal de Bellas Artes y el anfiteatro del festival internacional.",
+    "datoCurioso": "En el siglo XIX su parque albergó uno de los primeros jardines de aclimatación botánica de Chile, importando especies exóticas desde Asia, Oceanía y California.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Martes a Domingo de 09:00 a 18:00",
     "imagen": "img/quinta-vergara.jpg",
     "sitioWeb": "https://palaciovergara.cl",
-    "coordenadas": { "lat": -33.029444, "lng": -71.552500 },
+    "coordenadas": {
+      "lat": -33.029444,
+      "lng": -71.5525
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.552500"
   },
   {
@@ -80,11 +100,15 @@
     "categoria": "Patrimonio Arquitectónico y Cultural",
     "añoConstruccion": 1912,
     "descripcionHistorica": "Diseñado por Alfredo Azancot para Emilio Carrasco. Exhibe arquitectura ecléctica con jardines públicos en Av. Libertad y una escultura original de Auguste Rodin.",
+    "datoCurioso": "En sus jardines descansa la escultura original de bronce 'La Defensa', vaciada en los talleres parisinos del maestro escultor Auguste Rodin.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso a jardines libre 24/7",
     "imagen": "img/palacio-carrasco.jpg",
-    "coordenadas": { "lat": -33.019444, "lng": -71.551667 },
+    "coordenadas": {
+      "lat": -33.019444,
+      "lng": -71.551667
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.019444,-71.551667"
   },
   {
@@ -94,6 +118,7 @@
     "categoria": "Balneario Costero y Deporte",
     "añoConstruccion": 1960,
     "descripcionHistorica": "El epicentro del turismo estival y del surf en la zona central de Chile. Se divide en 5 sectores a lo largo de su costanera, flanqueada por los icónicos edificios residenciales escalonados sobre las laderas de los cerros.",
+    "datoCurioso": "El diseño piramidal y escalonado de los edificios en sus laderas fue un hito de cálculo estructural para garantizar que ningún balcón proyectara sombra sobre el contiguo.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
@@ -113,6 +138,7 @@
     "categoria": "Balneario Costero y Paseo Peatonal",
     "añoConstruccion": 1930,
     "descripcionHistorica": "Extensa franja costera céntrica ubicada entre el Muelle Vergara y la Av. San Martín. Posee una amplia ciclovía, ferias de artesanía, parques infantiles y miradores directos a la bahía de Valparaíso.",
+    "datoCurioso": "Durante las primeras décadas del siglo XX albergó instalaciones de baños de mar cerrados y piletas con calderas para calentar el agua salada para fines terapéuticos.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
@@ -131,6 +157,7 @@
     "categoria": "Balneario Costero y Jardines",
     "añoConstruccion": 1920,
     "descripcionHistorica": "Histórica playa de aguas resguardadas al sur de la ciudad, al pie del Cerro Castillo y a pasos del Reloj de Flores y la estación Miramar del Metro. Rodeada de jardines con palmeras y paseos peatonales.",
+    "datoCurioso": "Toma su nombre de don Juan Abarca, maestro de herrería y maestranza que instaló sobre la arena una fundición auxiliar para reparar calderas navales a vapor.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
@@ -149,6 +176,7 @@
     "categoria": "Balneario Costero y Gastronomía",
     "añoConstruccion": 1975,
     "descripcionHistorica": "Acogedora ensenada de oleaje calmo ubicada en la ruta costera hacia Concón, famosa por su extensa oferta de restaurantes marinos sobre la costanera y vista directa a las puestas de sol.",
+    "datoCurioso": "Frente a sus rompientes reposa una restinga rocosa que sirve de apostadero habitual para pingüinos de Humboldt y bandadas migratorias de cormoranes lile.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
@@ -161,23 +189,24 @@
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.957778,-71.548889"
   },
   {
-  "id": "jardin-botanico-nacional",
-  "nombre": "Jardín Botánico Nacional",
-  "ciudad": "Viña del Mar",
-  "categoria": "Parque Botánico y Conservación",
-  "añoConstruccion": 1931,
-  "descripcionHistorica": "Creado originalmente en 1918 por el empresario salitrero Pascual Baburizza en el fundo El Salto y traspasado al Estado chileno en 1931. Cuenta con cerca de 400 hectáreas dedicadas a la conservación de flora nativa, colecciones de cactáceas, bosque esclerófilo, lagunas y senderos recreativos.",
-  "precio": "Adultos: ~$3.000 CLP | Estudiantes (con TNE), Niños (5-12) y Adultos mayores: ~$1.500 CLP | Niños 0-4 años: Gratis",
-  "esGratis": false,
-  "horario": "Lunes a Viernes de 09:00 a 17:30 (ingreso hasta 17:00) | Sábados, Domingos y Festivos de 09:00 a 18:00 hrs",
-  "imagen": "img/jardin-botanico.jpg",
-  "sitioWeb": "https://jbn.cl",
-  "infoAdicional": "Abierto todos los días del año (incluye feriados). Estudiantes deben presentar TNE o credencial vigente para acceder a tarifa rebajada. Áreas de picnic, senderos y estacionamiento de autos ($3.000).",
-  "coordenadas": {
-    "lat": -33.045278,
-    "lng": -71.503056
-  },
-  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045278,-71.503056"
+    "id": "jardin-botanico-nacional",
+    "nombre": "Jardín Botánico Nacional",
+    "ciudad": "Viña del Mar",
+    "categoria": "Parque Botánico y Conservación",
+    "añoConstruccion": 1931,
+    "descripcionHistorica": "Creado originalmente en 1918 por el empresario salitrero Pascual Baburizza en el fundo El Salto y traspasado al Estado chileno en 1931. Cuenta con cerca de 400 hectáreas dedicadas a la conservación de flora nativa, colecciones de cactáceas, bosque esclerófilo, lagunas y senderos recreativos.",
+    "datoCurioso": "Preserva ejemplares vivos del árbol Toromiro (Sophora toromiro), árbol sagrado de la cultura Rapa Nui extinto en estado silvestre en la Isla de Pascua.",
+    "precio": "Adultos: ~$3.000 CLP | Estudiantes (con TNE), Niños (5-12) y Adultos mayores: ~$1.500 CLP | Niños 0-4 años: Gratis",
+    "esGratis": false,
+    "horario": "Lunes a Viernes de 09:00 a 17:30 (ingreso hasta 17:00) | Sábados, Domingos y Festivos de 09:00 a 18:00 hrs",
+    "imagen": "img/jardin-botanico.jpg",
+    "sitioWeb": "https://jbn.cl",
+    "infoAdicional": "Abierto todos los días del año (incluye feriados). Estudiantes deben presentar TNE o credencial vigente para acceder a tarifa rebajada. Áreas de picnic, senderos y estacionamiento de autos ($3.000).",
+    "coordenadas": {
+      "lat": -33.045278,
+      "lng": -71.503056
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045278,-71.503056"
   },
   {
     "id": "museo-fonck",
@@ -186,6 +215,7 @@
     "categoria": "Museo Arqueológico y Antropológico",
     "añoConstruccion": 1937,
     "descripcionHistorica": "Institución fundada en 1937 dedicada a la arqueología chilena y culturas precolombinas. En su frontis se ubica uno de los pocos Moái auténticos de Rapa Nui fuera de la isla.",
+    "datoCurioso": "El moái de su entrada fue tallado en toba volcánica de la cantera Rano Raraku y trasladado al continente a bordo de la fragata Baquedano en 1951.",
     "precio": "Jardín con Moái Gratis / Museo: Adultos ~$4.500 CLP - Niños ~$1.000 CLP",
     "esGratis": false,
     "horario": "Lunes 10:00-14:00 y 15:00-18:00 | Martes a Sábado 10:00-18:00 | Domingo y festivos 10:00-14:00",
@@ -193,7 +223,10 @@
     "sitioWeb": "https://museofonck.cl",
     "requisitoIngreso": "Cédula de identidad chilena (vigente)",
     "infoAdicional": "Primer domingo de cada mes: Entrada liberada de 10:00 a 14:00 horas para visitantes nacionales y extranjeros con cédula de identidad chilena.",
-    "coordenadas": { "lat": -33.020556, "lng": -71.549722 },
+    "coordenadas": {
+      "lat": -33.020556,
+      "lng": -71.549722
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.020556,-71.549722"
   },
   {
@@ -203,12 +236,16 @@
     "categoria": "Patrimonio Arquitectónico y Artes Escénicas",
     "añoConstruccion": 1930,
     "descripcionHistorica": "Diseñado por Renato Schiavon y Arnaldo Barison con monumental estilo neoclásico e inaugurado en octubre de 1930 frente a la Plaza Vergara. Es el epicentro escénico, lírico y sinfónico de la Ciudad Jardín.",
+    "datoCurioso": "Bajo su escenario principal subsisten túneles de ventilación y cámaras acústicas naturales construidas en albañilería que amplifican la voz de los cantantes líricos sin apoyo eléctrico.",
     "precio": "Gratis (área exterior / visitas guiadas patrimoniales) - Funciones de pago según cartelera",
     "esGratis": true,
     "horario": "Foyer y visitas: Lunes a Sábado de 10:00 a 18:00 / Funciones según cartelera",
     "imagen": "img/teatro-vina.jpg",
     "sitioWeb": "https://teatrovina.cl",
-    "coordenadas": { "lat": -33.024167, "lng": -71.551944 },
+    "coordenadas": {
+      "lat": -33.024167,
+      "lng": -71.551944
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024167,-71.551944"
   },
   {
@@ -218,12 +255,16 @@
     "categoria": "Parque Urbano y Ecoturismo",
     "añoConstruccion": 1929,
     "descripcionHistorica": "Embalse construido a fines del siglo XIX por José Francisco Vergara para regar los viñedos de la hacienda y adquirido por el municipio en 1929. Renombrada en los años 60 en honor al hermanamiento con Sausalito (California), es un pulmón verde de 8 hectáreas ideal para paseos familiares, senderismo y avistamiento de aves.",
+    "datoCurioso": "Su nombre homenajea el hermanamiento con la ciudad portuaria de Sausalito en California, bautizada a su vez en alusión a los pequeños sauces que bordeaban su bahía.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Lunes a Domingo de 08:00 a 20:00 hrs",
     "imagen": "img/laguna-sausalito.jpg",
     "sitioWeb": "https://visitavina.cl",
-    "coordenadas": { "lat": -33.012778, "lng": -71.536389 },
+    "coordenadas": {
+      "lat": -33.012778,
+      "lng": -71.536389
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.012778,-71.536389"
   },
   {
@@ -233,33 +274,38 @@
     "categoria": "Patrimonio Deportivo y Arquitectura",
     "añoConstruccion": 1929,
     "descripcionHistorica": "Inaugurado en septiembre de 1929 como 'Estadio El Tranque' y casa histórica del club Everton de Viña del Mar. Fue sede histórica de la Copa del Mundo FIFA de 1962 (incluyendo la semifinal de Brasil con Garrincha), la Copa América de 1991 y 2015, y los Juegos Panamericanos Santiago 2023.",
+    "datoCurioso": "Fue el recinto donde la mítica selección brasileña de 1962 concentró la totalidad de su fase de grupos y la semifinal rumbo a su segundo título mundial consecutivo.",
     "precio": "Gratis (recorrido exterior en parque) / Partidos y eventos de pago según boletería",
     "esGratis": true,
     "horario": "Exterior y parque abierto en horario diurno / Interior según programación de partidos y conciertos",
     "imagen": "img/estadio-sausalito.jpg",
     "sitioWeb": "https://everton.cl",
-    "coordenadas": { "lat": -33.014444, "lng": -71.535000 },
+    "coordenadas": {
+      "lat": -33.014444,
+      "lng": -71.535
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.014444,-71.535000"
   },
   {
-  "id": "palacio-presidencial-cerro-castillo",
-  "nombre": "Palacio Presidencial de Cerro Castillo",
-  "ciudad": "Viña del Mar",
-  "categoria": "Patrimonio Arquitectónico e Histórico",
-  "añoConstruccion": 1929,
-  "descripcionHistorica": "Residencia de descanso oficial de los Presidentes de la República de Chile, mandada a construir bajo el mandato de Carlos Ibáñez del Campo y diseñada por los arquitectos Luis Browne y Manuel Valenzuela. De estilo neocolonial español con influencias barrocas, se emplaza en la cima del Cerro Castillo dominando la entrada sur a Viña del Mar y la bahía.",
-  "precio": "Gratis (Con inscripción previa)",
-  "esGratis": true,
-  "horario": "Visitas: Martes 10:00 hrs | Miércoles | Jueves 11:00 hrs",
-  "imagen": "img/palacio-cerro-castillo.jpg",
-  "sitioWeb": "https://visitaspatrimonio.presidencia.cl/app",
-  "requisitoIngreso": "Inscripción previa obligatoria en la plataforma oficial (visitaspatrimonio.presidencia.cl/app) y presentación de cédula de identidad o pasaporte.",
-  "infoAdicional": "Punto de encuentro: Fuera del Palacio Presidencial Cerro Castillo.",
-  "coordenadas": {
-    "lat": -33.022500,
-    "lng": -71.565833
-  },
-  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.565833"
+    "id": "palacio-presidencial-cerro-castillo",
+    "nombre": "Palacio Presidencial de Cerro Castillo",
+    "ciudad": "Viña del Mar",
+    "categoria": "Patrimonio Arquitectónico e Histórico",
+    "añoConstruccion": 1929,
+    "descripcionHistorica": "Residencia de descanso oficial de los Presidentes de la República de Chile, mandada a construir bajo el mandato de Carlos Ibáñez del Campo y diseñada por los arquitectos Luis Browne y Manuel Valenzuela. De estilo neocolonial español con influencias barrocas, se emplaza en la cima del Cerro Castillo dominando la entrada sur a Viña del Mar y la bahía.",
+    "datoCurioso": "En las escalinatas de su patio central se realiza tradicionalmente la primera fotografía oficial de cada Presidente de la República junto a su gabinete ministerial antes del cambio de mando.",
+    "precio": "Gratis (Con inscripción previa)",
+    "esGratis": true,
+    "horario": "Visitas: Martes 10:00 hrs | Miércoles | Jueves 11:00 hrs",
+    "imagen": "img/palacio-cerro-castillo.jpg",
+    "sitioWeb": "https://visitaspatrimonio.presidencia.cl/app",
+    "requisitoIngreso": "Inscripción previa obligatoria en la plataforma oficial (visitaspatrimonio.presidencia.cl/app) y presentación de cédula de identidad o pasaporte.",
+    "infoAdicional": "Punto de encuentro: Fuera del Palacio Presidencial Cerro Castillo.",
+    "coordenadas": {
+      "lat": -33.0225,
+      "lng": -71.565833
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.565833"
   },
   {
     "id": "acantilados-federico-santa-maria",
@@ -268,6 +314,7 @@
     "categoria": "Santuario Natural y Mirador Costero",
     "añoConstruccion": 2005,
     "descripcionHistorica": "Impresionante formación geológica y farellón costero ubicado en los faldeos de Playa Ancha, en terrenos históricos ligados a la fundación benéfica del filántropo Federico Santa María. Ofrece vistas panorámicas al océano Pacífico abierto, acantilados escarpados y senderos naturales para el avistamiento de aves marinas y atardeceres.",
+    "datoCurioso": "Los farallones verticales caen abruptamente por más de 80 metros al mar, constituyendo el punto de avistamiento costero más elevado y agreste de la comuna porteña.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre diurno (recomendado con luz solar)",
@@ -286,11 +333,15 @@
     "categoria": "Ascensor Patrimonial",
     "añoConstruccion": 1906,
     "descripcionHistorica": "Inaugurado en 1906, fue el primer ascensor de Valparaíso impulsado por motor eléctrico. Conecta la Av. Argentina y España con el Cerro Barón (frente a la Iglesia San Francisco) y destaca por su vista directa al sector portuario oriente.",
+    "datoCurioso": "Su inauguración en 1906 marcó el hito de ser el primer funicular de Valparaíso en prescindir totalmente del vapor para funcionar con un motor eléctrico de tracción directa.",
     "precio": "Tarifa Local: ~$200 CLP / Extranjeros: ~$1.000 CLP / Bicicletas: ~$600 CLP",
     "esGratis": false,
     "horario": "Lunes a Domingo de 07:00 a 21:30 hrs",
     "imagen": "img/ascensor-baron.jpg",
-    "coordenadas": { "lat": -33.042500, "lng": -71.603889 },
+    "coordenadas": {
+      "lat": -33.0425,
+      "lng": -71.603889
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.603889"
   },
   {
@@ -300,11 +351,15 @@
     "categoria": "Ascensor Patrimonial",
     "añoConstruccion": 1883,
     "descripcionHistorica": "El ascensor más antiguo de Valparaíso, inaugurado en diciembre de 1883 originalmente a tracción hidráulica con contrapesos de agua. Conecta la calle Prat en el plan con el emblemático Paseo Gervasoni en Cerro Concepción.",
+    "datoCurioso": "En sus inicios no usaba motores: funcionaba gracias a dos grandes estanques de agua que se llenaban en la cumbre para que el carro superior bajara por gravedad haciendo subir al inferior.",
     "precio": "Pasaje general: ~$300 CLP",
     "esGratis": false,
     "horario": "Lunes a Domingo de 07:00 a 22:00 hrs",
     "imagen": "img/ascensor-concepcion.jpg",
-    "coordenadas": { "lat": -33.041389, "lng": -71.627222 },
+    "coordenadas": {
+      "lat": -33.041389,
+      "lng": -71.627222
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041389,-71.627222"
   },
   {
@@ -314,11 +369,15 @@
     "categoria": "Ascensor Patrimonial",
     "añoConstruccion": 1887,
     "descripcionHistorica": "Inaugurado en 1887, es el segundo ascensor más antiguo de la ciudad. Conecta la histórica Plaza de la Matriz con el Cerro Cordillera y el Callejón Merlet, con un pronunciado ángulo de inclinación.",
+    "datoCurioso": "Sus rieles salvan una pendiente de casi 70 grados sobre la ladera rocosa, lo que lo convierte en uno de los viajes más empinados de todo el casco histórico.",
     "precio": "Tarifa Local: ~$200 CLP / Extranjeros: ~$1.000 CLP / Bicicletas: ~$600 CLP",
     "esGratis": false,
     "horario": "Lunes a Domingo de 07:00 a 21:30 hrs",
     "imagen": "img/ascensor-cordillera.jpg",
-    "coordenadas": { "lat": -33.037778, "lng": -71.631111 },
+    "coordenadas": {
+      "lat": -33.037778,
+      "lng": -71.631111
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.037778,-71.631111"
   },
   {
@@ -328,11 +387,15 @@
     "categoria": "Ascensor Patrimonial",
     "añoConstruccion": 1902,
     "descripcionHistorica": "Inaugurado en 1902 para conectar la Plaza de la Justicia (frente a Sotomayor) con el Cerro Alegre. Su estación superior desemboca directamente en el Paseo Yugoslavo y el Palacio Baburizza.",
+    "datoCurioso": "Para acceder a su andén superior los pasajeros deben cruzar una pasarela metálica colgante suspendida directamente sobre los techos de casonas victorianas.",
     "precio": "Tarifa Local: ~$200 CLP / Extranjeros: ~$1.000 CLP",
     "esGratis": false,
     "horario": "Lunes a Domingo de 07:00 a 21:30 hrs",
     "imagen": "img/ascensor-el-peral.jpg",
-    "coordenadas": { "lat": -33.040278, "lng": -71.629167 },
+    "coordenadas": {
+      "lat": -33.040278,
+      "lng": -71.629167
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.040278,-71.629167"
   },
   {
@@ -342,11 +405,15 @@
     "categoria": "Ascensor Patrimonial",
     "añoConstruccion": 1902,
     "descripcionHistorica": "Inaugurado en 1902 en honor a la Reina Victoria del Reino Unido. Es uno de los más empinados y pintorescos del puerto; conecta la subida Cumming con el Cerro Concepción y el Paseo Dimalow.",
+    "datoCurioso": "Su campana mecánica de bronce original aún repica artesanalmente cada vez que los carros inician su marcha entre las estaciones.",
     "precio": "Tarifa Local: ~$200 CLP / Extranjeros: ~$1.000 CLP",
     "esGratis": false,
     "horario": "Lunes a Domingo de 07:00 a 21:30 hrs",
     "imagen": "img/ascensor-reina-victoria.jpg",
-    "coordenadas": { "lat": -33.042500, "lng": -71.625833 },
+    "coordenadas": {
+      "lat": -33.0425,
+      "lng": -71.625833
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.625833"
   },
   {
@@ -356,11 +423,15 @@
     "categoria": "Ascensor Patrimonial",
     "añoConstruccion": 1911,
     "descripcionHistorica": "Inaugurado en 1911 en calle Aldunate (cercano a Plaza Victoria). Conecta el plan con el Cerro Bellavista, sirviendo de acceso principal hacia el circuito del Museo a Cielo Abierto y la casa La Sebastiana.",
+    "datoCurioso": "Su estación inferior pasa inadvertida desde la calle al estar camuflada detrás de la fachada regular de una vivienda de dos pisos del plan comercial.",
     "precio": "Tarifa Local: ~$200 CLP / Extranjeros: ~$1.000 CLP",
     "esGratis": false,
     "horario": "Lunes a Domingo de 07:00 a 21:30 hrs",
     "imagen": "img/ascensor-espiritu-santo.jpg",
-    "coordenadas": { "lat": -33.046111, "lng": -71.622222 },
+    "coordenadas": {
+      "lat": -33.046111,
+      "lng": -71.622222
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.622222"
   },
   {
@@ -370,11 +441,15 @@
     "categoria": "Ascensor Patrimonial",
     "añoConstruccion": 1913,
     "descripcionHistorica": "Inaugurado en 1913, comunica la calle Tomás Ramos con la calle Canal en el Cerro Cordillera. Cuenta con un trayecto de rieles de 51 metros y es una vía patrimonial clave para los vecinos del sector.",
+    "datoCurioso": "Su trayecto de apenas 51 metros de vía férrea lo convierte en uno de los recorridos funiculares más cortos y concentrados en salvar desnivel de Valparaíso.",
     "precio": "Tarifa Local: ~$200 CLP / Extranjeros: ~$1.000 CLP",
     "esGratis": false,
     "horario": "Lunes a Domingo de 07:00 a 21:30 hrs",
     "imagen": "img/ascensor-san-agustin.jpg",
-    "coordenadas": { "lat": -33.039722, "lng": -71.630278 },
+    "coordenadas": {
+      "lat": -33.039722,
+      "lng": -71.630278
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.039722,-71.630278"
   },
   {
@@ -384,12 +459,16 @@
     "categoria": "Casa Museo",
     "añoConstruccion": 1961,
     "descripcionHistorica": "Emblemática casa del poeta Pablo Neruda en el cerro Bellavista, inaugurada en septiembre de 1961. Conserva mascarones de proa, catalejos y vistas panorámicas de la bahía.",
+    "datoCurioso": "Pablo Neruda mandó a construir un pequeño bar semicircular donde él mismo preparaba cócteles disfrazado de camarero para recibir a sus invitados íntimos.",
     "precio": "De Pago (~$9.000 CLP entrada general)",
     "esGratis": false,
     "horario": "Martes a Domingo de 10:00 a 18:00",
     "imagen": "img/la-sebastiana.jpg",
     "sitioWeb": "https://fundacionneruda.org",
-    "coordenadas": { "lat": -33.048056, "lng": -71.615278 },
+    "coordenadas": {
+      "lat": -33.048056,
+      "lng": -71.615278
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048056,-71.615278"
   },
   {
@@ -399,13 +478,14 @@
     "categoria": "Balneario Tradicional y Patrimonio Costero",
     "añoConstruccion": 1887,
     "descripcionHistorica": "La playa más clásica y tradicional de Valparaíso, ubicada en la base de Playa Ancha. Su nombre proviene de los galpones donde se resguardaban las lanchas torpederas de la Armada a fines del siglo XIX.",
+    "datoCurioso": "Bajo las aguas de su ensenada aún reposan restos sumergidos de los viejos rieles donde las lanchas torpederas eran deslizadas velozmente hacia el mar durante emergencias.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/playa-torpederas.jpg",
     "infoAdicional": "Conecta con el paseo peatonal costero hacia el Mirador del Faro Punta Ángeles y la Universidad de Playa Ancha.",
     "coordenadas": {
-      "lat": -33.022500,
+      "lat": -32.0225,
       "lng": -71.642778
     },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.642778"
@@ -417,13 +497,14 @@
     "categoria": "Balneario Portuario",
     "añoConstruccion": 1900,
     "descripcionHistorica": "Pequeña caleta de baño ubicada al pie del Cerro Artillería, inmediata al Molo de Abrigo y al Sitio de Fondeo de la Armada. Punto tradicional de descanso para navegantes y pescadores.",
+    "datoCurioso": "Es el único balneario de la comuna porteña que ofrece vista de frente al fondeadero interior y a las maniobras de amarre de los buques de guerra chilenos.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/playa-san-mateo.jpg",
     "coordenadas": {
       "lat": -33.029444,
-      "lng": -71.630000
+      "lng": -71.63
     },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.630000"
   },
@@ -434,31 +515,36 @@
     "categoria": "Plaza Cívica e Histórica",
     "añoConstruccion": 1886,
     "descripcionHistorica": "Corazón histórico del puerto. En su centro yace el monumento y cripta a los marinos del Combate Naval de Iquique (1879), flanqueado por el Edificio Armada de Chile.",
+    "datoCurioso": "Bajo la superficie de la plaza existe una cámara subterránea donde descansan con guardia militar permanente los restos mortales del capitán Arturo Prat Chacón.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/plaza-sotomayor.jpg",
-    "coordenadas": { "lat": -33.038889, "lng": -71.628889 },
+    "coordenadas": {
+      "lat": -33.038889,
+      "lng": -71.628889
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.038889,-71.628889"
   },
   {
-  "id": "museo-del-inmigrante-valparaiso",
-  "nombre": "Museo del Inmigrante (Cerro Alegre)",
-  "ciudad": "Valparaíso",
-  "categoria": "Museo y Patrimonio Histórico",
-  "añoConstruccion": 1880,
-  "descripcionHistorica": "Ubicado en una casona de conservación histórica en el Cerro Alegre, este espacio cultural e interpretativo rescata la memoria y el legado de las diversas colonias de inmigrantes (británicos, alemanes, italianos, franceses y españoles, entre otros) que forjaron la identidad cosmopolita, comercial y arquitectónica de Valparaíso durante los siglos XIX y XX.",
-  "precio": "Entrada general: ~$3.000 CLP / Estudiantes y 3ra edad: ~$1.500 CLP",
-  "esGratis": false,
-  "horario": "Martes a Domingo de 10:30 a 18:00 hrs",
-  "imagen": "img/museo-inmigrante.jpg",
-  "sitioWeb": "https://valparaisochile.cl",
-  "infoAdicional": "Ofrece exposiciones permanentes de documentos de época, relatos orales y objetos de las familias inmigrantes en los cerros Alegre y Concepción.",
-  "coordenadas": {
-    "lat": -33.041667,
-    "lng": -71.628889
-  },
-  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628889"
+    "id": "museo-del-inmigrante-valparaiso",
+    "nombre": "Museo del Inmigrante (Cerro Alegre)",
+    "ciudad": "Valparaíso",
+    "categoria": "Museo y Patrimonio Histórico",
+    "añoConstruccion": 1880,
+    "descripcionHistorica": "Ubicado en una casona de conservación histórica en el Cerro Alegre, este espacio cultural e interpretativo rescata la memoria y el legado de las diversas colonias de inmigrantes (británicos, alemanes, italianos, franceses y españoles, entre otros) que forjaron la identidad cosmopolita, comercial y arquitectónica de Valparaíso durante los siglos XIX y XX.",
+    "datoCurioso": "Exhibe documentos comerciales y partituras de época que demuestran cómo la comunidad británica introdujo en estos cerros prácticas como el fútbol, el tenis y el té de la tarde en Chile.",
+    "precio": "Entrada general: ~$3.000 CLP / Estudiantes y 3ra edad: ~$1.500 CLP",
+    "esGratis": false,
+    "horario": "Martes a Domingo de 10:30 a 18:00 hrs",
+    "imagen": "img/museo-inmigrante.jpg",
+    "sitioWeb": "https://valparaisochile.cl",
+    "infoAdicional": "Ofrece exposiciones permanentes de documentos de época, relatos orales y objetos de las familias inmigrantes en los cerros Alegre y Concepción.",
+    "coordenadas": {
+      "lat": -33.041667,
+      "lng": -71.628889
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628889"
   },
   {
     "id": "paseo-yugoslavo-baburizza",
@@ -467,12 +553,16 @@
     "categoria": "Mirador y Museo Art Nouveau",
     "añoConstruccion": 1916,
     "descripcionHistorica": "Ubicado en Cerro Alegre. Residencia modernista de Pascual Baburizza proyectada por Barison y Schiavon, actual sede del Museo Municipal de Bellas Artes.",
+    "datoCurioso": "Su fachada combina torreones tiroleses, maderas nobles y elementos modernistas que representaban la prosperidad salitrera que financió su edificación en 1916.",
     "precio": "Paseo Gratis / Museo de Pago (~$3.000 CLP)",
     "esGratis": false,
     "horario": "Paseo 24/7 | Museo Martes a Domingo 10:00 a 18:00",
     "imagen": "img/paseo-baburizza.jpg",
     "sitioWeb": "https://museobaburizza.cl",
-    "coordenadas": { "lat": -33.041667, "lng": -71.628611 },
+    "coordenadas": {
+      "lat": -33.041667,
+      "lng": -71.628611
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628611"
   },
   {
@@ -482,11 +572,15 @@
     "categoria": "Paseo Patrimonial y Mirador",
     "añoConstruccion": 1911,
     "descripcionHistorica": "Emblemático balcón y mirador peatonal ubicado en la cumbre del Cerro Artillería, con ferias artesanales y vista panorámica a toda la bahía portuaria.",
+    "datoCurioso": "Por su perspectiva panorámica abierta, es históricamente el lugar más codiciado por fotógrafos de todo el mundo para retratar el espectáculo pirotécnico de Año Nuevo.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/paseo-21-mayo.jpg",
-    "coordenadas": { "lat": -33.032222, "lng": -71.631944 },
+    "coordenadas": {
+      "lat": -33.032222,
+      "lng": -71.631944
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.032222,-71.631944"
   },
   {
@@ -496,11 +590,15 @@
     "categoria": "Paseo Patrimonial y Mirador",
     "añoConstruccion": 1869,
     "descripcionHistorica": "Clásica calle peatonal empedrada de Cerro Concepción rodeada de casonas victorianas revestidas en calamina y vista despejada a la bahía.",
+    "datoCurioso": "En este paseo residió el caricaturista Renzo Pecchenino ('Lukas'), quien retrató la singular geografía humana porteña en sus célebres crónicas gráficas.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/paseo-gervasoni.jpg",
-    "coordenadas": { "lat": -33.042222, "lng": -71.627778 },
+    "coordenadas": {
+      "lat": -33.042222,
+      "lng": -71.627778
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042222,-71.627778"
   },
   {
@@ -510,11 +608,15 @@
     "categoria": "Mirador y Zona Patrimonial",
     "añoConstruccion": 1886,
     "descripcionHistorica": "Famoso por su hilera de casas victorianas de madera y zinc construidas para inmigrantes británicos y alemanes, con una vista despejada a la iglesia Matriz y al puerto.",
+    "datoCurioso": "La hilera de residencias victorianas conserva sus jardines delanteros abiertos sin rejas perimetrales, una disposición urbanística típica de los barrios suburbanos ingleses del siglo XIX.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/paseo-atkinson.jpg",
-    "coordenadas": { "lat": -33.042778, "lng": -71.626944 },
+    "coordenadas": {
+      "lat": -33.042778,
+      "lng": -71.626944
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.626944"
   },
   {
@@ -524,12 +626,16 @@
     "categoria": "Sitio de Memoria y Parque Cultural",
     "añoConstruccion": 1807,
     "descripcionHistorica": "Antiguo polvorín colonial y recinto penitenciario público reconvertido en 2011 en el mayor parque y centro artístico multidisciplinario de la ciudad.",
+    "datoCurioso": "Su polvorín colonial central de muros de más de un metro de espesor fue construido en 1807 para proteger la pólvora virreinal de posibles bombardeos navales ingleses.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Martes a Domingo de 10:00 a 19:00",
     "imagen": "img/parque-cultural-valpo.jpg",
     "sitioWeb": "https://parquecultural.cl",
-    "coordenadas": { "lat": -33.044722, "lng": -71.618889 },
+    "coordenadas": {
+      "lat": -33.044722,
+      "lng": -71.618889
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.618889"
   },
   {
@@ -539,12 +645,16 @@
     "categoria": "Museo Histórico Naval",
     "añoConstruccion": 1915,
     "descripcionHistorica": "Edificio neorrenacentista en la cumbre de Artillería que albergó la Escuela Naval de Chile. Exhibe armamento, modelos a escala y memorias de las gestas marítimas del país.",
+    "datoCurioso": "Custodia celosamente la espada de abordaje y el catalejo original utilizados por el capitán Arturo Prat a bordo de la corbeta Esmeralda en 1879.",
     "precio": "De Pago (~$2.000 CLP)",
     "esGratis": false,
     "horario": "Martes a Domingo de 10:00 a 17:30",
     "imagen": "img/museo-maritimo.jpg",
     "sitioWeb": "https://museomaritimo.cl",
-    "coordenadas": { "lat": -33.031944, "lng": -71.632222 },
+    "coordenadas": {
+      "lat": -33.031944,
+      "lng": -71.632222
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.031944,-71.632222"
   },
   {
@@ -554,11 +664,15 @@
     "categoria": "Arte Urbano e Intervención",
     "añoConstruccion": 2011,
     "descripcionHistorica": "Escalinata intervenida artísticamente simulando las teclas de un piano bajo la Iglesia Luterana en Cerro Concepción, convertida en hito fotográfico porteño.",
+    "datoCurioso": "La disposición de sus teclas blancas y negras reproduce fielmente las octavas de un piano en homenaje a los conciertos de órgano de la vecina Iglesia Luterana de La Santa Cruz.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/escalera-piano.jpg",
-    "coordenadas": { "lat": -33.041667, "lng": -71.626944 },
+    "coordenadas": {
+      "lat": -33.041667,
+      "lng": -71.626944
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.626944"
   },
   {
@@ -568,11 +682,15 @@
     "categoria": "Paseo Peatonal y Muralismo",
     "añoConstruccion": 1900,
     "descripcionHistorica": "Pintoresca casona con su clásica puerta roja en el corazón del Pasaje Gálvez en Cerro Concepción, rodeada de galerías de arte, adoquines y murales.",
+    "datoCurioso": "El tono rojo vibrante de la puerta se inspiró en la tradición marítima británica que señalizaba con bermellón las residencias de los oficiales y capitanes de navío.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/puerta-roja.jpg",
-    "coordenadas": { "lat": -33.043333, "lng": -71.626111 },
+    "coordenadas": {
+      "lat": -33.043333,
+      "lng": -71.626111
+    },
     "googleMapsUrl": "https://maps.app.goo.gl/wsj1J7MAENHp5ujK8"
   },
   {
@@ -582,11 +700,15 @@
     "categoria": "Arte Urbano e Hito Fotográfico",
     "añoConstruccion": 2014,
     "descripcionHistorica": "Ubicada en el laberíntico Pasaje Gálvez de Cerro Concepción. Sus contrahuellas están pintadas con una brillante paleta cromática en degradé arcoíris, rodeada de fachadas de calamina victoriana, talleres de grabado y cafeterías de especialidad.",
+    "datoCurioso": "Para lograr el efecto de perspectiva cromática continua, cada uno de sus peldaños debió ser pintado con una gradación exacta que solo se alinea visualmente desde la base del callejón.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/escalera-colores.jpg",
-    "coordenadas": { "lat": -33.043611, "lng": -71.626389 },
+    "coordenadas": {
+      "lat": -33.043611,
+      "lng": -71.626389
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043611,-71.626389"
   },
   {
@@ -596,11 +718,15 @@
     "categoria": "Paseo Peatonal y Tradición Urbana",
     "añoConstruccion": 1920,
     "descripcionHistorica": "Histórica y empinada escalinata de piedra y concreto que conecta la calle Miramar con las partes altas del Cerro Alegre. Debe su popular nombre a las antiguas vendedoras de algas marinas ('luche') que transitaban por estos peldaños hacia los mercados del plan.",
+    "datoCurioso": "Su nombre rescata la memoria de las recolectoras que subían a diario con canastos de alga marina fresca sobre la cabeza gritando su venta matinal de peldaño en peldaño.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/escalera-luche.jpg",
-    "coordenadas": { "lat": -33.045000, "lng": -71.627778 },
+    "coordenadas": {
+      "lat": -33.045,
+      "lng": -71.627778
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045000,-71.627778"
   },
   {
@@ -610,11 +736,15 @@
     "categoria": "Monumento Conmemorativo",
     "añoConstruccion": 1911,
     "descripcionHistorica": "Monumento de mármol de Carrara diseñado por Alfredo Azancot y donado por los residentes británicos para el Centenario de la Independencia de Chile en Av. Brasil.",
+    "datoCurioso": "Fue construido íntegramente con mármol blanco italiano importado directamente desde los yacimientos de Carrara y tallado por canteros especializados traídos a Valparaíso.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/arco-britanico.jpg",
-    "coordenadas": { "lat": -33.044167, "lng": -71.621944 },
+    "coordenadas": {
+      "lat": -33.044167,
+      "lng": -71.621944
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044167,-71.621944"
   },
   {
@@ -624,12 +754,16 @@
     "categoria": "Edificio Cívico e Institucional",
     "añoConstruccion": 1990,
     "descripcionHistorica": "Sede del Poder Legislativo chileno inaugurada en marzo de 1990 en el barrio El Almendral con el retorno a la democracia.",
+    "datoCurioso": "Se emplaza sobre el terreno histórico que ocupó el Hospital San Juan de Dios y la congregación de los Padres Franceses de Valparaíso.",
     "precio": "Gratis (Recorrido exterior / visitas con previa reserva)",
     "esGratis": true,
     "horario": "Exterior 24/7",
     "imagen": "img/congreso-nacional.jpg",
     "sitioWeb": "https://www.congreso.cl",
-    "coordenadas": { "lat": -33.047778, "lng": -71.605278 },
+    "coordenadas": {
+      "lat": -33.047778,
+      "lng": -71.605278
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.047778,-71.605278"
   },
   {
@@ -639,13 +773,17 @@
     "categoria": "Ingeniería Marítima y Patrimonio Portuario",
     "añoConstruccion": 1912,
     "descripcionHistorica": "Colosal obra de ingeniería marítima iniciada en 1912 por la firma británica S. Pearson & Son para proteger la bahía y el puerto de los temporales del norte. Cuenta con más de 1.000 metros de extensión mar adentro y remata en el histórico Faro Punta Duprat de 1928, siendo fondeadero oficial de la Escuadra Nacional de la Armada de Chile.",
+    "datoCurioso": "Para fundar sus gigantescos bloques de hormigón a más de 50 metros de profundidad se requirieron buzos tácticos e ingenieros que trabajaron durante dos décadas ininterrumpidas.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Sábados y domingos de 14:00 a 17:00 / 17:45 hrs (sujeto a apertura de naves)",
     "imagen": "img/molo-abrigo.jpg",
     "requisitoIngreso": "Cédula de identidad chilena o documento de identidad vigente",
     "infoAdicional": "La Armada de Chile anuncia frecuentemente la apertura de fragatas o buques escuela para visitas del público general en fechas específicas.",
-    "coordenadas": { "lat": -33.028611, "lng": -71.628889 },
+    "coordenadas": {
+      "lat": -33.028611,
+      "lng": -71.628889
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.028611,-71.628889"
   },
   {
@@ -655,11 +793,15 @@
     "categoria": "Arte Urbano e Hito Fotográfico",
     "añoConstruccion": 2015,
     "descripcionHistorica": "Ubicada entre calle Urriola y Lautaro Rosas (Cerro Alegre). Sus peldaños con patrones geométricos fueron intervenidos por el colectivo británico Art+Believe junto a la célebre frase mural que se ha convertido en una postal infaltable del street art.",
+    "datoCurioso": "El colectivo londinense Art+Believe pintó el diseño geométrico calculando los ángulos para que las figuras formen un patrón tridimensional continuo al ser vistas desde abajo.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/escalera-templeman.jpg",
-    "coordenadas": { "lat": -33.043889, "lng": -71.626667 },
+    "coordenadas": {
+      "lat": -33.043889,
+      "lng": -71.626667
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043889,-71.626667"
   },
   {
@@ -669,11 +811,15 @@
     "categoria": "Arte Urbano y Música",
     "añoConstruccion": 2016,
     "descripcionHistorica": "Escalera peatonal que conecta calle Urriola con el Pasaje Gálvez en Cerro Concepción. Sus peldaños están rotulados con versos de la canción 'Latinoamérica' de Calle 13.",
+    "datoCurioso": "Los versos rotulados en sus peldaños comienzan en la base con la frase 'Soy lo que sostengo' y culminan en el descanso superior con 'Tú no puedes comprar mi vida'.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/escalera-latinoamerica.jpg",
-    "coordenadas": { "lat": -33.043056, "lng": -71.626389 },
+    "coordenadas": {
+      "lat": -33.043056,
+      "lng": -71.626389
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043056,-71.626389"
   },
   {
@@ -683,11 +829,15 @@
     "categoria": "Muralismo a Gran Escala",
     "añoConstruccion": 2015,
     "descripcionHistorica": "Monumental obra de los artistas franceses Ella & Pitr en calle Almirante Montt. Representa a una abuelita en descanso adaptada a la esquina de dos fachadas típicas porteñas.",
+    "datoCurioso": "La figura de la abuelita dormida fue diseñada para doblarse en un ángulo recto perfecto aprovechando la unión estructural de dos casas vecinas.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/mural-mamie.jpg",
-    "coordenadas": { "lat": -33.044444, "lng": -71.625556 },
+    "coordenadas": {
+      "lat": -33.044444,
+      "lng": -71.625556
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044444,-71.625556"
   },
   {
@@ -697,11 +847,15 @@
     "categoria": "Circuito Muralista Patrimonial",
     "añoConstruccion": 1992,
     "descripcionHistorica": "Inaugurado en 1992, reúne 20 murales de destacados artistas plásticos chilenos y latinoamericanos (como Roberto Matta y Nemesio Antúnez) a lo largo de las callejuelas del Cerro Bellavista.",
+    "datoCurioso": "La idea original surgió a fines de los años 60 en las aulas de arte de la Universidad Católica de Valparaíso, pero tardó más de 20 años en materializarse debido a la contingencia política.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/museo-cielo-abierto.jpg",
-    "coordenadas": { "lat": -33.047500, "lng": -71.618611 },
+    "coordenadas": {
+      "lat": -33.0475,
+      "lng": -71.618611
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.047500,-71.618611"
   },
   {
@@ -711,11 +865,15 @@
     "categoria": "Mirador Panorámico",
     "añoConstruccion": 1980,
     "descripcionHistorica": "Ubicado en la parte alta de la Avenida Alemania (Cerro San Juan de Dios). Rinde homenaje a los inmigrantes italianos de Liguria y ofrece una vista cenital a los tejados multicolores y la bahía.",
+    "datoCurioso": "Fue bautizado en honor a Camogli, pintoresco pueblo de la Riviera Ligure italiana del cual provino una de las comunidades de pescadores y comerciantes más influyentes de Valparaíso.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7 (recomendado al atardecer)",
     "imagen": "img/mirador-camogli.jpg",
-    "coordenadas": { "lat": -33.051944, "lng": -71.621389 },
+    "coordenadas": {
+      "lat": -33.051944,
+      "lng": -71.621389
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.051944,-71.621389"
   },
   {
@@ -725,11 +883,15 @@
     "categoria": "Arte Urbano y Muralismo",
     "añoConstruccion": 2018,
     "descripcionHistorica": "Ubicada en la intersección de Urriola con Pasaje Apolo. Destaca por su colorido degradado y su mural anamórfico de dos manos entrelazadas que simbolizan la unidad y diversidad de los pueblos.",
+    "datoCurioso": "El mural de las dos manos entrelazadas está pintado de forma anamórfica sobre los descansos, viéndose perfectamente proporcionado solo cuando el observador se para al pie de la escalera.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/escalera-apolo.jpg",
-    "coordenadas": { "lat": -33.042778, "lng": -71.625556 },
+    "coordenadas": {
+      "lat": -33.042778,
+      "lng": -71.625556
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.625556"
   },
   {
@@ -739,11 +901,15 @@
     "categoria": "Santuario Natural y Paisaje",
     "añoConstruccion": 1993,
     "descripcionHistorica": "Formación geológica eólica cuaternaria declarada Santuario de la Naturaleza en 1993, reconocida por su flora costera nativa y puestas de sol sobre el mar.",
+    "datoCurioso": "Geológicamente son dunas fósiles colgadas sobre terrazas marinas cuaternarias, resistiendo el avance del tiempo y la erosión costera durante miles de años.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/dunas-concon.jpg",
-    "coordenadas": { "lat": -32.939722, "lng": -71.548611 },
+    "coordenadas": {
+      "lat": -32.939722,
+      "lng": -71.548611
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.939722,-71.548611"
   },
   {
@@ -753,6 +919,7 @@
     "categoria": "Balneario Costero y Surf",
     "añoConstruccion": 1950,
     "descripcionHistorica": "Ubicada junto a la desembocadura del Río Aconcagua, es el epicentro del aprendizaje de surf y bodyboard en la región, gracias a sus olas constantes y fondo de arena suave.",
+    "datoCurioso": "Es reconocida a nivel nacional como la mayor escuela natural de surf en Chile, formando a cientos de principiantes cada fin de semana gracias a su fondo de arena bajo y regular.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
@@ -771,6 +938,7 @@
     "categoria": "Balneario Costero y Ensenada Natural",
     "añoConstruccion": 1980,
     "descripcionHistorica": "Ensenada protegida de oleaje suave ubicada al pie de los acantilados de Concón. Ideal para el descanso familiar y la práctica de kayak o stand-up paddle.",
+    "datoCurioso": "Su disposición natural en herradura protegida por farallones rocosos amortigua la marejada pacífica, logrando que sus aguas sean significativamente más mansas y templadas.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
@@ -788,11 +956,15 @@
     "categoria": "Paseo Costero y Gastronomía Marina",
     "añoConstruccion": 1940,
     "descripcionHistorica": "Enclave tradicional pesquero y gastronómico de la comuna, con caleta artesanal, club de yates y miradores sobre los roqueríos marinos.",
+    "datoCurioso": "Aquí se celebra cada año la tradicional procesión náutica de San Pedro, donde decenas de botes pesqueros engalanados con guirnaldas navegan escoltando la imagen del santo patrono.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/borde-concon.jpg",
-    "coordenadas": { "lat": -32.923889, "lng": -71.519444 },
+    "coordenadas": {
+      "lat": -32.923889,
+      "lng": -71.519444
+    },
     "googleMapsUrl": "https://maps.app.goo.gl/P4Cf74jpAkJkPjah8"
   },
   {
@@ -802,11 +974,15 @@
     "categoria": "Humedal y Ecoturismo",
     "añoConstruccion": 2006,
     "descripcionHistorica": "Reserva ecológica en la desembocadura del Río Aconcagua que alberga a más de 70 especies de aves playeras migratorias con pasarelas interpretativas.",
+    "datoCurioso": "Constituye una parada de reabastecimiento vital para aves migratorias boreales como el zarapito de pico curvo, que vuela sin escalas desde la tundra de Alaska.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Martes a Domingo de 09:00 a 18:00",
     "imagen": "img/humedal-concon.jpg",
-    "coordenadas": { "lat": -32.919444, "lng": -71.508889 },
+    "coordenadas": {
+      "lat": -32.919444,
+      "lng": -71.508889
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.919444,-71.508889"
   },
   {
@@ -816,11 +992,15 @@
     "categoria": "Balneario Costero",
     "añoConstruccion": 1930,
     "descripcionHistorica": "La playa más tradicional y resguardada de Concón, rodeada de jardines costeros y reconocida como punto histórico de baño y práctica de deportes náuticos.",
+    "datoCurioso": "Su arena de grano fino presenta una alta concentración de feldespato y cuarzo erosionado que le confiere su característico color dorado brillante bajo el sol de verano.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/playa-amarilla.jpg",
-    "coordenadas": { "lat": -32.933333, "lng": -71.536111 },
+    "coordenadas": {
+      "lat": -32.933333,
+      "lng": -71.536111
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.933333,-71.536111"
   },
   {
@@ -830,14 +1010,17 @@
     "categoria": "Mirador Geológico y Santuario Natural",
     "añoConstruccion": 1990,
     "descripcionHistorica": "Promontorio rocoso protegido como Santuario de la Naturaleza en 1990. Ofrece senderos y una vista frontal abierta al oleaje del Océano Pacífico.",
+    "datoCurioso": "En los meses de primavera e inicio de verano este promontorio permite avistar ejemplares de ballenas jorobadas y delfines nariz de botella en su ruta hacia aguas antárticas.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/roca-oceanica.jpg",
-    "coordenadas": { "lat": -32.951111, "lng": -71.554722 },
+    "coordenadas": {
+      "lat": -32.951111,
+      "lng": -71.554722
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.951111,-71.554722"
   },
-
   {
     "id": "parque-zoologico-quilpue",
     "nombre": "Bioparque Los Pinos (Ex Zoológico de Quilpué)",
@@ -845,12 +1028,16 @@
     "categoria": "Parque Urbano y Conservación",
     "añoConstruccion": 1962,
     "descripcionHistorica": "Extenso predio boscoso en el sector Los Pinos destinado al rescate animal, conservación de especies y educación ecológica comunitaria.",
+    "datoCurioso": "Evolucionó desde un zoológico clásico hacia un centro de rescate y rehabilitación de fauna silvestre nativa afectada por incendios o tráfico ilegal en la zona central.",
     "precio": "De Pago (~$2.000 a $4.000 CLP)",
     "esGratis": false,
     "horario": "Martes a Domingo de 10:00 a 17:30",
     "imagen": "img/zoolo-quilpue.jpg",
     "sitioWeb": "https://quilpue.cl",
-    "coordenadas": { "lat": -33.054444, "lng": -71.428333 },
+    "coordenadas": {
+      "lat": -33.054444,
+      "lng": -71.428333
+    },
     "googleMapsUrl": "https://maps.app.goo.gl/WwtoKJQM8jLSZBw57"
   },
   {
@@ -860,11 +1047,15 @@
     "categoria": "Patrimonio Urbano Ferroviario",
     "añoConstruccion": 1856,
     "descripcionHistorica": "Espacio urbano ligado a la inauguración del ferrocarril Santiago-Valparaíso en 1856, conservando casonas señoriales y árboles centenarios.",
+    "datoCurioso": "El asentamiento urbano moderno de la ciudad nació y floreció alrededor de esta parada gracias a la llegada del tren a vapor Santiago-Valparaíso a mediados del siglo XIX.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/plaza-quilpue.jpg",
-    "coordenadas": { "lat": -33.046111, "lng": -71.443056 },
+    "coordenadas": {
+      "lat": -33.046111,
+      "lng": -71.443056
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.443056"
   },
   {
@@ -874,12 +1065,16 @@
     "categoria": "Casona Histórica y Centro de Arte",
     "añoConstruccion": 1895,
     "descripcionHistorica": "Residencia de valor patrimonial que reúne salas de exposición de artes plásticas, presentaciones teatrales y talleres para la comunidad.",
+    "datoCurioso": "Fue levantada como casa de veraneo por familias acomodadas atraídas por el microclima benigno y soleado que le dio a Quilpué el título de 'Ciudad del Sol'.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Lunes a Viernes de 09:00 a 18:00",
     "imagen": "img/casona-quilpue.jpg",
     "sitioWeb": "https://quilpue.cl",
-    "coordenadas": { "lat": -33.044722, "lng": -71.441944 },
+    "coordenadas": {
+      "lat": -33.044722,
+      "lng": -71.441944
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.441944"
   },
   {
@@ -889,11 +1084,15 @@
     "categoria": "Parque Natural y Trekking",
     "añoConstruccion": 1940,
     "descripcionHistorica": "Antiguo tranque de regadío convertido en pulmón ecológico con senderos de bosque esclerófilo para caminatas y ciclismo de montaña.",
+    "datoCurioso": "Su espejo de agua artificial fue construido originalmente para regar antiguos predios agrícolas y hoy es un refugio habitual para el coipo, el roedor nativo más grande de Chile.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre diurno",
     "imagen": "img/tranque-quilpue.jpg",
-    "coordenadas": { "lat": -33.061944, "lng": -71.431111 },
+    "coordenadas": {
+      "lat": -33.061944,
+      "lng": -71.431111
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.061944,-71.431111"
   },
   {
@@ -903,15 +1102,18 @@
     "categoria": "Patrimonio Arquitectónico y Teatro",
     "añoConstruccion": 1940,
     "descripcionHistorica": "Edificio art déco recuperado como el principal teatro y auditorio artístico del valle de Marga Marga, frente a la Plaza de Armas.",
+    "datoCurioso": "Durante su época de oro en los años 40 y 50 funcionó como el gran biógrafo de la comuna, proyectando estrenos cinematográficos en rollos de celuloide de 35 mm.",
     "precio": "Gratis (según cartelera cultural)",
     "esGratis": true,
     "horario": "Según programación de eventos",
     "imagen": "img/teatro-quilpue.jpg",
     "sitioWeb": "https://quilpue.cl",
-    "coordenadas": { "lat": -33.045556, "lng": -71.444444 },
+    "coordenadas": {
+      "lat": -33.045556,
+      "lng": -71.444444
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045556,-71.444444"
   },
-
   {
     "id": "plaza-armas-santa-barbara-casablanca",
     "nombre": "Plaza de Armas y Parroquia Santa Bárbara",
@@ -919,11 +1121,15 @@
     "categoria": "Patrimonio Cívico y Colonial",
     "añoConstruccion": 1753,
     "descripcionHistorica": "Centro fundacional de la Villa Santa Bárbara de Casablanca decretada en 1753. Su templo principal conserva la tradición arquitectónica del valle central.",
+    "datoCurioso": "La plaza nació como punto de relevo de caballos y descanso para las carretas coloniales que demoraban varios días en completar el trayecto entre Santiago y Valparaíso.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Plaza libre 24/7",
     "imagen": "img/plaza-casablanca.jpg",
-    "coordenadas": { "lat": -33.318889, "lng": -71.408889 },
+    "coordenadas": {
+      "lat": -33.318889,
+      "lng": -71.408889
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.318889,-71.408889"
   },
   {
@@ -933,12 +1139,16 @@
     "categoria": "Santuario Religioso",
     "añoConstruccion": 1851,
     "descripcionHistorica": "Mayor centro de devoción mariana de Chile central. Su templo actual data de 1913 y reúne a más de un millón de peregrinos cada 8 de diciembre.",
+    "datoCurioso": "Cada 8 de diciembre la Ruta 68 se clausura completamente al tránsito automovilístico para permitir el avance a pie y en bicicleta de más de un millón de peregrinos.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Lunes a Domingo de 08:30 a 18:30",
     "imagen": "img/santuario-lo-vasquez.jpg",
     "sitioWeb": "https://santuariolovasquez.cl",
-    "coordenadas": { "lat": -33.262500, "lng": -71.429444 },
+    "coordenadas": {
+      "lat": -33.2625,
+      "lng": -71.429444
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.262500,-71.429444"
   },
   {
@@ -948,12 +1158,16 @@
     "categoria": "Enoturismo y Viñedos",
     "añoConstruccion": 1982,
     "descripcionHistorica": "Valle pionero en Chile en la producción de cepas de clima frío como Sauvignon Blanc y Pinot Noir, destacado por su arquitectura enológica vanguardista.",
+    "datoCurioso": "Las espesas neblinas que ingresan desde el mar cada mañana enfrían los viñedos, prolongando la maduración de la uva y otorgando a sus vinos blancos su aclamada acidez fresca.",
     "precio": "Tours de Pago (desde ~$15.000 CLP)",
     "esGratis": false,
     "horario": "Lunes a Domingo de 10:00 a 17:30 (reserva previa)",
     "imagen": "img/vina-casablanca.jpg",
     "sitioWeb": "https://casablancavalley.cl",
-    "coordenadas": { "lat": -33.327500, "lng": -71.378889 },
+    "coordenadas": {
+      "lat": -33.3275,
+      "lng": -71.378889
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.327500,-71.378889"
   },
   {
@@ -963,11 +1177,15 @@
     "categoria": "Naturaleza y Avistamiento de Aves",
     "añoConstruccion": 1930,
     "descripcionHistorica": "Cuerpo de agua y entorno campestre que actúa como refugio de aves acuáticas y flora esclerófila típica de la cordillera de la Costa.",
+    "datoCurioso": "Es uno de los mejores puntos de la provincia para observar cisnes de cuello negro y taguas anidando entre los totorales del humedal.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso diurno libre",
     "imagen": "img/tranque-vinilla.jpg",
-    "coordenadas": { "lat": -33.342500, "lng": -71.442778 },
+    "coordenadas": {
+      "lat": -33.3425,
+      "lng": -71.442778
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.342500,-71.442778"
   },
   {
@@ -977,14 +1195,17 @@
     "categoria": "Museo Histórico Rural",
     "añoConstruccion": 1880,
     "descripcionHistorica": "Casona patronal colonial que preserva vestigios arqueológicos prehispánicos y objetos representativos de la vida campesina y arriera del valle.",
+    "datoCurioso": "Conserva vestigios cerámicos de las culturas Bato y Llolleo con más de mil años de antigüedad desenterrados en los fundos agrícolas de la zona.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Lunes a Viernes de 09:00 a 17:30",
     "imagen": "img/museo-casablanca.jpg",
-    "coordenadas": { "lat": -33.319722, "lng": -71.407500 },
+    "coordenadas": {
+      "lat": -33.319722,
+      "lng": -71.4075
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.319722,-71.407500"
   },
-
   {
     "id": "parque-nacional-la-campana-olmue",
     "nombre": "Parque Nacional La Campana (Sector Granizo)",
@@ -992,12 +1213,16 @@
     "categoria": "Reserva de la Biosfera y Ecoturismo",
     "añoConstruccion": 1967,
     "descripcionHistorica": "Declarado Reserva de la Biosfera por la UNESCO en 1985. Ascendido por Charles Darwin en 1834, protege densos palmares de Palma Chilena milenaria.",
+    "datoCurioso": "En agosto de 1834, Charles Darwin alcanzó su cumbre a 1.880 msnm y escribió maravillado sobre la vista simultánea de los Andes y el Océano Pacífico.",
     "precio": "De Pago (~$3.500 a $5.000 CLP / Reserva vía aspticket.cl)",
     "esGratis": false,
     "horario": "Martes a Domingo de 08:30 a 17:30",
     "imagen": "img/la-campana.jpg",
     "sitioWeb": "https://www.conaf.cl",
-    "coordenadas": { "lat": -32.983333, "lng": -71.133333 },
+    "coordenadas": {
+      "lat": -32.983333,
+      "lng": -71.133333
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.983333,-71.133333"
   },
   {
@@ -1007,12 +1232,16 @@
     "categoria": "Patrimonio Cultural Folclórico",
     "añoConstruccion": 1970,
     "descripcionHistorica": "Recinto al aire libre y sede del Festival del Huaso de Olmué desde 1970, el certamen de música de raíz folclórica más representativo del país.",
+    "datoCurioso": "Su anfiteatro al aire libre fue levantado cobijando un añoso árbol de patagua en el centro del escenario, respetando la vegetación autóctona original.",
     "precio": "Gratis (área exterior en días sin evento)",
     "esGratis": true,
     "horario": "Lunes a Domingo de 09:00 a 19:00",
     "imagen": "img/el-patagual.jpg",
     "sitioWeb": "https://muniolmue.cl",
-    "coordenadas": { "lat": -33.003611, "lng": -71.188056 },
+    "coordenadas": {
+      "lat": -33.003611,
+      "lng": -71.188056
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.003611,-71.188056"
   },
   {
@@ -1022,11 +1251,15 @@
     "categoria": "Patrimonio Tradicional Criollo",
     "añoConstruccion": 1880,
     "descripcionHistorica": "Plaza central de la comuna con pérgolas coloniales, ferias de artesanía típica y la iglesia de estilo rústico tradicional.",
+    "datoCurioso": "Mantiene el diseño fundacional de pueblo campestre donde convergen los huasos montados a caballo junto a los tradicionales puestos de venta de flores y frutos de temporada.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Plaza libre 24/7",
     "imagen": "img/plaza-olmue.jpg",
-    "coordenadas": { "lat": -32.998889, "lng": -71.186667 },
+    "coordenadas": {
+      "lat": -32.998889,
+      "lng": -71.186667
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.998889,-71.186667"
   },
   {
@@ -1036,11 +1269,15 @@
     "categoria": "Tradición Gastronómica",
     "añoConstruccion": 1950,
     "descripcionHistorica": "Punto de encuentro campesino famoso por sus pastelerías tradicionales de manjar blanco, alfajores de chancaca y frutos secos de la cuenca.",
+    "datoCurioso": "Los tradicionales dulces y alfajores de la zona se siguen elaborando artesanalmente con manjar cocinado por largas horas en pailas de cobre con leche recién ordeñada.",
     "precio": "Acceso Libre",
     "esGratis": true,
     "horario": "Lunes a Domingo de 09:30 a 20:00",
     "imagen": "img/pasteleria-olmue.jpg",
-    "coordenadas": { "lat": -33.001667, "lng": -71.196944 },
+    "coordenadas": {
+      "lat": -33.001667,
+      "lng": -71.196944
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.001667,-71.196944"
   },
   {
@@ -1050,47 +1287,53 @@
     "categoria": "Mirador Panorámico y Ruta Histórica",
     "añoConstruccion": 1790,
     "descripcionHistorica": "Histórico camino de arrieros y correos virreinales entre Santiago y Valparaíso que cruza la cordillera de la Costa con vistas panorámicas al valle de Olmué.",
+    "datoCurioso": "Su nombre alude a las postas donde los viajeros y arrieros coloniales pernoctaban ('dormían') antes de afrontar el cruce a caballo de la cordillera costera.",
     "precio": "Gratis",
     "esGratis": true,
     "horario": "Acceso libre 24/7",
     "imagen": "img/cuesta-dormida.jpg",
-    "coordenadas": { "lat": -33.048333, "lng": -71.076667 },
+    "coordenadas": {
+      "lat": -33.048333,
+      "lng": -71.076667
+    },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048333,-71.076667"
   },
   {
-  "id": "mural-mon-laferte",
-  "nombre": "Mural 'Día Uno' (Mon Laferte)",
-  "ciudad": "Valparaíso",
-  "categoria": "Arte Urbano y Muralismo",
-  "añoConstruccion": 2021,
-  "descripcionHistorica": "Pintado en febrero de 2021 por la cantautora y artista visual viñamarina Mon Laferte en colaboración con la muralista Mono González. Ubicado en una casona de tres pisos en la intersección de las calles Capilla y Galos (Cerro Alegre), la obra representa el ciclo femenino, el nacimiento y la energía creadora.",
-  "precio": "Gratis",
-  "esGratis": true,
-  "horario": "Acceso libre 24/7",
-  "imagen": "img/mural-mon-laferte.jpg",
-  "coordenadas": {
-    "lat": -33.041944,
-    "lng": -71.629722
+    "id": "mural-mon-laferte",
+    "nombre": "Mural 'Día Uno' (Mon Laferte)",
+    "ciudad": "Valparaíso",
+    "categoria": "Arte Urbano y Muralismo",
+    "añoConstruccion": 2021,
+    "descripcionHistorica": "Pintado en febrero de 2021 por la cantautora y artista visual viñamarina Mon Laferte en colaboración con la muralista Mono González. Ubicado en una casona de tres pisos en la intersección de las calles Capilla y Galos (Cerro Alegre), la obra representa el ciclo femenino, el nacimiento y la energía creadora.",
+    "datoCurioso": "Fue pintado en solo dos jornadas de trabajo sobre un muro de 12 metros de altura utilizando técnicas combinadas de esmalte al agua y spray.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/mural-mon-laferte.jpg",
+    "coordenadas": {
+      "lat": -33.041944,
+      "lng": -71.629722
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041944,-71.629722"
   },
-  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041944,-71.629722"
-},
-{
-  "id": "casino-municipal-vina",
-  "nombre": "Casino Municipal de Viña del Mar",
-  "ciudad": "Viña del Mar",
-  "categoria": "Patrimonio Arquitectónico y Entretenimiento",
-  "añoConstruccion": 1930,
-  "descripcionHistorica": "Inaugurado en diciembre de 1930 bajo la presidencia de Carlos Ibáñez del Campo y la alcaldía de Manuel Ossa. De monumental estilo neoclásico y art déco, diseñado por los arquitectos Alberto Risopatrón y Augusto Gómez Serrano, se ubica frente a la desembocadura del Estero Marga Marga rodeado de jardines costeros tradicionales.",
-  "precio": "Jardines y exterior: Gratis | Entrada a sala de juegos: Entrada general establecida por ley (~$4.500 CLP)",
-  "esGratis": false,
-  "horario": "Abierto 24/7 (Sala de juegos, restaurantes y espectáculos)",
-  "imagen": "img/casino-vina.jpg",
-  "sitioWeb": "https://www.enjoy.cl/#/vina-del-mar",
-  "requisitoIngreso": "Mayores de 18 años con cédula de identidad o pasaporte vigente (para ingresar a la sala de juegos)",
-  "coordenadas": {
-    "lat": -33.020556,
-    "lng": -71.560278
-  },
-  "googleMapsUrl": "https://maps.app.goo.gl/FYm7qY4VaakzHNqY8"
-}
+  {
+    "id": "casino-municipal-vina",
+    "nombre": "Casino Municipal de Viña del Mar",
+    "ciudad": "Viña del Mar",
+    "categoria": "Patrimonio Arquitectónico y Entretenimiento",
+    "añoConstruccion": 1930,
+    "descripcionHistorica": "Inaugurado en diciembre de 1930 bajo la presidencia de Carlos Ibáñez del Campo y la alcaldía de Manuel Ossa. De monumental estilo neoclásico y art déco, diseñado por los arquitectos Alberto Risopatrón y Augusto Gómez Serrano, se ubica frente a la desembocadura del Estero Marga Marga rodeado de jardines costeros tradicionales.",
+    "datoCurioso": "Su inauguración la noche de Año Nuevo de 1930 reunió a la alta sociedad sudamericana y consolidó a Viña del Mar como el principal balneario turístico de Chile.",
+    "precio": "Jardines y exterior: Gratis | Entrada a sala de juegos: Entrada general establecida por ley (~$4.500 CLP)",
+    "esGratis": false,
+    "horario": "Abierto 24/7 (Sala de juegos, restaurantes y espectáculos)",
+    "imagen": "img/casino-vina.jpg",
+    "sitioWeb": "https://www.enjoy.cl/#/vina-del-mar",
+    "requisitoIngreso": "Mayores de 18 años con cédula de identidad o pasaporte vigente (para ingresar a la sala de juegos)",
+    "coordenadas": {
+      "lat": -33.020556,
+      "lng": -71.560278
+    },
+    "googleMapsUrl": "https://maps.app.goo.gl/FYm7qY4VaakzHNqY8"
+  }
 ]

@@ -1,3 +1,33 @@
+/* Base premium */
+:root {
+  --premium-bg: #f8fafc;
+  --premium-card: rgba(255, 255, 255, 0.82);
+  --premium-border: rgba(148, 163, 184, 0.2);
+  --premium-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  --premium-accent: #0f172a;
+  --premium-sky: #0ea5e9;
+  --premium-rose: #f43f5e;
+  --premium-gold: #fbbf24;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.11), transparent 28%),
+    radial-gradient(circle at top right, rgba(244, 63, 94, 0.08), transparent 22%),
+    linear-gradient(180deg, #f8fafc 0%, #eef5ff 28%, #f8fafc 100%);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(244, 63, 94, 0.08), transparent 20%),
+    linear-gradient(180deg, #020817 0%, #0f172a 22%, #020817 100%);
+}
+
 /* Altura y capa del mapa Leaflet */
 #mapa {
   height: 420px;
@@ -5,11 +35,18 @@
 }
 
 #seccionMapa {
-  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,250,252,0.92));
+  box-shadow: var(--premium-shadow);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.dark #seccionMapa {
+  background: linear-gradient(180deg, rgba(15,23,42,0.9), rgba(15,23,42,0.95));
 }
 
 #seccionMapa:hover {
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
 }
 
 #contenedorMapa {
@@ -37,6 +74,23 @@
 #filtroCosto,
 #buscarInput {
   transition: all 0.2s ease;
+}
+
+#buscarInput,
+#filtroCiudad,
+#filtroCategoria,
+#filtroCosto,
+#btnFiltroFavoritos,
+#btnCercaDeMi {
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.03);
+}
+
+#buscarInput:focus,
+#filtroCiudad:focus,
+#filtroCategoria:focus,
+#filtroCosto:focus {
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12), 0 10px 22px rgba(14, 165, 233, 0.08);
+  border-color: rgba(14, 165, 233, 0.6);
 }
 
 #btnFiltroFavoritos.is-active {
@@ -265,11 +319,34 @@
 
 /* Transiciones suaves para las tarjetas */
 article {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
 }
 
 article:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+}
+
+#contenedorTarjetas > article {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.04);
+}
+
+#contenedorTarjetas > article:hover {
+  border-color: rgba(14, 165, 233, 0.25);
+  box-shadow: 0 20px 42px rgba(14, 165, 233, 0.08), 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+#tarjetaCiudadHistoria {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(239,246,255,0.7));
+  border: 1px solid rgba(14, 165, 233, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+}
+
+.dark #tarjetaCiudadHistoria {
+  background: linear-gradient(135deg, rgba(15,23,42,0.75), rgba(30,41,59,0.8));
+  border-color: rgba(96, 165, 250, 0.2);
 }
 
 /* Adaptación del Popup de Leaflet en Dark Mode */

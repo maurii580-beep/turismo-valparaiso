@@ -194,9 +194,8 @@ function actualizarTarjetaCiudad() {
     return;
   }
 
-  tarjetaCiudadHistoria.classList.remove('hidden');
-  tarjetaCiudadHistoria.classList.remove('city-card-animate');
-  void tarjetaCiudadHistoria.offsetWidth;
+  tarjetaCiudadHistoria.classList.remove('hidden', 'city-card-animate');
+  tarjetaCiudadHistoria.getBoundingClientRect();
 
   tarjetaCiudadHistoria.innerHTML = `
     <div class="city-card-animate flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
@@ -284,7 +283,7 @@ function filtrarDatos() {
         l.coordenadas.lat,
         l.coordenadas.lng
       );
-      return { ...l, distanciaKm: parseFloat(dist) };
+      return { ...l, distanciaKm: Number.parseFloat(dist) };
     }).sort((a, b) => a.distanciaKm - b.distanciaKm);
   }
 
@@ -296,10 +295,162 @@ function filtrarDatos() {
 // ==========================================
 // RENDERIZADO DINÁMICO (3 VISTAS)
 // ==========================================
+function crearBloqueCurioso(lugar) {
+  return lugar.datoCurioso ? `
+    <div class="mb-4 p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/70 dark:border-amber-900/50 flex items-start gap-2 text-xs">
+      <span class="text-amber-500 text-sm leading-none mt-0.5">💡</span>
+      <p class="text-amber-900 dark:text-amber-200 font-medium leading-snug">
+        <strong class="font-bold">¿Sabías que?</strong> ${lugar.datoCurioso}
+      </p>
+    </div>
+  ` : '';
+}
+
+function crearInfoAccesibilidad(lugar) {
+  const estacionamiento = lugar.estacionamiento || 'No disponible';
+  const accesoTexto = (() => {
+    const valor = String(lugar.accesoSillaRuedas ?? 'No').trim().toLowerCase();
+    if (['si', 'sí', 'yes', 'true', 'disponible', 'habilitado'].includes(valor)) return 'Sí';
+    if (['no', 'false', 'no disponible', 'no habilitado'].includes(valor)) return 'No';
+    return valor || 'No';
+  })();
+
+  return `
+    <div class="grid grid-cols-2 gap-2 pt-3 border-t border-slate-100 dark:border-slate-800">
+      <div class="flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+        <i data-lucide="car-front" class="w-3.5 h-3.5 text-sky-500"></i>
+        <span>Estac.: ${estacionamiento}</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+        <i data-lucide="accessibility" class="w-3.5 h-3.5 text-violet-500"></i>
+        <span>Silla: ${accesoTexto}</span>
+      </div>
+    </div>
+  `;
+}
+
+function crearEtiquetaDistancia(lugar) {
+  return lugar.distanciaKm !== undefined ? `
+    <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-sky-500 text-white shadow-sm">
+      <i data-lucide="map-pin" class="w-3 h-3"></i> ${lugar.distanciaKm} km
+    </span>` : '';
+}
+
+function crearTarjetaGrid(lugar, esFav, imgFallback, imgSrc) {
+  const distanciaTag = crearEtiquetaDistancia(lugar);
+  const bloqueCurioso = crearBloqueCurioso(lugar);
+
+  return `
+    <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+      <div class="relative h-48 w-full overflow-hidden cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">
+        <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+
+        <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" 
+                class="absolute top-3 right-3 p-2 rounded-full ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg shadow-rose-500/25' : 'bg-slate-900/40 hover:bg-slate-900/70'} backdrop-blur-sm transition-all duration-200 active:scale-90">
+          <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-white'}"></i>
+        </button>
+
+        <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5 items-center">
+          <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-900/70 text-white backdrop-blur-sm">${lugar.ciudad}</span>
+          ${distanciaTag}
+        </div>
+      </div>
+
+      <div class="p-5 flex-1 flex flex-col">
+        <div class="flex justify-between items-start gap-2 mb-1">
+          <h3 class="font-bold text-base text-slate-800 dark:text-slate-100 hover:text-sky-500 cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">${lugar.nombre}</h3>
+          <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 flex-shrink-0">${lugar.añoConstruccion}</span>
+        </div>
+        <p class="text-xs text-sky-600 dark:text-sky-400 font-medium mb-3">${lugar.categoria}</p>
+        <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 mb-4 flex-1">${lugar.descripcionHistorica}</p>
+
+        ${bloqueCurioso}
+
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1.5 mb-4">
+          <div class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
+            <span class="truncate">${lugar.horario}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="ticket" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
+            <span class="truncate font-medium">${lugar.precio}</span>
+          </div>
+        </div>
+
+        ${crearInfoAccesibilidad(lugar)}
+
+        <div class="grid grid-cols-2 gap-2 mt-auto">
+          <button onclick="abrirModalDetalle('${lugar.id}')" 
+                  class="px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1.5">
+            <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Detalles
+          </button>
+          <a href="${lugar.googleMapsUrl}" target="_blank" rel="noopener noreferrer" 
+             class="px-3 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1.5">
+            <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Llegar
+          </a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function crearTarjetaLista(lugar, esFav, imgFallback, imgSrc) {
+  const distanciaTag = crearEtiquetaDistancia(lugar);
+
+  return `
+    <article class="bg-white dark:bg-slate-900 p-3 sm:p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-sky-500 transition-all flex items-center gap-4">
+      <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-20 h-20 sm:w-28 sm:h-28 rounded-lg object-cover flex-shrink-0 cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">
+
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1 flex-wrap">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${lugar.ciudad}</span>
+          ${distanciaTag}
+          <span class="text-xs text-sky-600 dark:text-sky-400 font-medium truncate">${lugar.categoria}</span>
+        </div>
+        <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white truncate cursor-pointer hover:text-sky-500" onclick="abrirModalDetalle('${lugar.id}')">${lugar.nombre}</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">${lugar.horario} • <strong class="text-slate-700 dark:text-slate-300">${lugar.precio}</strong></p>
+      </div>
+
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <button onclick="toggleFavorito('${lugar.id}')" class="p-2 rounded-lg ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-md shadow-rose-500/20' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400'} transition-all duration-200">
+          <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-slate-400'}"></i>
+        </button>
+        <button onclick="abrirModalDetalle('${lugar.id}')" class="p-2 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 hover:bg-sky-100">
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </article>
+  `;
+}
+
+function crearTarjetaIconos(lugar, esFav, imgFallback, imgSrc) {
+  const distanciaTag = crearEtiquetaDistancia(lugar);
+
+  return `
+    <article class="group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all" onclick="abrirModalDetalle('${lugar.id}')">
+      <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+
+      <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" class="absolute top-3 right-3 p-2 rounded-full ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg shadow-rose-500/25' : 'bg-slate-900/60'} backdrop-blur-sm transition-all duration-200">
+        <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-white'}"></i>
+      </button>
+
+      <div class="absolute bottom-3 left-3 right-3 text-white">
+        <div class="flex items-center gap-1.5 mb-1">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md">${lugar.ciudad}</span>
+          ${distanciaTag}
+        </div>
+        <h3 class="font-bold text-sm leading-tight group-hover:text-sky-300 transition-colors">${lugar.nombre}</h3>
+        <p class="text-[11px] text-slate-300 font-light truncate mt-0.5">${lugar.categoria}</p>
+      </div>
+    </article>
+  `;
+}
+
 function renderizarTarjetas(lugares) {
   if (!contenedorTarjetas) return;
 
-  // Ajustar grid según el tipo de vista
   if (tipoVistaActual === 'grid') {
     contenedorTarjetas.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6";
   } else if (tipoVistaActual === 'lista') {
@@ -320,130 +471,18 @@ function renderizarTarjetas(lugares) {
 
   contenedorTarjetas.innerHTML = lugares.map(lugar => {
     const esFav = favoritos.includes(lugar.id);
-
-    // Generador de imagen de respaldo con el nombre del lugar si falla o no existe
     const imgFallback = `https://placehold.co/600x400/f8fafc/64748b?text=${encodeURIComponent(lugar.nombre)}`;
     const imgSrc = lugar.imagen || imgFallback;
 
-    const distanciaTag = lugar.distanciaKm !== undefined ? `
-      <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-sky-500 text-white shadow-sm">
-        <i data-lucide="map-pin" class="w-3 h-3"></i> ${lugar.distanciaKm} km
-      </span>` : '';
-
-    const bloqueCurioso = lugar.datoCurioso ? `
-      <div class="mb-4 p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/70 dark:border-amber-900/50 flex items-start gap-2 text-xs">
-        <span class="text-amber-500 text-sm leading-none mt-0.5">💡</span>
-        <p class="text-amber-900 dark:text-amber-200 font-medium leading-snug">
-          <strong class="font-bold">¿Sabías que?</strong> ${lugar.datoCurioso}
-        </p>
-      </div>
-    ` : '';
-
-    // VISTA 1: GRID CLÁSICA
-    if (tipoVistaActual === 'grid') {
-      return `
-        <article class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-          <div class="relative h-48 w-full overflow-hidden cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">
-            <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
-            
-            <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" 
-                    class="absolute top-3 right-3 p-2 rounded-full ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg shadow-rose-500/25' : 'bg-slate-900/40 hover:bg-slate-900/70'} backdrop-blur-sm transition-all duration-200 active:scale-90">
-              <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-white'}"></i>
-            </button>
-
-            <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5 items-center">
-              <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-900/70 text-white backdrop-blur-sm">${lugar.ciudad}</span>
-              ${distanciaTag}
-            </div>
-          </div>
-
-          <div class="p-5 flex-1 flex flex-col">
-            <div class="flex justify-between items-start gap-2 mb-1">
-              <h3 class="font-bold text-base text-slate-800 dark:text-slate-100 hover:text-sky-500 cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">${lugar.nombre}</h3>
-              <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 flex-shrink-0">${lugar.añoConstruccion}</span>
-            </div>
-            <p class="text-xs text-sky-600 dark:text-sky-400 font-medium mb-3">${lugar.categoria}</p>
-            <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 mb-4 flex-1">${lugar.descripcionHistorica}</p>
-
-            ${bloqueCurioso}
-
-            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1.5 mb-4">
-              <div class="flex items-center gap-2">
-                <i data-lucide="clock" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
-                <span class="truncate">${lugar.horario}</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="ticket" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
-                <span class="truncate font-medium">${lugar.precio}</span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2 mt-auto">
-              <button onclick="abrirModalDetalle('${lugar.id}')" 
-                      class="px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1.5">
-                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Detalles
-              </button>
-              <a href="${lugar.googleMapsUrl}" target="_blank" rel="noopener noreferrer" 
-                 class="px-3 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1.5">
-                <i data-lucide="navigation" class="w-3.5 h-3.5"></i> Llegar
-              </a>
-            </div>
-          </div>
-        </article>
-      `;
-    }
-
-    // VISTA 2: LISTA COMPACTA
     if (tipoVistaActual === 'lista') {
-      return `
-        <article class="bg-white dark:bg-slate-900 p-3 sm:p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-sky-500 transition-all flex items-center gap-4">
-          <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-20 h-20 sm:w-28 sm:h-28 rounded-lg object-cover flex-shrink-0 cursor-pointer" onclick="abrirModalDetalle('${lugar.id}')">
-          
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 mb-1 flex-wrap">
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${lugar.ciudad}</span>
-              ${distanciaTag}
-              <span class="text-xs text-sky-600 dark:text-sky-400 font-medium truncate">${lugar.categoria}</span>
-            </div>
-            <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white truncate cursor-pointer hover:text-sky-500" onclick="abrirModalDetalle('${lugar.id}')">${lugar.nombre}</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">${lugar.horario} • <strong class="text-slate-700 dark:text-slate-300">${lugar.precio}</strong></p>
-          </div>
-
-          <div class="flex items-center gap-2 flex-shrink-0">
-            <button onclick="toggleFavorito('${lugar.id}')" class="p-2 rounded-lg ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 text-white shadow-md shadow-rose-500/20' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400'} transition-all duration-200">
-              <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-slate-400'}"></i>
-            </button>
-            <button onclick="abrirModalDetalle('${lugar.id}')" class="p-2 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 hover:bg-sky-100">
-              <i data-lucide="chevron-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-      `;
+      return crearTarjetaLista(lugar, esFav, imgFallback, imgSrc);
     }
 
-    // VISTA 3: ÍCONOS / GALERÍA FOTOGRÁFICA
     if (tipoVistaActual === 'iconos') {
-      return `
-        <article class="group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all" onclick="abrirModalDetalle('${lugar.id}')">
-          <img src="${imgSrc}" onerror="this.onerror=null;this.src='${imgFallback}';" alt="${lugar.nombre}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
-          
-          <button onclick="event.stopPropagation(); toggleFavorito('${lugar.id}')" class="absolute top-3 right-3 p-2 rounded-full ${esFav ? 'bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg shadow-rose-500/25' : 'bg-slate-900/60'} backdrop-blur-sm transition-all duration-200">
-            <i data-lucide="heart" class="w-4 h-4 ${esFav ? 'text-white fill-white' : 'text-white'}"></i>
-          </button>
-
-          <div class="absolute bottom-3 left-3 right-3 text-white">
-            <div class="flex items-center gap-1.5 mb-1">
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md">${lugar.ciudad}</span>
-              ${distanciaTag}
-            </div>
-            <h3 class="font-bold text-sm leading-tight group-hover:text-sky-300 transition-colors">${lugar.nombre}</h3>
-            <p class="text-[11px] text-slate-300 font-light truncate mt-0.5">${lugar.categoria}</p>
-          </div>
-        </article>
-      `;
+      return crearTarjetaIconos(lugar, esFav, imgFallback, imgSrc);
     }
+
+    return crearTarjetaGrid(lugar, esFav, imgFallback, imgSrc);
   }).join('');
 
   lucide.createIcons();
@@ -464,6 +503,17 @@ function abrirModalDetalle(id) {
   document.getElementById('modalHorario').textContent = lugar.horario;
   document.getElementById('modalPrecio').textContent = lugar.precio;
   document.getElementById('modalLinkMaps').href = lugar.googleMapsUrl;
+
+  const modalEstacionamiento = document.getElementById('modalEstacionamiento');
+  const modalAccesoSilla = document.getElementById('modalAccesoSilla');
+  if (modalEstacionamiento) {
+    modalEstacionamiento.textContent = `Estacionamiento: ${lugar.estacionamiento || 'No disponible'}`;
+  }
+  if (modalAccesoSilla) {
+    const acceso = String(lugar.accesoSillaRuedas ?? 'No').trim().toLowerCase();
+    const accesoTexto = ['si', 'sí', 'yes', 'true', 'disponible', 'habilitado'].includes(acceso) ? 'Sí' : 'No';
+    modalAccesoSilla.textContent = `Acceso silla de ruedas: ${accesoTexto}`;
+  }
 
   const contReq = document.getElementById('modalRequisitoCont');
   const txtReq = document.getElementById('modalRequisito');
@@ -619,7 +669,7 @@ function actualizarIconoTema(esOscuro) {
   }
 
   if (!iconoTema) return;
-  iconoTema.setAttribute('data-lucide', esOscuro ? 'moon' : 'sun');
+  iconoTema.dataset.lucide = esOscuro ? 'moon' : 'sun';
   const textoModo = document.getElementById('textoModo');
   if (textoModo) {
     textoModo.textContent = esOscuro ? 'Oscuro' : 'Claro';
