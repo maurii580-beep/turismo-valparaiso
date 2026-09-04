@@ -491,6 +491,25 @@
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.642778"
   },
   {
+    "id": "caleta-playa-portales",
+    "nombre": "Caleta y Playa Portales",
+    "ciudad": "Valparaíso",
+    "categoria": "Caleta Pesquera y Balneario Costero",
+    "añoConstruccion": 1929,
+    "descripcionHistorica": "Histórico enclave pesquero y balneario ubicado en el límite costero entre Valparaíso y Viña del Mar, frente a la estación Portales de EFE. Es una de las caletas de pescadores artesanales más activas de la región, destacando por su venta de productos del mar recién desembarcados, restaurantes típicos y un paseo costero conectado con la ciclovía metropolitana.",
+    "datoCurioso": "Al mediodía, decenas de lobos marinos y bandadas de pelícanos suben hasta el borde de los muelles y las rampas de desembarque para alimentarse de los descartes que entregan los pescadores.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Caleta activa desde las 07:00 hrs | Playa y paseo peatonal: Acceso libre 24/7",
+    "imagen": "img/caleta-portales.jpg",
+    "infoAdicional": "Excelente punto para degustar empanadas de mariscos y pescados fritos. Cuenta con estación de Metro Valparaíso (Estación Portales) a pasos de la caleta.",
+    "coordenadas": {
+      "lat": -33.030556,
+      "lng": -71.597222
+    },
+    "googleMapsUrl": "https://maps.app.goo.gl/YkoEaijD4naadjj99"
+  },
+  {
     "id": "playa-san-mateo",
     "nombre": "Playa San Mateo",
     "ciudad": "Valparaíso",
