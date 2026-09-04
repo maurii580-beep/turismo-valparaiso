@@ -196,8 +196,7 @@ body {
 }
 
 .theme-toggle[aria-pressed="false"] .theme-icon-moon {
-  opacity: 0.35;
-  transform: scale(0.85) rotate(-12deg);
+  display: none;
 }
 
 .theme-toggle[aria-pressed="true"] {
@@ -219,8 +218,7 @@ body {
 }
 
 .theme-toggle[aria-pressed="true"] .theme-icon-sun {
-  opacity: 0.35;
-  transform: scale(0.85) rotate(12deg);
+  display: none;
 }
 
 .theme-toggle[aria-pressed="true"] .theme-icon-moon {

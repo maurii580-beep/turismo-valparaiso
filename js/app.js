@@ -8,6 +8,8 @@ let tipoVistaActual = 'grid'; // 'grid' | 'lista' | 'iconos'
 let ubicacionUsuario = null; // { lat, lng }
 let mapaLeaflet = null;
 let capaMarcadores = null;
+let cantidadTarjetasVisibles = 6;
+let resultadosFiltradosActuales = [];
 
 // ==========================================
 // REFERENCIAS DEL DOM
@@ -19,6 +21,7 @@ const filtroCategoria = document.getElementById('filtroCategoria');
 const filtroCosto = document.getElementById('filtroCosto');
 const btnFiltroFavoritos = document.getElementById('btnFiltroFavoritos');
 const contadorFavoritosBadge = document.getElementById('contadorFavoritosBadge');
+const resumenFiltros = document.getElementById('resumenFiltros');
 const tarjetaCiudadHistoria = document.getElementById('tarjetaCiudadHistoria');
 const btnCercaDeMi = document.getElementById('btnCercaDeMi');
 const textoCercaDeMi = document.getElementById('textoCercaDeMi');
@@ -141,38 +144,38 @@ const historiasCiudades = {
   'Viña del Mar': {
     titulo: 'Viña del Mar',
     icono: '🌊',
-    historia: 'Conocida como la Ciudad Jardín, Viña del Mar nació como balneario elegante a fines del siglo XIX y se consolidó con palacios, jardines y una fuerte identidad turística. Su costa, sus paseos y su arquitectura la convierten en un símbolo del litoral chileno.',
-    detalle: 'Un destino donde la mirada hacia el mar convive con la cultura, el arte y la historia de la vida elegante del Pacífico.'
+    fundacion: '1878',
+    nombreConocido: 'Ciudad Jardín'
   },
   'Valparaíso': {
     titulo: 'Valparaíso',
     icono: '🎨',
-    historia: 'Valparaíso fue clave en la historia comercial y cultural de Chile, creciendo como puerto cosmopolita con influencias europeas, inmigrantes y artistas. Sus cerros, callejones y ascensores le dieron una personalidad única y una identidad profundamente creativa.',
-    detalle: 'La ciudad puerto se convirtió en un referente de color, movimiento, arte urbano y memoria histórica.'
+    fundacion: '1536',
+    nombreConocido: 'Ciudad Puerto'
   },
   'Casablanca': {
     titulo: 'Casablanca',
     icono: '🍇',
-    historia: 'Casablanca se destaca por su tradición vinícola y su cercanía con el mar, combinando paisajes rurales con una fuerte presencia del vino de la zona. Su nombre evoca la historia agrícola y la belleza del valle central junto al océano.',
-    detalle: 'Un lugar de paisaje sereno, viñedos y una identidad ligada a la tierra y la viticultura.'
+    fundacion: '1753',
+    nombreConocido: 'Valle del Vino'
   },
   'Concón': {
     titulo: 'Concón',
     icono: '🏖️',
-    historia: 'Concón se reconoce por su costa arenosa, su paisaje de dunas y su vínculo con la vida costera de la región. Su historia está marcada por la relación entre el mar, la playa y la vida cotidiana de la zona central.',
-    detalle: 'Una ciudad de tranquilidad, horizonte abierto y encanto costero que invita a recorrer sus playas y caletas.'
+    fundacion: '1544',
+    nombreConocido: 'Capital Gastronómica'
   },
   'Quilpué': {
     titulo: 'Quilpué',
-    icono: '🌿',
-    historia: 'Quilpué nació como asentamiento agrícola y comercial en la zona central de la región, creciendo con la llegada de familias, servicios y un fuerte desarrollo urbano. Su historia refleja la transformación de un territorio rural hacia una ciudad dinámica.',
-    detalle: 'Una ciudad de raíces campesinas y crecimiento constante, con identidad vecina al litoral y al valle.'
+    icono: '☀️',
+    fundacion: '1891',
+    nombreConocido: 'Ciudad del Sol'
   },
   'Olmué': {
     titulo: 'Olmué',
     icono: '🌄',
-    historia: 'Olmué es un pueblo de tradición paisajista y cultural, reconocido por sus festividades, su cercanía a la naturaleza y su encanto de pueblo serrano. Su historia se liga a la vida rural, los viñedos y la tranquilidad del entorno.',
-    detalle: 'Un rincón de belleza natural y calma, donde la tradición y la naturaleza siguen marcando su identidad.'
+    fundacion: '1854',
+    nombreConocido: 'Capital Folclórica'
   }
 };
 
@@ -213,8 +216,10 @@ function actualizarTarjetaCiudad() {
         Región de Valparaíso
       </span>
     </div>
-    <p class="text-sm leading-6 text-slate-700 dark:text-slate-200 mt-3">${infoCiudad.historia}</p>
-    <p class="text-xs font-medium text-slate-500 dark:text-slate-300 mt-1">${infoCiudad.detalle}</p>
+    <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-600 dark:text-slate-300">
+      <span><strong class="font-bold text-slate-800 dark:text-slate-100">Fundada:</strong> ${infoCiudad.fundacion}</span>
+      <span><strong class="font-bold text-slate-800 dark:text-slate-100">Conocida como:</strong> ${infoCiudad.nombreConocido}</span>
+    </div>
   `;
 
   if (window.lucide) {
@@ -230,6 +235,9 @@ function filtrarDatos() {
   const ciudadSeleccionada = filtroCiudad?.value || 'todas';
   const categoriaSeleccionada = filtroCategoria?.value || 'todas';
   const costoSeleccionado = filtroCosto?.value || 'todos';
+  cantidadTarjetasVisibles = 6;
+
+  actualizarResumenFiltros(texto, ciudadSeleccionada, categoriaSeleccionada, costoSeleccionado);
 
   let resultados = datosTuristicos.filter(lugar => {
     const coincideTexto = lugar.nombre.toLowerCase().includes(texto) ||
@@ -287,9 +295,26 @@ function filtrarDatos() {
     }).sort((a, b) => a.distanciaKm - b.distanciaKm);
   }
 
-  renderizarTarjetas(resultados);
+  resultadosFiltradosActuales = resultados;
+  renderizarTarjetas(resultadosFiltradosActuales);
   actualizarMapa(resultados);
   actualizarTarjetaCiudad();
+}
+
+function actualizarResumenFiltros(texto, ciudad, categoria, costo) {
+  if (!resumenFiltros) return;
+
+  const preferencias = [];
+  if (texto.trim()) preferencias.push(`"${texto.trim()}"`);
+  if (ciudad !== 'todas') preferencias.push(ciudad);
+  if (categoria !== 'todas') preferencias.push(filtroCategoria.options[filtroCategoria.selectedIndex].textContent.trim());
+  if (costo !== 'todos') preferencias.push(costo === 'gratis' ? 'Solo gratis' : 'De pago');
+  if (soloFavoritosActivo) preferencias.push('Solo favoritos');
+  if (ubicacionUsuario) preferencias.push('Más cercanos');
+
+  resumenFiltros.textContent = preferencias.length
+    ? `Preferencias: ${preferencias.join(' · ')}`
+    : 'Sin filtros activos';
 }
 
 // ==========================================
@@ -316,15 +341,13 @@ function crearInfoAccesibilidad(lugar) {
   })();
 
   return `
-    <div class="grid grid-cols-2 gap-2 pt-3 border-t border-slate-100 dark:border-slate-800">
-      <div class="flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300">
-        <i data-lucide="car-front" class="w-3.5 h-3.5 text-sky-500"></i>
-        <span>Estac.: ${estacionamiento}</span>
-      </div>
-      <div class="flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300">
-        <i data-lucide="accessibility" class="w-3.5 h-3.5 text-violet-500"></i>
-        <span>Silla: ${accesoTexto}</span>
-      </div>
+    <div class="flex items-center gap-2 text-[11px] text-slate-600 dark:text-slate-300">
+      <i data-lucide="car-front" class="w-3.5 h-3.5 text-sky-500"></i>
+      <span class="truncate">Estac.: ${estacionamiento}</span>
+    </div>
+    <div class="flex items-center gap-2 text-[11px] text-slate-600 dark:text-slate-300">
+      <i data-lucide="accessibility" class="w-3.5 h-3.5 text-violet-500"></i>
+      <span>Silla: ${accesoTexto}</span>
     </div>
   `;
 }
@@ -367,7 +390,7 @@ function crearTarjetaGrid(lugar, esFav, imgFallback, imgSrc) {
 
         ${bloqueCurioso}
 
-        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1.5 mb-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl mb-4 text-xs text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/50">
           <div class="flex items-center gap-2">
             <i data-lucide="clock" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
             <span class="truncate">${lugar.horario}</span>
@@ -376,9 +399,8 @@ function crearTarjetaGrid(lugar, esFav, imgFallback, imgSrc) {
             <i data-lucide="ticket" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
             <span class="truncate font-medium">${lugar.precio}</span>
           </div>
+          ${crearInfoAccesibilidad(lugar)}
         </div>
-
-        ${crearInfoAccesibilidad(lugar)}
 
         <div class="grid grid-cols-2 gap-2 mt-auto">
           <button onclick="abrirModalDetalle('${lugar.id}')" 
@@ -451,6 +473,8 @@ function crearTarjetaIconos(lugar, esFav, imgFallback, imgSrc) {
 function renderizarTarjetas(lugares) {
   if (!contenedorTarjetas) return;
 
+  const tarjetasVisibles = lugares.slice(0, cantidadTarjetasVisibles);
+
   if (tipoVistaActual === 'grid') {
     contenedorTarjetas.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6";
   } else if (tipoVistaActual === 'lista') {
@@ -469,7 +493,7 @@ function renderizarTarjetas(lugares) {
     return;
   }
 
-  contenedorTarjetas.innerHTML = lugares.map(lugar => {
+  contenedorTarjetas.innerHTML = tarjetasVisibles.map(lugar => {
     const esFav = favoritos.includes(lugar.id);
     const imgFallback = `https://placehold.co/600x400/f8fafc/64748b?text=${encodeURIComponent(lugar.nombre)}`;
     const imgSrc = lugar.imagen || imgFallback;
@@ -485,7 +509,24 @@ function renderizarTarjetas(lugares) {
     return crearTarjetaGrid(lugar, esFav, imgFallback, imgSrc);
   }).join('');
 
+  if (lugares.length > cantidadTarjetasVisibles) {
+    contenedorTarjetas.insertAdjacentHTML('beforeend', `
+      <div class="col-span-full flex justify-center pt-2">
+        <button id="btnVerMas" type="button" onclick="mostrarMasTarjetas()"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-bold rounded-lg shadow-sm hover:bg-sky-50 dark:hover:bg-sky-950/50 transition-colors">
+          <i data-lucide="chevrons-down" class="w-4 h-4"></i>
+          Ver más
+        </button>
+      </div>
+    `);
+  }
+
   lucide.createIcons();
+}
+
+function mostrarMasTarjetas() {
+  cantidadTarjetasVisibles += 6;
+  renderizarTarjetas(resultadosFiltradosActuales);
 }
 
 // ==========================================
