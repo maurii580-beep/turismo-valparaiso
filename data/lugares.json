@@ -16,7 +16,9 @@
       "lat": -33.034659,
       "lng": -71.4836123
     },
-    "googleMapsUrl": "https://maps.app.goo.gl/nNpdWoEGJgSSA5St6"
+    "googleMapsUrl": "https://maps.app.goo.gl/nNpdWoEGJgSSA5St6",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "castillo-wulff",
@@ -35,7 +37,9 @@
       "lat": -33.021111,
       "lng": -71.565833
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.021111,-71.565833"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.021111,-71.565833",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "muelle-vergara",
@@ -53,7 +57,9 @@
       "lat": -33.007222,
       "lng": -71.554444
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.007222,-71.554444"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.007222,-71.554444",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "palacio-rioja",
@@ -72,7 +78,9 @@
       "lat": -33.018611,
       "lng": -71.5475
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.018611,-71.547500"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.018611,-71.547500",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "parque-quinta-vergara",
@@ -91,7 +99,9 @@
       "lat": -33.029444,
       "lng": -71.5525
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.552500"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.552500",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "palacio-carrasco",
@@ -109,7 +119,9 @@
       "lat": -33.019444,
       "lng": -71.551667
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.019444,-71.551667"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.019444,-71.551667",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "playa-renaca",
@@ -129,7 +141,9 @@
       "lat": -32.973056,
       "lng": -71.545833
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.973056,-71.545833"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.973056,-71.545833",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "playa-acapulco-el-sol",
@@ -148,7 +162,9 @@
       "lat": -33.013611,
       "lng": -71.556667
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.013611,-71.556667"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.013611,-71.556667",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "playa-caleta-abarca",
@@ -167,7 +183,9 @@
       "lat": -33.024167,
       "lng": -71.567222
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024167,-71.567222"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024167,-71.567222",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "playa-cochoa",
@@ -186,7 +204,9 @@
       "lat": -32.957778,
       "lng": -71.548889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.957778,-71.548889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.957778,-71.548889",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "jardin-botanico-nacional",
@@ -206,7 +226,9 @@
       "lat": -33.045278,
       "lng": -71.503056
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045278,-71.503056"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045278,-71.503056",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "museo-fonck",
@@ -227,7 +249,9 @@
       "lat": -33.020556,
       "lng": -71.549722
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.020556,-71.549722"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.020556,-71.549722",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "teatro-municipal-vina",
@@ -246,7 +270,9 @@
       "lat": -33.024167,
       "lng": -71.551944
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024167,-71.551944"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.024167,-71.551944",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "laguna-sausalito",
@@ -265,7 +291,9 @@
       "lat": -33.012778,
       "lng": -71.536389
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.012778,-71.536389"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.012778,-71.536389",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "estadio-sausalito",
@@ -284,7 +312,9 @@
       "lat": -33.014444,
       "lng": -71.535
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.014444,-71.535000"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.014444,-71.535000",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "palacio-presidencial-cerro-castillo",
@@ -305,7 +335,9 @@
       "lat": -33.0225,
       "lng": -71.565833
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.565833"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.565833",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "acantilados-federico-santa-maria",
@@ -324,7 +356,9 @@
       "lat": -33.028889,
       "lng": -71.654722
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.028889,-71.654722"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.028889,-71.654722",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "ascensor-baron",
@@ -342,7 +376,9 @@
       "lat": -33.0425,
       "lng": -71.603889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.603889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.603889",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "ascensor-concepcion",
@@ -360,7 +396,9 @@
       "lat": -33.041389,
       "lng": -71.627222
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041389,-71.627222"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041389,-71.627222",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "ascensor-cordillera",
@@ -378,7 +416,9 @@
       "lat": -33.037778,
       "lng": -71.631111
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.037778,-71.631111"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.037778,-71.631111",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "ascensor-el-peral",
@@ -396,7 +436,9 @@
       "lat": -33.040278,
       "lng": -71.629167
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.040278,-71.629167"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.040278,-71.629167",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "ascensor-reina-victoria",
@@ -414,7 +456,9 @@
       "lat": -33.0425,
       "lng": -71.625833
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.625833"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042500,-71.625833",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "ascensor-espiritu-santo",
@@ -432,7 +476,9 @@
       "lat": -33.046111,
       "lng": -71.622222
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.622222"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.622222",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "ascensor-san-agustin",
@@ -450,7 +496,9 @@
       "lat": -33.039722,
       "lng": -71.630278
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.039722,-71.630278"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.039722,-71.630278",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "la-sebastiana",
@@ -469,7 +517,9 @@
       "lat": -33.048056,
       "lng": -71.615278
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048056,-71.615278"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048056,-71.615278",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "playa-torpederas",
@@ -488,7 +538,9 @@
       "lat": -32.0225,
       "lng": -71.642778
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.642778"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.642778",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "caleta-playa-portales",
@@ -507,7 +559,9 @@
       "lat": -33.030556,
       "lng": -71.597222
     },
-    "googleMapsUrl": "https://maps.app.goo.gl/YkoEaijD4naadjj99"
+    "googleMapsUrl": "https://maps.app.goo.gl/YkoEaijD4naadjj99",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "playa-san-mateo",
@@ -525,7 +579,9 @@
       "lat": -33.029444,
       "lng": -71.63
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.630000"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.630000",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "plaza-sotomayor",
@@ -543,7 +599,9 @@
       "lat": -33.038889,
       "lng": -71.628889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.038889,-71.628889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.038889,-71.628889",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "museo-del-inmigrante-valparaiso",
@@ -563,7 +621,9 @@
       "lat": -33.041667,
       "lng": -71.628889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628889",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "paseo-yugoslavo-baburizza",
@@ -582,7 +642,9 @@
       "lat": -33.041667,
       "lng": -71.628611
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628611"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.628611",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "paseo-21-de-mayo",
@@ -600,7 +662,9 @@
       "lat": -33.032222,
       "lng": -71.631944
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.032222,-71.631944"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.032222,-71.631944",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "paseo-gervasoni",
@@ -618,7 +682,9 @@
       "lat": -33.042222,
       "lng": -71.627778
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042222,-71.627778"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042222,-71.627778",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "paseo-atkinson",
@@ -636,7 +702,9 @@
       "lat": -33.042778,
       "lng": -71.626944
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.626944"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.626944",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "parque-cultural-valparaiso",
@@ -655,7 +723,9 @@
       "lat": -33.044722,
       "lng": -71.618889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.618889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.618889",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "museo-maritimo-nacional",
@@ -674,7 +744,9 @@
       "lat": -33.031944,
       "lng": -71.632222
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.031944,-71.632222"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.031944,-71.632222",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "escalera-piano-beethoven",
@@ -692,7 +764,9 @@
       "lat": -33.041667,
       "lng": -71.626944
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.626944"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.626944",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "puerta-roja-pasaje-galvez",
@@ -710,7 +784,9 @@
       "lat": -33.043333,
       "lng": -71.626111
     },
-    "googleMapsUrl": "https://maps.app.goo.gl/wsj1J7MAENHp5ujK8"
+    "googleMapsUrl": "https://maps.app.goo.gl/wsj1J7MAENHp5ujK8",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "escalera-de-colores-galvez",
@@ -728,7 +804,9 @@
       "lat": -33.043611,
       "lng": -71.626389
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043611,-71.626389"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043611,-71.626389",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "escalera-el-luche",
@@ -746,7 +824,9 @@
       "lat": -33.045,
       "lng": -71.627778
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045000,-71.627778"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045000,-71.627778",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "arco-britanico",
@@ -764,7 +844,9 @@
       "lat": -33.044167,
       "lng": -71.621944
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044167,-71.621944"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044167,-71.621944",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "congreso-nacional",
@@ -783,7 +865,9 @@
       "lat": -33.047778,
       "lng": -71.605278
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.047778,-71.605278"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.047778,-71.605278",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "molo-de-abrigo-valparaiso",
@@ -803,7 +887,9 @@
       "lat": -33.028611,
       "lng": -71.628889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.028611,-71.628889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.028611,-71.628889",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "escalera-templeman",
@@ -821,7 +907,9 @@
       "lat": -33.043889,
       "lng": -71.626667
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043889,-71.626667"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043889,-71.626667",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "escalera-fischer-latinoamerica",
@@ -839,7 +927,9 @@
       "lat": -33.043056,
       "lng": -71.626389
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043056,-71.626389"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043056,-71.626389",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "mural-la-mamie",
@@ -857,7 +947,9 @@
       "lat": -33.044444,
       "lng": -71.625556
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044444,-71.625556"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044444,-71.625556",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "museo-cielo-abierto-bellavista",
@@ -875,7 +967,9 @@
       "lat": -33.0475,
       "lng": -71.618611
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.047500,-71.618611"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.047500,-71.618611",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "mirador-camogli",
@@ -893,7 +987,9 @@
       "lat": -33.051944,
       "lng": -71.621389
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.051944,-71.621389"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.051944,-71.621389",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "escalera-apolo",
@@ -911,7 +1007,9 @@
       "lat": -33.042778,
       "lng": -71.625556
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.625556"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.625556",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "campo-dunar-concon",
@@ -929,7 +1027,9 @@
       "lat": -32.939722,
       "lng": -71.548611
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.939722,-71.548611"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.939722,-71.548611",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "playa-la-boca-concon",
@@ -948,7 +1048,9 @@
       "lat": -32.922222,
       "lng": -71.513333
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.922222,-71.513333"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.922222,-71.513333",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "playa-los-lilenes",
@@ -966,7 +1068,9 @@
       "lat": -32.943889,
       "lng": -71.551667
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.943889,-71.551667"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.943889,-71.551667",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "roquerios-playa-amarilla-concon",
@@ -984,7 +1088,9 @@
       "lat": -32.923889,
       "lng": -71.519444
     },
-    "googleMapsUrl": "https://maps.app.goo.gl/P4Cf74jpAkJkPjah8"
+    "googleMapsUrl": "https://maps.app.goo.gl/P4Cf74jpAkJkPjah8",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "parque-ecologico-la-isla-concon",
@@ -1002,7 +1108,9 @@
       "lat": -32.919444,
       "lng": -71.508889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.919444,-71.508889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.919444,-71.508889",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "playa-amarilla-concon",
@@ -1020,7 +1128,9 @@
       "lat": -32.933333,
       "lng": -71.536111
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.933333,-71.536111"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.933333,-71.536111",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "roca-oceanica-concon",
@@ -1038,7 +1148,9 @@
       "lat": -32.951111,
       "lng": -71.554722
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.951111,-71.554722"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.951111,-71.554722",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "parque-zoologico-quilpue",
@@ -1057,7 +1169,9 @@
       "lat": -33.054444,
       "lng": -71.428333
     },
-    "googleMapsUrl": "https://maps.app.goo.gl/WwtoKJQM8jLSZBw57"
+    "googleMapsUrl": "https://maps.app.goo.gl/WwtoKJQM8jLSZBw57",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "plaza-viejas-glorias-quilpue",
@@ -1075,7 +1189,9 @@
       "lat": -33.046111,
       "lng": -71.443056
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.443056"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.443056",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "casona-cultural-quilpue",
@@ -1094,7 +1210,9 @@
       "lat": -33.044722,
       "lng": -71.441944
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.441944"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044722,-71.441944",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "tranque-recreo-los-pinos",
@@ -1112,7 +1230,9 @@
       "lat": -33.061944,
       "lng": -71.431111
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.061944,-71.431111"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.061944,-71.431111",
+    "estacionamiento": "No disponible",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "teatro-municipal-quilpue",
@@ -1131,7 +1251,9 @@
       "lat": -33.045556,
       "lng": -71.444444
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045556,-71.444444"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045556,-71.444444",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "plaza-armas-santa-barbara-casablanca",
@@ -1149,7 +1271,9 @@
       "lat": -33.318889,
       "lng": -71.408889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.318889,-71.408889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.318889,-71.408889",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "santuario-de-lo-vasquez",
@@ -1168,7 +1292,9 @@
       "lat": -33.2625,
       "lng": -71.429444
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.262500,-71.429444"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.262500,-71.429444",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "valle-casablanca-bodegas",
@@ -1187,7 +1313,9 @@
       "lat": -33.3275,
       "lng": -71.378889
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.327500,-71.378889"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.327500,-71.378889",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "tranques-la-vinilla-casablanca",
@@ -1205,7 +1333,9 @@
       "lat": -33.3425,
       "lng": -71.442778
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.342500,-71.442778"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.342500,-71.442778",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "museo-antropologico-casablanca",
@@ -1223,7 +1353,9 @@
       "lat": -33.319722,
       "lng": -71.4075
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.319722,-71.407500"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.319722,-71.407500",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "parque-nacional-la-campana-olmue",
@@ -1242,7 +1374,9 @@
       "lat": -32.983333,
       "lng": -71.133333
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.983333,-71.133333"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.983333,-71.133333",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "el-patagual-olmue",
@@ -1261,7 +1395,9 @@
       "lat": -33.003611,
       "lng": -71.188056
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.003611,-71.188056"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.003611,-71.188056",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "plaza-manuel-montt-olmue",
@@ -1279,7 +1415,9 @@
       "lat": -32.998889,
       "lng": -71.186667
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.998889,-71.186667"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.998889,-71.186667",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "ruta-pasteleria-la-vega-olmue",
@@ -1297,7 +1435,9 @@
       "lat": -33.001667,
       "lng": -71.196944
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.001667,-71.196944"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.001667,-71.196944",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "cuesta-la-dormida-olmue",
@@ -1315,7 +1455,9 @@
       "lat": -33.048333,
       "lng": -71.076667
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048333,-71.076667"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.048333,-71.076667",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "Sí"
   },
   {
     "id": "mural-mon-laferte",
@@ -1333,7 +1475,9 @@
       "lat": -33.041944,
       "lng": -71.629722
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041944,-71.629722"
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041944,-71.629722",
+    "estacionamiento": "Gratis en zona cercana",
+    "accesoSillaRuedas": "No"
   },
   {
     "id": "casino-municipal-vina",
@@ -1353,6 +1497,8 @@
       "lat": -33.020556,
       "lng": -71.560278
     },
-    "googleMapsUrl": "https://maps.app.goo.gl/FYm7qY4VaakzHNqY8"
+    "googleMapsUrl": "https://maps.app.goo.gl/FYm7qY4VaakzHNqY8",
+    "estacionamiento": "Pago en estacionamiento cercano",
+    "accesoSillaRuedas": "Sí"
   }
 ]

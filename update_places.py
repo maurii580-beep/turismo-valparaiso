@@ -32,8 +32,8 @@ for obj in arr:
         estacionamiento = "Pago en estacionamiento cercano"
         acceso = "Sí"
 
-    obj["estacionamiento"] = estacionamiento
-    obj["accesoSillaRuedas"] = acceso
+    obj.setdefault("estacionamiento", estacionamiento)
+    obj.setdefault("accesoSillaRuedas", acceso)
 
 p.write_text(json.dumps(arr, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"count={len(arr)}")

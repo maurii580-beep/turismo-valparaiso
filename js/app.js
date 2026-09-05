@@ -33,6 +33,16 @@ const btnToggleMapa = document.getElementById('btnToggleMapa');
 const contenedorMapa = document.getElementById('contenedorMapa');
 let mapaAbierto = false;
 
+const lugaresInstagrameables = [
+  'reloj-de-flores',
+  'castillo-wulff',
+  'paseo-gervasoni',
+  'escalera-de-colores-galvez',
+  'puerta-roja-pasaje-galvez',
+  'la-sebastiana',
+  'campo-dunar-concon'
+];
+
 // ==========================================
 // 1. MODO OSCURO / CLARO
 // ==========================================
@@ -270,6 +280,8 @@ function filtrarDatos() {
                           lugar.categoria.toLowerCase().includes('mirador') ||
                           lugar.categoria.toLowerCase().includes('paseo') ||
                           lugar.categoria.toLowerCase().includes('escalera');
+    } else if (categoriaSeleccionada === 'instagrameable') {
+      coincideCategoria = lugaresInstagrameables.includes(lugar.id);
     }
 
     let coincideCosto = true;
@@ -1033,3 +1045,4 @@ function setVista(tipo) {
 
   filtrarDatos();
 }
+
