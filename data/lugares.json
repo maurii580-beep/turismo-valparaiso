@@ -564,6 +564,26 @@
     "accesoSillaRuedas": "Sí"
   },
   {
+    "id": "fuente-neptuno-valparaiso",
+    "nombre": "Monumento y Fuente de Neptuno",
+    "ciudad": "Valparaíso",
+    "categoria": "Monumento Escultórico y Patrimonio Urbano",
+    "añoConstruccion": 1856,
+    "descripcionHistorica": "Histórica escultura de hierro fundido de origen francés emplazada en la Plaza Aníbal Pinto (antigua Plaza del Orden). Representa a Neptuno, dios mitológico romano de los mares, armado con su tridente y emergiendo sobre caballos marinos y nereidas. Es uno de los monumentos ornamentales más icónicos del plano central y punto de encuentro clave hacia las subidas Cumming y Ecuador.",
+    "datoCurioso": "Fue importada directamente desde Francia a mediados del siglo XIX no solo como elemento decorativo, sino como uno de los primeros pilones de agua pública potable para vecinos y carruajes del centro porteño.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/fuente-neptuno.jpg",
+    "coordenadas": {
+      "lat": -33.043611,
+      "lng": -71.624722
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043611,-71.624722",
+    "estacionamiento": "Pago en estacionamientos subterráneos de Plaza Bellavista o parquímetros en calle",
+    "accesoSillaRuedas": "Sí (a nivel de calle en Plaza Aníbal Pinto)"
+  },
+  {
     "id": "playa-san-mateo",
     "nombre": "Playa San Mateo",
     "ciudad": "Valparaíso",
