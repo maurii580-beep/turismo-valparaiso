@@ -341,11 +341,11 @@ function crearInfoAccesibilidad(lugar) {
   })();
 
   return `
-    <div class="flex items-center gap-2 text-[11px] text-slate-600 dark:text-slate-300">
+    <div class="order-2 flex items-center gap-2 text-[11px] text-slate-600 dark:text-slate-300">
       <i data-lucide="car-front" class="w-3.5 h-3.5 text-sky-500"></i>
       <span class="truncate">Estac.: ${estacionamiento}</span>
     </div>
-    <div class="flex items-center gap-2 text-[11px] text-slate-600 dark:text-slate-300">
+    <div class="order-4 flex items-center gap-2 text-[11px] text-slate-600 dark:text-slate-300">
       <i data-lucide="accessibility" class="w-3.5 h-3.5 text-violet-500"></i>
       <span>Silla: ${accesoTexto}</span>
     </div>
@@ -390,12 +390,12 @@ function crearTarjetaGrid(lugar, esFav, imgFallback, imgSrc) {
 
         ${bloqueCurioso}
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl mb-4 text-xs text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/50">
-          <div class="flex items-center gap-2">
+        <div class="grid grid-cols-2 gap-2 p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl mb-4 text-xs text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/50">
+          <div class="order-1 flex items-center gap-2">
             <i data-lucide="clock" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
             <span class="truncate">${lugar.horario}</span>
           </div>
-          <div class="flex items-center gap-2">
+          <div class="order-3 flex items-center gap-2">
             <i data-lucide="ticket" class="w-3.5 h-3.5 flex-shrink-0 text-slate-400"></i>
             <span class="truncate font-medium">${lugar.precio}</span>
           </div>
