@@ -207,7 +207,6 @@ function actualizarTarjetaCiudad() {
           ${infoCiudad.icono}
         </div>
         <div>
-          <p class="text-[10px] uppercase tracking-[0.18em] text-rose-600 dark:text-rose-400 font-bold">Ciudad destacada</p>
           <h3 class="text-xl font-black text-slate-900 dark:text-slate-100">${infoCiudad.titulo}</h3>
         </div>
       </div>
