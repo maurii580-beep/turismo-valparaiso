@@ -748,6 +748,26 @@
     "accesoSillaRuedas": "Sí"
   },
   {
+    "id": "placa-limite-mar-sotomayor",
+    "nombre": "Placa Histórica Línea de Mar (1692)",
+    "ciudad": "Valparaíso",
+    "categoria": "Hito Histórico y Patrimonio Arqueológico",
+    "añoConstruccion": 1999,
+    "descripcionHistorica": "Incrustada directamente en el pavimento de la Plaza Sotomayor, frente al edificio de la Armada de Chile. Señala con precisión la línea costera original que alcanzaban las olas en el año 1600, evidenciando cómo la ciudad fue ganando terreno al mar mediante sucesivos rellenos y malecones artificiales a lo largo de los siglos XIX y XX.",
+    "datoCurioso": "Bajo las baldosas donde está incrustada la placa se descubrieron en 1999 los restos del antiguo Muelle Fiscal de madera de 1835 y parte de una fragata hundida.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7",
+    "imagen": "img/placa-limite-mar.jpg",
+    "coordenadas": {
+      "lat": -33.039042,
+      "lng": -71.629106
+    },
+    "googleMapsUrl": "https://maps.app.goo.gl/ueK52CLScVNK4VJy5",
+    "estacionamiento": "Pago en estacionamiento subterráneo bajo la Plaza Sotomayor",
+    "accesoSillaRuedas": "Sí"
+  },
+  {
     "id": "museo-maritimo-nacional",
     "nombre": "Museo Marítimo Nacional",
     "ciudad": "Valparaíso",
