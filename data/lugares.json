@@ -42,6 +42,26 @@
     "accesoSillaRuedas": "Sí"
   },
   {
+    "id": "iglesia-carmelitas-vina",
+    "nombre": "Iglesia de las Carmelitas (Parroquia Virgen del Carmen)",
+    "ciudad": "Viña del Mar",
+    "categoria": "Patrimonio Religioso y Arquitectónico",
+    "añoConstruccion": 1931,
+    "descripcionHistorica": "Emblemático templo de estilo neogótico ubicado en la intersección de Avenida Libertad con 4 Norte. Administrada por la Orden de los Carmelitas Descalzos, la iglesia destaca por sus altas agujas, arcos ojivales y detallados vitrales, siendo uno de los hitos arquitectónicos y religiosos más tradicionales de la Ciudad Jardín.",
+    "datoCurioso": "Sus impresionantes vitrales policromados y su esbelta torre campanario fueron diseñados e importados siguiendo fielmente los patrones de las clásicas catedrales góticas europeas de la Edad Media.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Lunes a Domingo de 09:00 a 13:00 y de 16:00 a 20:00 hrs (Horarios de misa)",
+    "imagen": "img/iglesia-carmelitas.jpg",
+    "coordenadas": {
+      "lat": -33.018611,
+      "lng": -71.551389
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.018611,-71.551389",
+    "estacionamiento": "Pago con parquímetro en Av. Libertad y calles laterales (4 Norte)",
+    "accesoSillaRuedas": "Sí (cuenta con rampas laterales o acceso a nivel para ingresar a la nave principal)"
+  },
+  {
     "id": "muelle-vergara",
     "nombre": "Muelle Vergara",
     "ciudad": "Viña del Mar",
@@ -520,6 +540,27 @@
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045953,-71.620025",
     "estacionamiento": "Pago en parquímetros (calle Edwards / Av. Brasil) o estacionamiento subterráneo Plaza Victoria",
     "accesoSillaRuedas": "Sí (cuenta con rampa de acceso exterior y ascensor habilitado para los pisos superiores)"
+  },
+  {
+    "id": "edificio-el-mercurio-valparaiso",
+    "nombre": "Edificio El Mercurio de Valparaíso",
+    "ciudad": "Valparaíso",
+    "categoria": "Patrimonio Arquitectónico e Histórico",
+    "añoConstruccion": 1901,
+    "descripcionHistorica": "Majestuoso edificio de estilo historicista con influencias Beaux Arts, construido especialmente para albergar la redacción e imprenta del diario El Mercurio. Ubicado en la céntrica calle Esmeralda, es uno de los inmuebles más representativos de la época de esplendor comercial porteña.",
+    "datoCurioso": "Fundado en 1827 por Pedro Félix Vicuña, Ignacio Silva y Thomas G. Wells, El Mercurio de Valparaíso es el periódico de publicación ininterrumpida más antiguo de Chile y de todo el mundo hispanohablante.",
+    "precio": "Gratis (vista exterior)",
+    "esGratis": true,
+    "horario": "Acceso libre 24/7 (fachada exterior)",
+    "imagen": "img/el-mercurio.jpg",
+    "sitioWeb": "https://www.mercuriovalpo.cl",
+    "coordenadas": {
+      "lat": -33.041389,
+      "lng": -71.625556
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041389,-71.625556",
+    "estacionamiento": "No disponible en el frontis (se recomienda estacionamiento subterráneo en Plaza Bellavista o Plaza Sotomayor)",
+    "accesoSillaRuedas": "Sí (veredas a nivel de calle en calle Esmeralda para observación exterior)"
   },
   {
     "id": "la-sebastiana",
