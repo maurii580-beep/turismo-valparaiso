@@ -13,11 +13,11 @@
     "imagen": "img/reloj-flores.jpg",
     "sitioWeb": "https://visitavina.cl",
     "coordenadas": {
-      "lat": -33.034659,
-      "lng": -71.4836123
+      "lat": -33.024722,
+      "lng": -71.568889
     },
-    "googleMapsUrl": "https://maps.app.goo.gl/nNpdWoEGJgSSA5St6",
-    "estacionamiento": "Pago en estacionamiento cercano",
+    "googleMapsUrl": "https://maps.app.goo.gl/5SvSuoBRxuaDNHa46",
+    "estacionamiento": "Pago en estacionamiento cercano (Caleta Abarca)",
     "accesoSillaRuedas": "Sí"
   },
   {
@@ -57,7 +57,7 @@
       "lat": -33.007222,
       "lng": -71.554444
     },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.007222,-71.554444",
+    "googleMapsUrl": "https://maps.app.goo.gl/gEDtaoxQ9wbqFJS9A",
     "estacionamiento": "Pago en estacionamiento cercano",
     "accesoSillaRuedas": "Sí"
   },
@@ -535,11 +535,11 @@
     "imagen": "img/playa-torpederas.jpg",
     "infoAdicional": "Conecta con el paseo peatonal costero hacia el Mirador del Faro Punta Ángeles y la Universidad de Playa Ancha.",
     "coordenadas": {
-      "lat": -32.0225,
+      "lat": -33.022500,
       "lng": -71.642778
     },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.022500,-71.642778",
-    "estacionamiento": "Gratis en zona cercana",
+    "estacionamiento": "Gratis en explanada lateral de Playa Ancha",
     "accesoSillaRuedas": "Sí"
   },
   {
@@ -1068,8 +1068,8 @@
       "lng": -71.548611
     },
     "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-32.939722,-71.548611",
-    "estacionamiento": "Gratis en zona cercana",
-    "accesoSillaRuedas": "Sí"
+    "estacionamiento": "Gratis en calles residenciales aledañas (Av. Cornisa)",
+    "accesoSillaRuedas": "Parcial (mirador accesible desde calle Cornisa; ascenso a la arena no adaptado)"
   },
   {
     "id": "playa-la-boca-concon",

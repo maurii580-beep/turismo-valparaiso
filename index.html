@@ -2,7 +2,8 @@
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#020617">
   <title>Ruta Patrimonial: Región de Valparaíso</title>
   
   <!-- Tailwind CSS CDN -->
@@ -25,349 +26,263 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased min-h-screen flex flex-col transition-colors duration-200">
 
-  <!-- Barra Superior Comunitaria -->
-  <div class="bg-slate-950 text-slate-300 text-xs border-b border-slate-800 py-2 px-4">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+  <!-- Barra Superior Comunitaria Móvil -->
+  <aside class="bg-slate-950 text-slate-300 text-xs border-b border-slate-800 py-1.5 px-3">
+    <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
       
-      <!-- Acciones Rápidas -->
-      <div class="flex items-center gap-3">
-        <!-- Botón Modo Oscuro / Claro -->
+      <!-- Lado Izquierdo: Tema y Compartir -->
+      <div class="flex items-center gap-2">
         <button id="btnModoOscuro" 
-                class="theme-toggle inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-2 py-1.5 text-slate-300 shadow-sm transition-all duration-300 hover:border-sky-400/60 hover:text-amber-300 focus:outline-none focus:ring-2 focus:ring-sky-500/50"
-                aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
-          <span class="theme-toggle-track relative inline-flex h-5 w-9 items-center rounded-full bg-slate-700 p-0.5 transition-colors duration-300">
-            <span class="theme-toggle-thumb absolute left-0.5 h-4 w-4 rounded-full bg-slate-100 shadow-md transition-transform duration-300 ease-out"></span>
-          </span>
-          <span class="theme-icons relative flex items-center justify-center h-4 w-7">
-            <i data-lucide="sun" class="theme-icon theme-icon-sun absolute w-3.5 h-3.5 text-amber-400 transition-all duration-300"></i>
-            <i id="iconoModo" data-lucide="moon" class="theme-icon theme-icon-moon absolute w-3.5 h-3.5 text-sky-300 transition-all duration-300"></i>
-          </span>
-          <span id="textoModo" class="text-[10px] font-semibold uppercase tracking-[0.12em]">Oscuro</span>
+                class="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-2.5 py-1 text-slate-300 shadow-sm hover:text-amber-300 transition-colors"
+                aria-label="Cambiar tema claro/oscuro">
+          <i id="iconoModo" data-lucide="moon" class="w-3.5 h-3.5 text-sky-300"></i>
+          <span id="textoModo" class="text-[10px] font-bold uppercase tracking-wider">Oscuro</span>
         </button>
 
-        <span class="text-slate-700">|</span>
+        <button id="btnCompartir" class="p-1.5 text-slate-400 hover:text-white transition-colors" title="Compartir aplicación">
+          <i data-lucide="share-2" class="w-4 h-4"></i>
+        </button>
+      </div>
 
-        <!-- Botón Sugerir Lugar (Abre Modal) -->
-        <button id="btnAbrirModalSugerencia" class="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors">
-          <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-amber-400"></i>
-          <span>Sugerir un lugar</span>
+      <!-- Lado Derecho: Sugerir e Invitación -->
+      <div class="flex items-center gap-2">
+        <button id="btnAbrirModalSugerencia" class="inline-flex items-center gap-1 text-xs text-slate-300 hover:text-white transition-colors py-1 px-2 rounded-lg hover:bg-slate-800">
+          <i data-lucide="plus-circle" class="w-3.5 h-3.5 text-sky-400"></i>
+          <span class="hidden sm:inline">Sugerir Lugar</span>
+          <span class="sm:hidden">Sugerir</span>
         </button>
 
-        <span class="text-slate-700">|</span>
-
-        <!-- Botón Compartir -->
-        <button id="btnCompartir" class="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors">
-          <i data-lucide="share-2" class="w-3.5 h-3.5 text-sky-400"></i>
-          <span>Compartir</span>
-        </button>
-
-        <span class="text-slate-700">|</span>
-
-        <!-- Invitar un café -->
         <a href="https://buymeacoffee.com/TU_USUARIO" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1 rounded-full shadow-sm transition-colors">
-          <i data-lucide="coffee" class="w-3.5 h-3.5"></i>
-          <span>Invítanos un café</span>
+           class="inline-flex items-center gap-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-2.5 py-1 rounded-full text-[11px] shadow-sm transition-colors">
+          <i data-lucide="coffee" class="w-3 h-3"></i>
+          <span class="hidden sm:inline">Invítanos un café</span>
         </a>
       </div>
 
     </div>
-  </div>
+  </aside>
 
   <!-- Encabezado -->
-  <header class="bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 text-white shadow-lg border-b border-slate-700/80">
-    <div class="max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div>
-        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
-          <img src="img/Logo.png" alt="Logo" class="w-8 h-8 object-contain">
-          Tour
-        </h1>
+  <header class="bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 text-white shadow-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 sm:px-6 flex justify-between items-center">
+      <div class="flex items-center gap-2.5">
+        <img src="img/Logo.png" onerror="this.style.display='none'" alt="Logo" class="w-7 h-7 object-contain">
+        <span class="text-lg sm:text-xl font-black tracking-tight text-white">Ruta Patrimonial</span>
       </div>
+      <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-sky-400 border border-slate-700">Región de Valparaíso</span>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 flex-1 w-full">
     
-    <!-- Mapa Interactivo -->
-    <section id="seccionMapa" class="mb-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-      <div class="p-4 bg-slate-100 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center gap-3">
-        <h2 class="font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-5 h-5 text-rose-500"></i>
-          Mapa de Ubicaciones
+    <!-- Mapa Interactivo (Colapsable) -->
+    <section id="seccionMapa" class="mb-5 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+      <div class="p-3 sm:p-4 bg-slate-100 dark:bg-slate-800/60 flex justify-between items-center gap-3">
+        <h2 class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-rose-500"></i>
+          Mapa Interactivo de Atractivos
         </h2>
         <button id="btnToggleMapa" type="button" aria-expanded="false"
-                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-slate-700 text-white text-xs font-semibold hover:bg-slate-700 dark:hover:bg-slate-600 transition-colors">
-          <i data-lucide="chevrons-down" class="w-4 h-4"></i>
-          <span>Mostrar mapa</span>
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900 dark:bg-slate-700 text-white text-xs font-semibold hover:bg-slate-700 transition-colors">
+          <i data-lucide="map" class="w-3.5 h-3.5"></i>
+          <span id="textoToggleMapa">Ver mapa</span>
         </button>
       </div>
       <div id="contenedorMapa" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
-        <div id="mapa" class="w-full h-[260px] sm:h-[340px] md:h-[420px]"></div>
+        <div id="mapa" class="w-full h-[260px] sm:h-[340px] md:h-[400px]"></div>
       </div>
     </section>
 
-    <!-- Barra de Filtros -->
-    <section class="bg-white dark:bg-slate-900 p-3 sm:p-5 rounded-2xl shadow-[0_10px_30px_rgba(15,23,42,0.05)] border border-slate-200 dark:border-slate-800 mb-8">
-      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-4 items-end mb-3">
-        
-        <div class="col-span-2 lg:col-span-1">
-          <label for="buscarInput" class="block text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Buscar</label>
-          <div class="relative">
-            <input type="text" id="buscarInput" placeholder="Ej. Castillo, Museo, playa..." 
-                   class="w-full pl-8 pr-2.5 py-1.5 sm:py-2 text-xs sm:text-sm bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
-            <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2"></i>
-          </div>
+    <!-- Barra de Filtros Compacta -->
+    <section class="bg-white dark:bg-slate-900 p-3 sm:p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 mb-6">
+      
+      <!-- Fila 1: Buscador y Favoritos -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-3">
+        <div class="sm:col-span-2 relative">
+          <input type="text" id="buscarInput" placeholder="Buscar por cerro, museo, ascensor, playa..." 
+                 class="w-full pl-8 pr-3 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5"></i>
         </div>
 
         <div>
-          <label for="filtroCiudad" class="block text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Ciudad</label>
-          <select id="filtroCiudad" class="w-full py-1.5 sm:py-2 px-2 sm:px-3 text-xs sm:text-sm bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
-            <option value="todas">Todas las ciudades</option>
-            <option value="Viña del Mar">Viña del Mar</option>
+          <button id="btnFiltroFavoritos" 
+                  class="w-full py-2 px-3 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl flex items-center justify-center gap-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+            <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
+            <span id="textoFiltroFavoritos">Favoritos</span>
+            <span id="contadorFavoritosBadge" class="bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Fila 2: Selectores de Filtrado -->
+      <div class="grid grid-cols-3 gap-2 mb-3 text-xs">
+        <div>
+          <label for="filtroCiudad" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Comuna</label>
+          <select id="filtroCiudad" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
+            <option value="todas">Todas</option>
             <option value="Valparaíso">Valparaíso</option>
-            <option value="Casablanca">Casablanca</option>
+            <option value="Viña del Mar">Viña del Mar</option>
             <option value="Concón">Concón</option>
             <option value="Quilpué">Quilpué</option>
+            <option value="Casablanca">Casablanca</option>
             <option value="Olmué">Olmué</option>
           </select>
         </div>
 
         <div>
-          <label for="filtroCategoria" class="block text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Categoría</label>
-          <select id="filtroCategoria" class="w-full py-1.5 sm:py-2 px-2 sm:px-3 text-xs sm:text-sm bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium">
-            <option value="todas">Todas las categorías</option>
-            <option value="ascensores" class="text-sky-600 dark:text-sky-400 font-bold">🚡 Ascensores</option>
-            <option value="patrimonio">🏛️ Patrimonio y museos</option>
-            <option value="naturaleza">🌿 Naturaleza y parques</option>
-            <option value="playa">🌊 Playas y balnearios</option>
-            <option value="urbano">🎨 Arte urbano y miradores</option>
-            <option value="instagrameable">📸 Instagrameable</option>
+          <label for="filtroCategoria" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Tipo</label>
+          <select id="filtroCategoria" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
+            <option value="todas">Todos</option>
+            <option value="ascensores">🚡 Ascensores</option>
+            <option value="patrimonio">🏛️ Patrimonio</option>
+            <option value="naturaleza">🌿 Parques</option>
+            <option value="playa">🌊 Playas</option>
+            <option value="urbano">🎨 Murales/Miradores</option>
           </select>
         </div>
 
         <div>
-          <label for="filtroCosto" class="block text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Ingreso</label>
-          <select id="filtroCosto" class="w-full py-1.5 sm:py-2 px-2 sm:px-3 text-xs sm:text-sm bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
-            <option value="todos">Todos los precios</option>
-            <option value="gratis">Solo Gratis</option>
-            <option value="pago">De Pago / Tarifa</option>
+          <label for="filtroCosto" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Acceso</label>
+          <select id="filtroCosto" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
+            <option value="todos">Todos</option>
+            <option value="gratis">Gratis</option>
+            <option value="pago">De Pago</option>
           </select>
         </div>
-
-        <div>
-          <button id="btnFiltroFavoritos" 
-                  class="w-full py-1.5 sm:py-2 px-2 sm:px-3 text-xs sm:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg flex items-center justify-center gap-1.5 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-            <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500"></i>
-            <span id="textoFiltroFavoritos" class="truncate">Favoritos</span>
-            <span id="contadorFavoritosBadge" class="bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full font-bold">0</span>
-          </button>
-        </div>
       </div>
 
-      <div class="flex items-center gap-2 min-h-6 mb-3 px-1 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
-        <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 flex-shrink-0 text-sky-500"></i>
-        <span id="resumenFiltros" class="truncate" aria-live="polite">Sin filtros activos</span>
-      </div>
+      <!-- Resumen y Contexto Histórico -->
+      <div id="tarjetaCiudadHistoria" class="hidden mb-3 rounded-xl border border-sky-200 dark:border-sky-900 bg-sky-50/50 dark:bg-sky-950/20 p-3 text-xs"></div>
 
-      <div id="tarjetaCiudadHistoria" class="hidden mb-4 rounded-2xl border border-white/40 bg-white/35 dark:bg-slate-900/45 backdrop-blur-xl shadow-[0_12px_30px_rgba(15,23,42,0.08)] p-4 ring-1 ring-slate-200/60 dark:ring-slate-700/60"></div>
-
-      <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
-        
+      <!-- Fila 3: Cerca de Mí y Selector de Vistas -->
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
         <button id="btnCercaDeMi" 
-                class="inline-flex items-center gap-2 px-3 py-1.5 bg-sky-50 dark:bg-sky-950/60 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold rounded-lg transition-all shadow-sm">
-          <i data-lucide="navigation-2" class="w-4 h-4 text-sky-500 animate-pulse"></i>
-          <span id="textoCercaDeMi">📍 Lugares Cerca de Mí</span>
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-sky-50 dark:bg-sky-950/60 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold rounded-xl transition-all shadow-sm">
+          <i data-lucide="navigation" class="w-3.5 h-3.5 text-sky-500"></i>
+          <span id="textoCercaDeMi">Cerca de Mí</span>
         </button>
 
-        <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700">
-          <button id="btnVistaGrid" class="px-2.5 py-1 text-xs font-medium rounded-md bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 shadow-sm transition-all flex items-center gap-1.5" title="Vista Tarjetas Clásicas">
+        <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+          <button id="btnVistaGrid" class="p-1.5 text-xs font-medium rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 shadow-sm" title="Tarjetas">
             <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
-            <span class="hidden sm:inline">Tarjetas</span>
           </button>
-          <button id="btnVistaLista" class="px-2.5 py-1 text-xs font-medium rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all flex items-center gap-1.5" title="Vista Lista Compacta">
+          <button id="btnVistaLista" class="p-1.5 text-xs font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900" title="Lista">
             <i data-lucide="list" class="w-3.5 h-3.5"></i>
-            <span class="hidden sm:inline">Lista</span>
           </button>
-          <button id="btnVistaIconos" class="px-2.5 py-1 text-xs font-medium rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all flex items-center gap-1.5" title="Vista Fotos Grandes">
+          <button id="btnVistaIconos" class="p-1.5 text-xs font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900" title="Galería">
             <i data-lucide="image" class="w-3.5 h-3.5"></i>
-            <span class="hidden sm:inline">Galería</span>
           </button>
         </div>
-
       </div>
+
     </section>
 
-    <div id="contenedorTarjetas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <!-- Contenedor Principal de Tarjetas -->
+    <div id="contenedorTarjetas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
   </main>
 
-  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-6 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors">
-    <p>Proyecto de Turismo y Patrimonio Regional &bull; Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué</p>
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-5 text-center text-xs text-slate-500 dark:text-slate-400">
+    <p>Ruta Patrimonial &bull; Valparaíso, Viña del Mar, Concón, Quilpué, Casablanca y Olmué</p>
   </footer>
 
-  <!-- Modal de Sugerencias (Envío Seguro a Correo vía Formspree) -->
-  <div id="modalSugerencia" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+  <!-- MODAL DE SUGERENCIAS (ÚNICO Y CONSOLIDADO) -->
+  <div id="modalSugerir" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 opacity-0 transition-opacity duration-200">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 transform scale-95 transition-transform duration-200" id="modalSugerirContenido">
       
-      <!-- Botón Cerrar -->
-      <button id="btnCerrarModalSugerencia" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0">
-          <i data-lucide="lightbulb" class="w-5 h-5"></i>
+      <div class="flex justify-between items-center mb-3">
+        <div class="flex items-center gap-2 text-sky-600 dark:text-sky-400">
+          <i data-lucide="plus-circle" class="w-5 h-5"></i>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white">Sugerir un Nuevo Lugar</h2>
         </div>
-        <div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">Sugerir un Lugar o Mejora</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Tus aportes nos ayudan a enriquecer la ruta regional</p>
-        </div>
+        <button id="btnCerrarModalSugerir" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg" aria-label="Cerrar modal">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
       </div>
 
-      <!-- Formulario Formspree -->
-      <form id="formSugerencia" action="https://formspree.io/f/mvkogjqa" method="POST" class="space-y-4">
+      <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+        ¿Conoces un atractivo histórico, mirador o hito que deba estar en la guía? Completa los datos:
+      </p>
+
+      <form id="formContactoModal" action="https://formspree.io/f/mvkogjqa" method="POST" class="space-y-3">
         <div>
-          <label for="sugNombreUsuario" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Tu Nombre o Alias (Opcional)</label>
-          <input type="text" id="sugNombreUsuario" name="nombre_usuario" placeholder="Ej. Juan Pérez" 
-                 class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          <label for="nombreContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Tu Nombre o Alias *</label>
+          <input type="text" id="nombreContactoModal" name="nombre" required placeholder="Ej. Andrea Gómez"
+                 class="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-sky-500">
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label for="emailContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Correo Electrónico *</label>
+          <input type="email" id="emailContactoModal" name="email" required placeholder="correo@ejemplo.com"
+                 class="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-sky-500">
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
           <div>
-            <label for="sugLugar" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Nombre del Lugar *</label>
-            <input type="text" id="sugLugar" name="lugar" required placeholder="Ej. Teatro Municipal" 
-                   class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+            <label for="motivoContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Tipo de Aporte</label>
+            <select id="motivoContactoModal" name="motivo"
+                    class="w-full px-2 py-2 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-sky-500">
+              <option value="Sugerencia de lugar" selected>Nuevo Atractivo</option>
+              <option value="Corrección de datos">Corregir Datos / Horario</option>
+              <option value="Comentario general">Comentario</option>
+            </select>
           </div>
           <div>
-            <label for="sugComuna" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Comuna / Ciudad *</label>
-            <select id="sugComuna" name="comuna" required 
-                    class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
-              <option value="Viña del Mar">Viña del Mar</option>
+            <label for="comunaSugeridaModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Comuna</label>
+            <select id="comunaSugeridaModal" name="comuna"
+                    class="w-full px-2 py-2 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-sky-500">
               <option value="Valparaíso">Valparaíso</option>
-              <option value="Casablanca">Casablanca</option>
+              <option value="Viña del Mar">Viña del Mar</option>
               <option value="Concón">Concón</option>
               <option value="Quilpué">Quilpué</option>
+              <option value="Casablanca">Casablanca</option>
               <option value="Olmué">Olmué</option>
-              <option value="Otra Comuna">Otra Comuna</option>
+              <option value="Otra">Otra</option>
             </select>
           </div>
         </div>
 
         <div>
-          <label for="sugDetalle" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Datos Históricos o Comentarios *</label>
-          <textarea id="sugDetalle" name="detalles" required rows="3" placeholder="¿En qué año se construyó? ¿Es gratis o de pago? ¿Por qué debería estar en el mapa?" 
-                    class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none"></textarea>
-        </div>
-
-        <div>
-          <label for="sugContacto" class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Opcional: deja tu contacto si quieres que te respondamos</label>
-          <input type="text" id="sugContacto" name="contacto" placeholder="Ej. +56 9 1234 5678 o correo@ejemplo.com"
-                 class="w-full text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        </div>
-
-        <!-- Estado de Envío -->
-        <div id="estadoEnvio" class="text-xs text-center hidden py-1"></div>
-
-        <button type="submit" id="btnEnviarSugerencia"
-                class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm rounded-lg shadow-md transition-colors disabled:opacity-50">
-          <i data-lucide="send" class="w-4 h-4"></i>
-          <span>Enviar sugerencia</span>
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- MODAL DE FORMULARIO: SUGERIR UN LUGAR / CONTACTO -->
-  <div id="modalSugerir" class="fixed inset-0 z-50 hidden bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 opacity-0 transition-opacity duration-200">
-    <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 p-6 transform scale-95 transition-transform duration-200" id="modalSugerirContenido">
-      
-      <div class="flex justify-between items-center mb-4">
-        <div class="flex items-center gap-2 text-sky-600 dark:text-sky-400">
-          <i data-lucide="plus-circle" class="w-5 h-5"></i>
-          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Sugerir un Nuevo Lugar</h2>
-        </div>
-        <button id="btnCerrarModalSugerir" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-lg transition-colors" aria-label="Cerrar modal de sugerencia">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">
-        ¿Conoces un atractivo patrimonial, mirador, parque o hito turístico que deba estar en la guía? Completa los datos y lo revisaremos.
-      </p>
-
-      <form id="formContactoModal" action="https://formspree.io/f/mvkogjqa" method="POST" class="space-y-4">
-        <div>
-          <label for="nombreContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Tu Nombre *</label>
-          <input type="text" id="nombreContactoModal" name="nombre" required placeholder="Ej. Andrea Gómez"
-                 class="w-full px-4 py-2 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
-        </div>
-
-        <div>
-          <label for="emailContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Correo Electrónico *</label>
-          <input type="email" id="emailContactoModal" name="email" required placeholder="ejemplo@correo.com"
-                 class="w-full px-4 py-2 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
-        </div>
-
-        <div>
-          <label for="preferenciaContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">
-            ¿Deseas recibir confirmación?
-          </label>
-          <select id="preferenciaContactoModal" name="preferencia_contacto"
-                  class="w-full px-4 py-2 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
-            <option value="Responder por correo">Sí, avisarme por correo cuando sea revisado</option>
-            <option value="Solo enviar sugerencia">No es necesario responder / Solo enviar sugerencia</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="motivoContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Tipo de Solicitud</label>
-          <select id="motivoContactoModal" name="motivo"
-                  class="w-full px-4 py-2 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
-            <option value="Sugerencia de lugar" selected>Sugerir un nuevo atractivo turístico</option>
-            <option value="Correccion de datos">Corrección de horario, tarifa o datos</option>
-            <option value="Pregunta general">Pregunta o comentario general</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="mensajeContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Detalle del Lugar o Mensaje *</label>
-          <textarea id="mensajeContactoModal" name="mensaje" rows="4" required placeholder="Indica nombre del lugar, comuna, por qué debería incluirse, o cualquier dato relevante..."
-                    class="w-full px-4 py-2 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+          <label for="mensajeContactoModal" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Detalle del Lugar o Historia *</label>
+          <textarea id="mensajeContactoModal" name="mensaje" rows="3" required placeholder="Nombre del atractivo, historia, dato curioso o corrección..."
+                    class="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-sky-500"></textarea>
         </div>
 
         <button type="submit" id="btnEnviarFormModal"
-                class="w-full py-2.5 px-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm rounded-xl transition-colors flex items-center justify-center gap-2 shadow-md">
+                class="w-full py-2.5 px-4 bg-sky-600 hover:bg-sky-700 text-white font-semibold text-xs sm:text-sm rounded-xl transition-colors flex items-center justify-center gap-2 shadow-md">
           <i data-lucide="send" class="w-4 h-4"></i>
           <span>Enviar Sugerencia</span>
         </button>
 
-        <div id="estadoEnvioFormModal" class="hidden text-center p-3 rounded-lg text-sm font-medium"></div>
+        <div id="estadoEnvioFormModal" class="hidden text-center p-2 rounded-lg text-xs font-medium"></div>
       </form>
     </div>
   </div>
 
+  <!-- MODAL DE DETALLES DEL LUGAR -->
   <div id="modalDetalle" class="fixed inset-0 z-50 hidden bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 opacity-0 transition-opacity duration-200">
     <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 transform scale-95 transition-transform duration-200" id="modalContenido">
       
-      <div class="relative h-64 sm:h-80 w-full overflow-hidden rounded-t-2xl">
+      <div class="relative h-60 sm:h-72 w-full overflow-hidden rounded-t-2xl">
         <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
-        <button id="btnCerrarModalDetalle" class="absolute top-4 right-4 bg-slate-900/70 hover:bg-slate-900 text-white p-2 rounded-full backdrop-blur-sm transition-colors shadow-lg">
+        <button id="btnCerrarModalDetalle" class="absolute top-3 right-3 bg-slate-900/70 hover:bg-slate-900 text-white p-2 rounded-full backdrop-blur-sm transition-colors shadow-lg">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
-        <div id="modalBadges" class="absolute bottom-4 left-4 flex flex-wrap gap-2"></div>
+        <div id="modalBadges" class="absolute bottom-3 left-3 flex flex-wrap gap-1.5"></div>
       </div>
 
-      <div class="p-6">
-        <div class="flex justify-between items-start gap-4 mb-2">
-          <h2 id="modalTitulo" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Detalle del lugar</h2>
+      <div class="p-5 sm:p-6">
+        <div class="flex justify-between items-start gap-3 mb-1">
+          <h2 id="modalTitulo" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">Detalle del lugar</h2>
           <span id="modalAño" class="text-xs font-semibold px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full flex-shrink-0"></span>
         </div>
         
-        <p id="modalCategoria" class="text-sm text-sky-600 dark:text-sky-400 font-medium mb-4"></p>
+        <p id="modalCategoria" class="text-xs sm:text-sm text-sky-600 dark:text-sky-400 font-medium mb-3"></p>
         
-        <p id="modalDescripcion" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6"></p>
+        <p id="modalDescripcion" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4"></p>
 
-        <div id="modalDatoCurioso" class="hidden mb-6 p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/70 dark:border-amber-900/50 flex items-start gap-2 text-xs">
+        <!-- Dato Curioso / Anecdótico -->
+        <div id="modalDatoCurioso" class="hidden mb-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/70 dark:border-amber-900/50 flex items-start gap-2 text-xs">
           <span class="text-amber-500 text-sm leading-none mt-0.5">💡</span>
           <p class="text-amber-900 dark:text-amber-200 font-medium leading-snug">
             <strong class="font-bold">¿Sabías que?</strong>
@@ -375,7 +290,8 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl mb-6 text-xs text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-slate-700/50">
+        <!-- Logística y Accesibilidad -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 p-3.5 bg-slate-50 dark:bg-slate-800/60 rounded-xl mb-4 text-xs text-slate-600 dark:text-slate-300 border border-slate-100 dark:border-slate-700/50">
           <div class="flex items-center gap-2">
             <i data-lucide="clock" class="w-4 h-4 text-sky-500 flex-shrink-0"></i>
             <span id="modalHorario"></span>
@@ -386,11 +302,11 @@
           </div>
           <div class="flex items-center gap-2">
             <i data-lucide="car-front" class="w-4 h-4 text-sky-500 flex-shrink-0"></i>
-            <span id="modalEstacionamiento">Estacionamiento: Disponible</span>
+            <span id="modalEstacionamiento"></span>
           </div>
           <div class="flex items-center gap-2">
             <i data-lucide="accessibility" class="w-4 h-4 text-violet-500 flex-shrink-0"></i>
-            <span id="modalAccesoSilla">Acceso silla de ruedas: No</span>
+            <span id="modalAccesoSilla"></span>
           </div>
           <div id="modalRequisitoCont" class="flex items-center gap-2 sm:col-span-2 text-amber-700 dark:text-amber-400 font-medium hidden">
             <i data-lucide="id-card" class="w-4 h-4 flex-shrink-0"></i>
@@ -398,13 +314,14 @@
           </div>
         </div>
 
-        <div id="modalInfoAdicional" class="p-3 bg-sky-50 dark:bg-sky-950/40 border border-sky-100 dark:border-sky-900/50 rounded-xl text-xs text-sky-800 dark:text-sky-300 mb-6 hidden"></div>
+        <div id="modalInfoAdicional" class="p-3 bg-sky-50 dark:bg-sky-950/40 border border-sky-100 dark:border-sky-900/50 rounded-xl text-xs text-sky-800 dark:text-sky-300 mb-4 hidden"></div>
 
-        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+        <!-- Botones de Acción -->
+        <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
           <a id="modalLinkMaps" href="#" target="_blank" rel="noopener noreferrer" 
              class="flex-1 inline-flex justify-center items-center gap-2 px-4 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-semibold rounded-xl transition-all shadow-md">
             <i data-lucide="navigation" class="w-4 h-4"></i>
-            <span>Abrir en Google Maps</span>
+            <span>Cómo llegar (Google Maps)</span>
           </a>
           <a id="modalLinkWeb" href="#" target="_blank" rel="noopener noreferrer" 
              class="inline-flex justify-center items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-xl transition-all hidden">
