@@ -501,6 +501,27 @@
     "accesoSillaRuedas": "Sí"
   },
   {
+    "id": "biblioteca-santiago-severin",
+    "nombre": "Biblioteca Pública Santiago Severín",
+    "ciudad": "Valparaíso",
+    "categoria": "Patrimonio Arquitectónico y Cultural",
+    "añoConstruccion": 1919,
+    "descripcionHistorica": "Fundada en 1873, es la primera biblioteca pública de Chile creada fuera de la capital. Su majestuoso edificio actual de estilo neoclásico renacentista fue diseñado por los arquitectos Arnaldo Barison y Renato Schiavon e inaugurado en 1919 frente a la Plaza Simón Bolívar.",
+    "datoCurioso": "Su imponente edificio de tres pisos fue financiado en su totalidad por el empresario y filántropo Santiago Severín, quien lo construyó y donó a la ciudad junto con miles de volúmenes de su colección privada.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Lunes a Viernes de 09:00 a 17:15 hrs",
+    "imagen": "img/biblioteca-severin.jpg",
+    "sitioWeb": "https://www.bibliotecaseverin.gob.cl",
+    "coordenadas": {
+      "lat": -33.045953,
+      "lng": -71.620025
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045953,-71.620025",
+    "estacionamiento": "Pago en parquímetros (calle Edwards / Av. Brasil) o estacionamiento subterráneo Plaza Victoria",
+    "accesoSillaRuedas": "Sí (cuenta con rampa de acceso exterior y ascensor habilitado para los pisos superiores)"
+  },
+  {
     "id": "la-sebastiana",
     "nombre": "La Sebastiana (Pablo Neruda)",
     "ciudad": "Valparaíso",
