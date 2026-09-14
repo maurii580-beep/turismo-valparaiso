@@ -231,6 +231,8 @@ function filtrarDatos() {
     let coincideCategoria = true;
     if (categoriaSeleccionada === 'ascensores') {
       coincideCategoria = lugar.categoria.toLowerCase().includes('ascensor');
+    } else if (categoriaSeleccionada === 'estaciones') {
+      coincideCategoria = catNorm.includes('transporte') || catNorm.includes('efe') || catNorm.includes('ferroviario');
     } else if (categoriaSeleccionada === 'patrimonio') {
       coincideCategoria = catNorm.includes('museo') || catNorm.includes('patrimonio') || catNorm.includes('palacio') || catNorm.includes('arquitectura') || catNorm.includes('cívico');
     } else if (categoriaSeleccionada === 'naturaleza') {

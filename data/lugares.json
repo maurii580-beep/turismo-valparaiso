@@ -1276,26 +1276,6 @@
     "accesoSillaRuedas": "Sí"
   },
   {
-    "id": "plaza-viejas-glorias-quilpue",
-    "nombre": "Plaza Manuel Dreves y Casco Tradicional de Quilpué",
-    "ciudad": "Quilpué",
-    "categoria": "Patrimonio Urbano Ferroviario",
-    "añoConstruccion": 1856,
-    "descripcionHistorica": "Espacio urbano ligado a la inauguración del ferrocarril Santiago-Valparaíso en 1856, conservando casonas señoriales y árboles centenarios.",
-    "datoCurioso": "El asentamiento urbano moderno de la ciudad nació y floreció alrededor de esta parada gracias a la llegada del tren a vapor Santiago-Valparaíso a mediados del siglo XIX.",
-    "precio": "Gratis",
-    "esGratis": true,
-    "horario": "Acceso libre 24/7",
-    "imagen": "img/plaza-quilpue.jpg",
-    "coordenadas": {
-      "lat": -33.046111,
-      "lng": -71.443056
-    },
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.443056",
-    "estacionamiento": "Gratis en zona cercana",
-    "accesoSillaRuedas": "Sí"
-  },
-  {
     "id": "casona-cultural-quilpue",
     "nombre": "Centro Cultural y Casona de Quilpué",
     "ciudad": "Quilpué",
@@ -1602,5 +1582,341 @@
     "googleMapsUrl": "https://maps.app.goo.gl/FYm7qY4VaakzHNqY8",
     "estacionamiento": "Pago en estacionamiento cercano",
     "accesoSillaRuedas": "Sí"
+  },
+  {
+    "id": "estacion-bellavista-efe",
+    "nombre": "Estación Bellavista (EFE)",
+    "ciudad": "Valparaíso",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Punto de acceso clave al Barrio Cívico de Valparaíso, la Intendencia Regional y la Plaza Aníbal Pinto. La estación actual es parte de la modernización estructural del tren regional inaugurada en el año 2005.",
+    "datoCurioso": "Desde su pasarela superior se obtiene una excelente vista simétrica del Arco Británico y el eje peatonal de Avenida Brasil.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-bellavista.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.042778,
+      "lng": -71.618611
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.042778,-71.618611",
+    "estacionamiento": "Pago en estacionamientos subterráneos cercanos",
+    "accesoSillaRuedas": "Sí (rampas y ascensores disponibles)"
+  },
+  {
+    "id": "estacion-francia-efe",
+    "nombre": "Estación Francia (EFE)",
+    "ciudad": "Valparaíso",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Ubicada frente al cruce de Avenida Francia, es la parada principal para acceder al Parque Cultural de Valparaíso (Ex Cárcel) y al sector del Almendral.",
+    "datoCurioso": "Es la estación más cercana al edificio del Congreso Nacional de Chile, a solo unas cuadras caminando por Avenida Pedro Montt.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-francia.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.044167,
+      "lng": -71.608889
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.044167,-71.608889",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (rampas y ascensores disponibles)"
+  },
+  {
+    "id": "estacion-baron-efe",
+    "nombre": "Estación Barón (EFE)",
+    "ciudad": "Valparaíso",
+    "categoria": "Transporte y Nodo Intermodal",
+    "añoConstruccion": 1855,
+    "descripcionHistorica": "Histórica estación que marcaba el ingreso de los trenes desde Santiago al puerto. Hoy es un punto neurálgico que conecta directamente con la Avenida Argentina, el Ascensor Barón y el Paseo Wheelwright.",
+    "datoCurioso": "Originalmente funcionaba aquí la Maestranza Barón, donde se ensamblaban y reparaban las primeras locomotoras a vapor que llegaron a Chile en el siglo XIX.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-baron.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.041667,
+      "lng": -71.599722
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.041667,-71.599722",
+    "estacionamiento": "Pago en parquímetros de Av. Argentina",
+    "accesoSillaRuedas": "Sí (rampas y ascensores disponibles)"
+  },
+  {
+    "id": "estacion-portales-efe",
+    "nombre": "Estación Portales (EFE)",
+    "ciudad": "Valparaíso",
+    "categoria": "Transporte y Patrimonio Costero",
+    "añoConstruccion": 1855,
+    "descripcionHistorica": "Estación clave en el límite entre Valparaíso y Viña del Mar. Es el punto de acceso directo a la tradicional Caleta Portales, el paseo costero y la sede de INACAP Valparaíso, siendo un nodo de alto flujo estudiantil, pesquero y turístico.",
+    "datoCurioso": "A metros de su pasarela peatonal convergen los pescadores artesanales ofreciendo sus capturas del día junto a grandes bandadas de pelícanos y lobos marinos.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-portales.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.032222,
+      "lng": -71.5975
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.032222,-71.597500",
+    "estacionamiento": "Pago en explanada de Caleta Portales",
+    "accesoSillaRuedas": "Sí (rampas y ascensores disponibles)"
+  },
+  {
+    "id": "estacion-recreo-efe",
+    "nombre": "Estación Recreo (EFE)",
+    "ciudad": "Viña del Mar",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 1855,
+    "descripcionHistorica": "Primera estación al cruzar el límite comunal hacia Viña del Mar, construida sobre el faldeo del histórico y tradicional barrio de Recreo, con vistas abiertas hacia la bahía.",
+    "datoCurioso": "En las décadas de 1920 y 1930, esta estación era la parada oficial para los bañistas que visitaban el desaparecido Balneario de Recreo, famoso por sus baños terapéuticos.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-recreo.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.030000,
+      "lng": -71.581667
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.030000,-71.581667",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (rampas y ascensores disponibles)"
+  },
+  {
+    "id": "estacion-miramar-efe",
+    "nombre": "Estación Miramar (EFE)",
+    "ciudad": "Viña del Mar",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Estación completamente soterrada que da acceso al sector poniente de Viña del Mar, conectando a minutos caminando con el Reloj de Flores, Caleta Abarca y el Cerro Castillo.",
+    "datoCurioso": "Su hundimiento eliminó el antiguo paso a nivel de Avenida España, mejorando radicalmente el flujo vehicular hacia el centro de la Ciudad Jardín.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-miramar.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.025278,
+      "lng": -71.564722
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.025278,-71.564722",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (ascensores subterráneos disponibles)"
+  },
+  {
+    "id": "estacion-hospital-efe",
+    "nombre": "Estación Hospital (EFE)",
+    "ciudad": "Viña del Mar",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Estación subterránea ubicada estratégicamente en Avenida Álvarez, diseñada para dar cobertura directa al Hospital Dr. Gustavo Fricke y al Hospital Clínico IST.",
+    "datoCurioso": "Al salir de la estación se aprecia el contraste arquitectónico entre el moderno complejo hospitalario y las casonas de estilo inglés que aún sobreviven en el plan de Viña.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-hospital.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.026111,
+      "lng": -71.541389
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.026111,-71.541389",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (ascensores subterráneos y prioridad clínica)"
+  },
+  {
+    "id": "estacion-chorrillos-efe",
+    "nombre": "Estación Chorrillos (EFE)",
+    "ciudad": "Viña del Mar",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "La última estación soterrada en el trazado de Viña del Mar, conectando el eje Álvarez-Viana con los barrios residenciales de Chorrillos y Miraflores Bajo.",
+    "datoCurioso": "A metros de su salida se formó uno de los polos de educación superior técnico-profesional más grandes de la comuna, albergando grandes sedes institucionales.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-chorrillos.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.029444,
+      "lng": -71.533333
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.029444,-71.533333",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (ascensores subterráneos disponibles)"
+  },
+  {
+    "id": "estacion-el-salto-efe",
+    "nombre": "Estación El Salto (EFE)",
+    "ciudad": "Viña del Mar",
+    "categoria": "Transporte y Patrimonio Ferroviario",
+    "añoConstruccion": 1856,
+    "descripcionHistorica": "Estación en superficie que marca el ingreso al cordón industrial de Viña del Mar y el punto de acceso más cercano para visitar el Jardín Botánico Nacional.",
+    "datoCurioso": "Alberga en sus terrenos los históricos Talleres Ferroviarios de El Salto, donde aún hoy se realizan los mantenimientos mayores a la flota de trenes de la región.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-el-salto.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.037222,
+      "lng": -71.517500
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.037222,-71.517500",
+    "estacionamiento": "Gratis en explanada lateral de la estación",
+    "accesoSillaRuedas": "Sí (rampas y ascensores peatonales)"
+  },
+  {
+    "id": "estacion-el-sol-efe",
+    "nombre": "Estación El Sol (EFE)",
+    "ciudad": "Quilpué",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Moderna estación en el sector residencial poniente de Quilpué, conectando el histórico trazado de la línea con los nuevos desarrollos urbanos de la Ciudad del Sol.",
+    "datoCurioso": "Es una de las estaciones con mayor proporción de ciclistas que utilizan el tren combinado con la bicicleta para trasladarse hacia Viña del Mar y Valparaíso.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-el-sol.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.045278,
+      "lng": -71.431944
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045278,-71.431944",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (rampas y ascensores peatonales)"
+  },
+  {
+    "id": "estacion-el-belloto-efe",
+    "nombre": "Estación El Belloto (EFE)",
+    "ciudad": "Quilpué",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 1856,
+    "descripcionHistorica": "Histórica estación que da servicio al pujante y comercial sector de El Belloto. A pocos metros se encuentra uno de los centros comerciales y de servicios más grandes de la Provincia de Marga Marga.",
+    "datoCurioso": "El sector toma su nombre del Belloto del Norte (Beilschmiedia miersii), un árbol endémico de Chile central que abundaba en estos terrenos antes del poblamiento urbano.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-belloto.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.046111,
+      "lng": -71.411389
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.046111,-71.411389",
+    "estacionamiento": "Gratis en estacionamientos de centros comerciales colindantes",
+    "accesoSillaRuedas": "Sí (rampas y pasarelas con ascensor)"
+  },
+  {
+    "id": "estacion-las-americas-efe",
+    "nombre": "Estación Las Américas (EFE)",
+    "ciudad": "Villa Alemana",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Estación de superficie que sirve de puerta de entrada poniente a la comuna de Villa Alemana, dando cobertura a los barrios residenciales en expansión.",
+    "datoCurioso": "Fue incorporada a la red recién con el proyecto de la Cuarta Etapa en 2005, respondiendo al explosivo crecimiento demográfico del límite entre El Belloto y Villa Alemana.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-las-americas.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.045278,
+      "lng": -71.396944
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.045278,-71.396944",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (rampas y ascensores peatonales)"
+  },
+  {
+    "id": "estacion-la-concepcion-efe",
+    "nombre": "Estación La Concepción (EFE)",
+    "ciudad": "Villa Alemana",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Ubicada en el sector norponiente de Villa Alemana, esta estación de diseño moderno se integra al paisaje residencial de la Ciudad de los Molinos.",
+    "datoCurioso": "Su estructura cuenta con una de las pasarelas metálicas techadas más amplias de la red, garantizando el resguardo de los pasajeros durante el invierno.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-la-concepcion.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.043611,
+      "lng": -71.385278
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.043611,-71.385278",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (rampas y ascensores peatonales)"
+  },
+  {
+    "id": "estacion-villa-alemana-efe",
+    "nombre": "Estación Villa Alemana (EFE)",
+    "ciudad": "Villa Alemana",
+    "categoria": "Transporte y Patrimonio Ferroviario",
+    "añoConstruccion": 1856,
+    "descripcionHistorica": "Estación fundacional ubicada en el corazón céntrico y cívico de la comuna. Su trazado fue clave para asentar las primeras parcelaciones a fines del siglo XIX que dieron origen a la ciudad.",
+    "datoCurioso": "El nombre de la ciudad y la estación rinde homenaje a los primeros inmigrantes europeos (en su mayoría alemanes) que compraron y parcelaron la hacienda original.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-villa-alemana.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.040833,
+      "lng": -71.373611
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.040833,-71.373611",
+    "estacionamiento": "Pago con parquímetro en calles céntricas de la comuna",
+    "accesoSillaRuedas": "Sí (rampas y paso inferior adaptado)"
+  },
+  {
+    "id": "estacion-sargento-aldea-efe",
+    "nombre": "Estación Sargento Aldea (EFE)",
+    "ciudad": "Villa Alemana",
+    "categoria": "Transporte (EFE)",
+    "añoConstruccion": 2005,
+    "descripcionHistorica": "Emplazada hacia el sector oriente de Villa Alemana. Brinda conexión directa a los barrios tradicionales y zonas de colegios ubicadas a un costado del trazado ferroviario.",
+    "datoCurioso": "Lleva el nombre de Juan de Dios Aldea, marino chileno que saltó junto a Arturo Prat al monitor Huáscar durante el Combate Naval de Iquique.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-sargento-aldea.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.039167,
+      "lng": -71.363889
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.039167,-71.363889",
+    "estacionamiento": "No disponible en la estación",
+    "accesoSillaRuedas": "Sí (rampas y ascensores peatonales)"
+  },
+  {
+    "id": "estacion-penablanca-efe",
+    "nombre": "Estación Peñablanca (EFE)",
+    "ciudad": "Villa Alemana",
+    "categoria": "Transporte y Patrimonio Ferroviario",
+    "añoConstruccion": 1856,
+    "descripcionHistorica": "Histórica estación de la localidad de Peñablanca, caracterizada por ser el punto más alto de todo el trazado del ferrocarril antes de comenzar el descenso hacia Limache y el Valle del Aconcagua.",
+    "datoCurioso": "En las décadas pasadas existía un rito popular en esta estación: los pasajeros se bajaban rápidamente para comprar 'empolvados' y dulces tradicionales mientras el tren a vapor tomaba agua.",
+    "precio": "Pasaje de tren: Según tramo tarifario",
+    "esGratis": false,
+    "horario": "Lunes a Domingo de 06:00 a 22:30 hrs",
+    "imagen": "img/estacion-penablanca.jpg",
+    "sitioWeb": "https://www.efe.cl",
+    "coordenadas": {
+      "lat": -33.035278,
+      "lng": -71.345556
+    },
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=-33.035278,-71.345556",
+    "estacionamiento": "Gratis en explanada lateral (zona de tierra)",
+    "accesoSillaRuedas": "Sí (rampas y paso inferior adaptado)"
   }
 ]
