@@ -195,3 +195,12 @@ article {
 .theme-toggle:active {
   transform: scale(0.95);
 }
+
+/* Ocultar barra de scroll en los chips manteniendo la funcionalidad táctil */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

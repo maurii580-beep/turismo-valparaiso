@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
 
+  <!-- Leaflet Gesture Handling (Protección 2 dedos) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
+  <script src="https://unpkg.com/leaflet-gesture-handling"></script>
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -92,42 +96,45 @@
       </div>
     </section>
 
-    <!-- Barra de Filtros Compacta -->
+    <!-- Barra de Filtros Optimizada para Móviles -->
     <section class="bg-white dark:bg-slate-900 p-3 sm:p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 mb-6">
       
-      <!-- Fila 1: Buscador y Favoritos -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-3">
-        <div class="sm:col-span-2 relative">
-          <input type="text" id="buscarInput" placeholder="Buscar por cerro, museo, ascensor, playa..." 
+      <!-- Fila 1: Buscador, Favoritos y Botón Filtros Secundarios -->
+      <div class="flex gap-2 mb-3">
+        <div class="relative flex-1">
+          <input type="text" id="buscarInput" placeholder="Buscar por cerro, museo, ascensor..." 
                  class="w-full pl-8 pr-3 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500">
           <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5"></i>
         </div>
 
-        <div>
-          <button id="btnFiltroFavoritos" 
-                  class="w-full py-2 px-3 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl flex items-center justify-center gap-2 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-            <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
-            <span id="textoFiltroFavoritos">Favoritos</span>
-            <span id="contadorFavoritosBadge" class="bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 text-xs px-2 py-0.5 rounded-full font-bold">0</span>
-          </button>
-        </div>
+        <button id="btnFiltroFavoritos" title="Ver Favoritos"
+                class="py-2 px-3 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl flex items-center justify-center gap-1 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+          <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
+          <span id="contadorFavoritosBadge" class="bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">0</span>
+        </button>
+
+        <button id="btnToggleFiltros" title="Más Filtros"
+                class="py-2 px-3 text-xs bg-slate-900 dark:bg-slate-700 text-white rounded-xl flex items-center justify-center gap-1.5 font-medium hover:bg-slate-800 transition-colors">
+          <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+        </button>
       </div>
 
-      <!-- Fila 2: Selectores de Filtrado -->
-      <div class="grid grid-cols-3 gap-2 mb-3 text-xs">
-        <div>
-          <label for="filtroCiudad" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Comuna</label>
-          <select id="filtroCiudad" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
-            <option value="todas">Todas</option>
-            <option value="Valparaíso">Valparaíso</option>
-            <option value="Viña del Mar">Viña del Mar</option>
-            <option value="Concón">Concón</option>
-            <option value="Quilpué">Quilpué</option>
-            <option value="Casablanca">Casablanca</option>
-            <option value="Olmué">Olmué</option>
-          </select>
-        </div>
+      <!-- Fila 2: Selector de Comunas -->
+      <div class="mb-3 text-xs">
+        <label for="filtroCiudad" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Comuna</label>
+        <select id="filtroCiudad" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
+          <option value="todas">Todas</option>
+          <option value="Valparaíso">Valparaíso</option>
+          <option value="Viña del Mar">Viña del Mar</option>
+          <option value="Concón">Concón</option>
+          <option value="Quilpué">Quilpué</option>
+          <option value="Casablanca">Casablanca</option>
+          <option value="Olmué">Olmué</option>
+        </select>
+      </div>
 
+      <!-- Fila 3: Filtros Secundarios Ocultos -->
+      <div id="filtrosSecundarios" class="hidden grid grid-cols-2 gap-2 mb-3 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs transition-all">
         <div>
           <label for="filtroCategoria" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Tipo</label>
           <select id="filtroCategoria" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">

@@ -582,10 +582,14 @@ function cerrarModalDetalle() {
 function inicializarMapa() {
   const mapElem = document.getElementById('mapa');
   if (!mapElem) return;
-  mapaLeaflet = L.map('mapa').setView([-33.03, -71.55], 11);
+  mapaLeaflet = L.map('mapa', {
+    center: [-33.03, -71.55],
+    zoom: 11,
+    gestureHandling: true
+  });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
+    attribution: '© OpenStreetMap contributors'
   }).addTo(mapaLeaflet);
 
   capaMarcadores = L.layerGroup().addTo(mapaLeaflet);
@@ -862,3 +866,41 @@ function setVista(tipo) {
 
   filtrarDatos();
 }
+
+// ==========================================
+// CONTROL DE UI PARA FILTROS (CHIPS Y TOGGLE)
+// ==========================================
+
+// Mostrar/Ocultar Filtros Secundarios
+const btnToggleFiltros = document.getElementById('btnToggleFiltros');
+const filtrosSecundarios = document.getElementById('filtrosSecundarios');
+
+if (btnToggleFiltros && filtrosSecundarios) {
+  btnToggleFiltros.addEventListener('click', () => {
+    filtrosSecundarios.classList.toggle('hidden');
+  });
+}
+
+// Lógica de visualización y asignación de los Chips de Ciudad
+const chipsCiudad = document.querySelectorAll('.chip-ciudad');
+const inputFiltroCiudad = document.getElementById('filtroCiudad');
+
+chipsCiudad.forEach(chip => {
+  chip.addEventListener('click', () => {
+    // 1. Quitar estilos activos (Azul) a TODOS los chips y dejarlos inactivos
+    chipsCiudad.forEach(c => {
+      c.classList.remove('bg-sky-600', 'text-white');
+      c.classList.add('bg-slate-50', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+    });
+    
+    // 2. Aplicar estilo activo (Azul) SOLO al chip que se clickeó
+    chip.classList.remove('bg-slate-50', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+    chip.classList.add('bg-sky-600', 'text-white');
+
+    // 3. Pasar el valor del chip al input oculto y detonar tu función original de filtrado
+    inputFiltroCiudad.value = chip.dataset.valor;
+    if (typeof filtrarDatos === 'function') {
+      filtrarDatos();
+    }
+  });
+});
