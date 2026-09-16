@@ -1,46 +1,24 @@
-# 🧭 Ruta Patrimonial — Región de Valparaíso
+# 🧭 Nomada Tour | Región de Valparaíso
 
-Plataforma web interactiva para descubrir atractivos patrimoniales, culturales, naturales y urbanos de la Región de Valparaíso. El sitio reúne una guía visual de Viña del Mar, Valparaíso, Casablanca, Concón, Quilpué y Olmué con un enfoque turístico, histórico y amigable para celular.
+Aplicación web orientada al turismo patrimonial, diseñada bajo estrictos estándares de usabilidad móvil (WCAG). Permite a los usuarios explorar hitos históricos, parques nacionales y monumentos en Valparaíso, Viña del Mar, Concón, Quilpué, Olmué y Casablanca[cite: 1].
 
-El proyecto combina mapa, filtros interactivos, favoritos, geolocalización, sugerencias de usuarios y una experiencia visual compacta optimizada para mobile.
+## ✨ Características de la Plataforma
+* **Centro de Control Unificado:** Interfaz optimizada sin selectores nativos, utilizando *chips* de desplazamiento horizontal para una navegación a un solo toque.
+* **Mapa Defensivo:** Integración de mapa interactivo con protección de gestos táctiles para evitar atascos en la pantalla móvil (*scroll trap*).
+* **Fichas Informativas Enriquecidas:** Tarjetas detalladas que incluyen historia, logística, un "Dato Curioso" y sistema de colores dinámicos para validación de accesibilidad (sillas de ruedas)[cite: 1].
+* **Modo Oscuro/Claro:** Adaptación visual automática y manual para mejorar la legibilidad bajo la luz del sol.
 
----
+## 🛠️ Stack Tecnológico
+* **Core:** HTML5 semántico y JavaScript Moderno (ES6+, Fetch API)[cite: 1].
+* **Estilos:** Tailwind CSS implementado vía CDN[cite: 1].
+* **Mapas e Íconos:** Leaflet.js, OpenStreetMap y Lucide Icons[cite: 1].
+* **Base de Datos Estática:** Consumo asíncrono de un archivo estructurado `lugares.json`[cite: 1].
+* **Integraciones:** Generador automático de imágenes de respaldo (Placehold) y gestión de formularios de contacto vía Formspree.
 
-## 📸 Vista previa
-
-La aplicación presenta una interfaz tipo guía turística con:
-- mapa de localidades
-- tarjetas de atractivos
-- filtros por ciudad, categoría, precio y favoritos
-- modo oscuro/claro
-- diseño compacto y responsivo
-
----
-
-## ✨ Mejoras incorporadas
-
-- **🗺️ Mapa desplegable:** el mapa queda oculto por defecto y se puede abrir/ocultar con un botón más limpio para no saturar la vista en móvil.
-- **🌗 Modo oscuro con toggle mejorado:** se implementó un selector visual con iconos de sol y luna y un comportamiento más moderno.
-- **📱 Diseño adaptado para celulares:** reducción de espacio, alturas más compactas y mejor densidad visual en pantallas pequeñas.
-- **🔍 Filtros más útiles:** búsqueda por texto, ciudad, categoría, tipo de ingreso y filtrado de favoritos.
-- **📍 Cerca de mí:** opción para ordenar lugares según la ubicación del usuario.
-- **💾 Favoritos persistentes:** los lugares guardados se mantienen en localStorage.
-- **📤 Sugerir lugar:** modal de sugerencias con flujo para enviar un aporte al proyecto.
-- **🔗 Compartir y acceso rápido:** botón para compartir la guía y abrir información relevante del sitio.
-- **🎨 Visual premium:** ajustes de bordes, sombras, espaciado y estados activos para una apariencia más pulida.
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-- **Frontend:** HTML5, JavaScript vanilla (ES6+)
-- **Estilos:** Tailwind CSS CDN y CSS personalizado
-- **Mapas:** Leaflet.js + OpenStreetMap
-- **Iconografía:** Lucide Icons
-- **Datos:** JSON estructurado en data/lugares.json
-- **Persistencia:** localStorage
-
----
+## 🚀 Despliegue y Desarrollo Local
+* **Entorno de Desarrollo:** Ejecuta la aplicación usando Live Server (VS Code) o mediante el comando `npx serve` para evitar bloqueos CORS al consumir los datos[cite: 1].
+* **Producción:** Despliegue automatizado y gratuito conectando la rama principal del repositorio de GitHub con Vercel[cite: 1].
+* **SEO y Compartición:** Incorpora etiquetas *Open Graph* para garantizar vistas previas profesionales al enviar la aplicación por WhatsApp o redes sociales[cite: 1].
 
 ## 📁 Estructura del proyecto
 
@@ -58,7 +36,29 @@ turismo-valparaiso/
 └── .gitignore
 ```
 
----
+{
+  "id": "nombre-del-lugar-sin-espacios",
+  "nombre": "Nombre Oficial Completo",
+  "ciudad": "Viña del Mar",
+  "categoria": "Categoría Principal (Ej: Monumento Público)",
+  "añoConstruccion": 1900,
+  "descripcionHistorica": "Párrafo breve con la historia principal del lugar.",
+  "datoCurioso": "Una anécdota o dato poco conocido para la sección '¿Sabías que?'.",
+  "precio": "Gratis o Valor estimado en CLP",
+  "esGratis": true,
+  "horario": "Días y horas de apertura",
+  "imagen": "img/nombre-foto.jpg",
+  "sitioWeb": "https://enlace-oficial.cl",
+  "requisitoIngreso": "Opcional: Cédula, reserva previa, etc.",
+  "infoAdicional": "Opcional: Consejos o recomendaciones de seguridad.",
+  "coordenadas": {
+    "lat": -33.000000,
+    "lng": -71.000000
+  },
+  "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&destination=LAT,LNG",
+  "estacionamiento": "Pago en parquímetros / Gratis / No disponible",
+  "accesoSillaRuedas": "Sí (detalle) / Parcial (detalle) / No"
+}
 
 ## ▶️ Cómo usarlo
 
