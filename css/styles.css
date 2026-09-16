@@ -204,3 +204,13 @@ article {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ==========================================
+   OPTIMIZACIONES MÓVILES Y UX
+   ========================================== */
+
+/* La altura del mapa se adapta al contenedor responsivo de Tailwind. */
+#mapa {
+  height: 100% !important;
+  min-height: 260px;
+}

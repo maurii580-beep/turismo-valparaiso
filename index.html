@@ -57,10 +57,9 @@
         </button>
 
         <a href="https://buymeacoffee.com/TU_USUARIO" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-full text-xs shadow-sm transition-colors min-h-[44px]">
+           class="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-2.5 sm:px-3 py-2 rounded-full text-xs shadow-sm transition-colors min-h-[44px] whitespace-nowrap">
           <i data-lucide="coffee" class="w-4 h-4"></i>
-          <span class="hidden sm:inline">Invítanos un café</span>
-          <span class="sm:hidden">Café</span>
+          <span>Invítanos un café</span>
         </a>
       </div>
 
@@ -80,66 +79,48 @@
 
   <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 flex-1 w-full">
     
-    <!-- Mapa Interactivo (Colapsable) -->
-    <section id="seccionMapa" class="mb-5 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-      <div class="p-3 sm:p-4 bg-slate-100 dark:bg-slate-800/60 flex justify-between items-center gap-3">
-        <h2 class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-4 h-4 text-rose-500"></i>
-          Mapa
-        </h2>
-        <button id="btnToggleMapa" type="button" aria-expanded="false"
-                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900 dark:bg-slate-700 text-white text-xs font-semibold hover:bg-slate-700 transition-colors">
-          <i data-lucide="map" class="w-3.5 h-3.5"></i>
-          <span id="textoToggleMapa">Ver mapa</span>
-        </button>
-      </div>
-      <div id="contenedorMapa" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
-        <div id="mapa" class="w-full h-[260px] sm:h-[340px] md:h-[400px]"></div>
-      </div>
-    </section>
-
-    <!-- Barra de Filtros Optimizada para Móviles -->
-    <section class="bg-white dark:bg-slate-900 p-3 sm:p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 mb-6">
+    <!-- CENTRO DE CONTROL UNIFICADO -->
+    <section class="bg-white dark:bg-slate-900 p-3 sm:p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 mb-5">
       
-      <!-- Fila 1: Buscador, Favoritos y Botón Filtros Secundarios -->
-      <div class="flex gap-2 mb-3">
-        <div class="relative flex-1">
-          <input type="text" id="buscarInput" placeholder="Buscar por cerro, museo, ascensor..." 
-                 class="w-full pl-8 pr-3 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500">
-          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5"></i>
+      <!-- Fila 1: Buscador -->
+      <div class="relative mb-3">
+        <input type="text" id="buscarInput" placeholder="Buscar por cerro, museo, ascensor..." 
+               class="w-full pl-8 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-2.5 top-3"></i>
+      </div>
+
+      <!-- Fila 2: 50% Comuna / 50% Mapa -->
+      <div class="grid grid-cols-2 gap-2 mb-3">
+        <div class="relative">
+          <select id="filtroCiudad" class="appearance-none w-full py-2.5 pl-3 pr-8 text-sm font-medium bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-200 focus:ring-2 focus:ring-sky-500">
+            <option value="todas">Todas las comunas</option>
+            <option value="Valparaíso">Valparaíso</option>
+            <option value="Viña del Mar">Viña del Mar</option>
+            <option value="Concón">Concón</option>
+            <option value="Quilpué">Quilpué</option>
+            <option value="Casablanca">Casablanca</option>
+            <option value="Olmué">Olmué</option>
+          </select>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-2.5 top-3 pointer-events-none"></i>
         </div>
 
-        <button id="btnFiltroFavoritos" title="Ver Favoritos"
-                class="py-2 px-3 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl flex items-center justify-center gap-1 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-          <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
-          <span id="contadorFavoritosBadge" class="bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">0</span>
-        </button>
-
-        <button id="btnToggleFiltros" title="Más Filtros"
-                class="py-2 px-3 text-xs bg-slate-900 dark:bg-slate-700 text-white rounded-xl flex items-center justify-center gap-1.5 font-medium hover:bg-slate-800 transition-colors">
-          <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+        <button id="btnToggleMapa" type="button" aria-expanded="false"
+                class="w-full py-2.5 flex items-center justify-center gap-2 rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-sm font-semibold hover:bg-slate-800 transition-colors shadow-sm">
+          <i data-lucide="map" class="w-4 h-4"></i>
+          <span id="textoToggleMapa">Ver Mapa</span>
         </button>
       </div>
 
-      <!-- Fila 2: Selector de Comunas -->
-      <div class="mb-3 text-xs">
-        <label for="filtroCiudad" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Comuna</label>
-        <select id="filtroCiudad" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
-          <option value="todas">Todas</option>
-          <option value="Valparaíso">Valparaíso</option>
-          <option value="Viña del Mar">Viña del Mar</option>
-          <option value="Concón">Concón</option>
-          <option value="Quilpué">Quilpué</option>
-          <option value="Casablanca">Casablanca</option>
-          <option value="Olmué">Olmué</option>
-        </select>
+      <!-- Mapa Desplegable (Incrustado sin su propia cabecera) -->
+      <div id="contenedorMapa" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out rounded-xl border-slate-200 dark:border-slate-700 mb-3">
+        <div id="mapa" class="w-full h-[260px] sm:h-[340px]"></div>
       </div>
 
-      <!-- Fila 3: Filtros Secundarios Ocultos -->
-      <div id="filtrosSecundarios" class="hidden grid grid-cols-2 gap-2 mb-3 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs transition-all">
+      <!-- Fila 3: Filtros Secundarios (Ocultos por defecto) -->
+      <div id="filtrosSecundarios" class="hidden grid grid-cols-2 gap-2 mb-3 p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800 text-xs transition-all">
         <div>
-          <label for="filtroCategoria" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Tipo</label>
-          <select id="filtroCategoria" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
+          <label for="filtroCategoria" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Tipo</label>
+          <select id="filtroCategoria" class="w-full py-2 px-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100">
             <option value="todas">Todos</option>
             <option value="ascensores">🚡 Ascensores</option>
             <option value="estaciones">🚆 Metro y Trenes</option>
@@ -151,8 +132,8 @@
         </div>
 
         <div>
-          <label for="filtroCosto" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Acceso</label>
-          <select id="filtroCosto" class="w-full py-1.5 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-sky-500">
+          <label for="filtroCosto" class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Acceso</label>
+          <select id="filtroCosto" class="w-full py-2 px-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100">
             <option value="todos">Todos</option>
             <option value="gratis">Gratis</option>
             <option value="pago">De Pago</option>
@@ -160,28 +141,39 @@
         </div>
       </div>
 
-      <!-- Resumen y Contexto Histórico -->
-      <div id="tarjetaCiudadHistoria" class="hidden mb-3 rounded-xl border border-sky-200 dark:border-sky-900 bg-sky-50/50 dark:bg-sky-950/20 p-3 text-xs"></div>
+      <!-- Fila 4: Barra de Herramientas Compacta (Acciones + Vistas) -->
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-1 overflow-x-auto hide-scrollbar">
+        <div class="flex items-center gap-1.5 flex-shrink-0">
+          <button id="btnCercaDeMi" title="Cerca de Mí"
+                  class="inline-flex items-center gap-1.5 px-3 py-2 bg-sky-50 dark:bg-sky-950/60 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold rounded-xl transition-all shadow-sm min-h-[40px]">
+            <i data-lucide="navigation" class="w-4 h-4 text-sky-500"></i>
+            <span class="hidden sm:inline" id="textoCercaDeMi">Cerca de Mí</span>
+          </button>
 
-      <!-- Fila 3: Cerca de Mí y Selector de Vistas -->
-      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-        <button id="btnCercaDeMi" 
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-sky-50 dark:bg-sky-950/60 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold rounded-xl transition-all shadow-sm">
-          <i data-lucide="navigation" class="w-3.5 h-3.5 text-sky-500"></i>
-          <span id="textoCercaDeMi">Cerca de Mí</span>
-        </button>
+          <button id="btnFiltroFavoritos" title="Favoritos"
+                  class="px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center gap-1.5 font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors min-h-[40px]">
+            <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
+            <span id="contadorFavoritosBadge" class="bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">0</span>
+          </button>
 
-        <div class="flex items-center gap-2">
+          <button id="btnToggleFiltros" title="Más Filtros"
+                  class="px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors min-h-[40px]">
+            <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+            <span class="text-xs font-semibold">Filtros</span>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-1.5 flex-shrink-0">
           <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Vistas</span>
-          <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
-          <button id="btnVistaGrid" class="p-1.5 text-xs font-medium rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 shadow-sm" title="Tarjetas">
-            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+          <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+          <button id="btnVistaGrid" class="p-2 text-xs font-medium rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 shadow-sm" title="Tarjetas">
+            <i data-lucide="layout-grid" class="w-4 h-4"></i>
           </button>
-          <button id="btnVistaLista" class="p-1.5 text-xs font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900" title="Lista">
-            <i data-lucide="list" class="w-3.5 h-3.5"></i>
+          <button id="btnVistaLista" class="p-2 text-xs font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900" title="Lista">
+            <i data-lucide="list" class="w-4 h-4"></i>
           </button>
-          <button id="btnVistaIconos" class="p-1.5 text-xs font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900" title="Galería">
-            <i data-lucide="image" class="w-3.5 h-3.5"></i>
+          <button id="btnVistaIconos" class="p-2 text-xs font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900" title="Galería">
+            <i data-lucide="image" class="w-4 h-4"></i>
           </button>
           </div>
         </div>

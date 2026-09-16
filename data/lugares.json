@@ -103,6 +103,26 @@
     "accesoSillaRuedas": "Sí"
   },
   {
+    "id": "iglesia-dolores-vina",
+    "nombre": "Parroquia Nuestra Señora de los Dolores",
+    "ciudad": "Viña del Mar",
+    "categoria": "Patrimonio Religioso e Histórico",
+    "añoConstruccion": 1912,
+    "descripcionHistorica": "Ubicada a un costado de la Plaza Vergara, es la parroquia fundacional de Viña del Mar (erigida originalmente en 1882). Tras el devastador terremoto de 1906, el templo fue reconstruido e inaugurado en 1912, destacando por su imponente fachada de estilo neorrománico y hermosos vitrales europeos.",
+    "datoCurioso": "En su interior se conserva intacta la pila bautismal original donde fue bautizado San Alberto Hurtado (el segundo santo chileno) el 5 de agosto de 1901.",
+    "precio": "Gratis",
+    "esGratis": true,
+    "horario": "Lunes a Domingo de 09:00 a 13:00 y de 16:00 a 20:00 hrs (Horarios de misa)",
+    "imagen": "img/iglesia-dolores.jpg",
+    "coordenadas": {
+      "lat": -33.02686,
+      "lng": -71.55255
+    },
+    "googleMapsUrl": "https://maps.app.goo.gl/Xxrupxu5qyiU4qCf7",
+    "estacionamiento": "Pago en estacionamientos subterráneos contiguos (Plaza Sucre / Plaza Vergara)",
+    "accesoSillaRuedas": "Sí (cuenta con rampas de acceso en sus entradas para ingresar a la nave principal)"
+  },
+  {
     "id": "parque-quinta-vergara",
     "nombre": "Parque Quinta Vergara y Palacio Vergara",
     "ciudad": "Viña del Mar",

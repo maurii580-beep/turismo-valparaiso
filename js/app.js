@@ -303,21 +303,28 @@ function crearBloqueCurioso(lugar) {
 
 function crearInfoAccesibilidad(lugar) {
   const estacionamiento = lugar.estacionamiento || 'No disponible';
-  const accesoTexto = (() => {
-    const valor = String(lugar.accesoSillaRuedas ?? 'No').trim().toLowerCase();
-    if (['si', 'sí', 'yes', 'true', 'disponible', 'habilitado'].includes(valor)) return 'Sí';
-    if (valor.startsWith('parcial')) return 'Parcial';
-    return 'No';
-  })();
+  const valorOriginal = String(lugar.accesoSillaRuedas ?? 'No').trim();
+  const valor = valorOriginal.toLowerCase();
+
+  let colorIcono = 'text-slate-400';
+  let textoCorto = 'No';
+
+  if (valor.startsWith('si') || valor.startsWith('sí')) {
+    colorIcono = 'text-emerald-500';
+    textoCorto = 'Sí';
+  } else if (valor.startsWith('parcial')) {
+    colorIcono = 'text-amber-500';
+    textoCorto = 'Parcial';
+  }
 
   return `
-    <div class="order-2 flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300 truncate">
+    <div class="order-2 flex items-center gap-2 text-[11px] text-slate-600 dark:text-slate-300">
       <i data-lucide="car-front" class="w-3.5 h-3.5 text-sky-500 flex-shrink-0"></i>
-      <span class="truncate">Estac.: ${estacionamiento}</span>
+      <span class="truncate" title="${estacionamiento}">Estac.: ${estacionamiento}</span>
     </div>
     <div class="order-4 flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-300">
-      <i data-lucide="accessibility" class="w-3.5 h-3.5 text-violet-500 flex-shrink-0"></i>
-      <span>Silla: ${accesoTexto}</span>
+      <i data-lucide="accessibility" class="w-3.5 h-3.5 ${colorIcono} flex-shrink-0"></i>
+      <span class="truncate" title="${valorOriginal}">Silla: ${textoCorto}</span>
     </div>
   `;
 }
@@ -519,7 +526,17 @@ function abrirModalDetalle(id) {
     modalEstacionamiento.textContent = `Estacionamiento: ${lugar.estacionamiento || 'No disponible'}`;
   }
   if (modalAccesoSilla) {
-    modalAccesoSilla.textContent = `Acceso silla: ${lugar.accesoSillaRuedas || 'No especificado'}`;
+    const valorAcceso = String(lugar.accesoSillaRuedas ?? 'No').trim();
+    const valorMin = valorAcceso.toLowerCase();
+    let colorAcceso = 'text-slate-400';
+
+    if (valorMin.startsWith('si') || valorMin.startsWith('sí')) colorAcceso = 'text-emerald-500';
+    else if (valorMin.startsWith('parcial')) colorAcceso = 'text-amber-500';
+
+    const iconoModal = modalAccesoSilla.previousElementSibling;
+    iconoModal?.classList.remove('text-slate-400', 'text-emerald-500', 'text-amber-500', 'text-violet-500');
+    iconoModal?.classList.add(colorAcceso);
+    modalAccesoSilla.textContent = valorAcceso;
   }
 
   const contReq = document.getElementById('modalRequisitoCont');
